@@ -1,6 +1,7 @@
 'use strict';
 
 var bridge = require('../');
+var seat = bridge.seat;
 var expect = require('chai').expect;
 
 describe('Deck', function() {
@@ -26,3 +27,14 @@ describe('Deck', function() {
     });
 
 });
+
+describe('Dealt deck', function() {
+    it('each player has 13 cards', function() {
+        var hand = new bridge.Deck().shuffle().deal(seat.west);
+        expect(hand[seat.north].cards.length).to.equal(13);
+        expect(hand[seat.south].cards.length).to.equal(13);
+        expect(hand[seat.east].cards.length).to.equal(13);
+        expect(hand[seat.west].cards.length).to.equal(13);
+    });
+
+})

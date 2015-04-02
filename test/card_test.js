@@ -11,6 +11,11 @@ describe('Card', function() {
         expect(card.suit).to.equal('S');
     });
 
+    it('string form is rank and suit', function() {
+        var card = bridge.card['2S'];
+        expect(card + '').to.equal('2S');
+    });
+
     it('rank can be 10 or T', function() {
         var card = bridge.card['10S'];
         expect(card.rank).to.equal('10');
