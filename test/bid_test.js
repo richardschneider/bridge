@@ -65,4 +65,12 @@ describe('Bid', function() {
         expect(bridge.bid['7NT'].order).to.equal(35);
     });
 
+    it('string representation is the bid', function() {
+        expect(bridge.bid['3D'] + '').to.equal('3D');
+        expect(bridge.bid.pass + '').to.equal('-');
+        expect(bridge.bid.double + '').to.equal('X');
+        expect(bridge.bid.redouble + '').to.equal('XX');
+    });
+
+
 });
