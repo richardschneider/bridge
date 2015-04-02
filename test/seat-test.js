@@ -43,4 +43,8 @@ describe('Seat', function() {
        expect(seat.west.lho).to.equal(seat.north);
     });
 
+    it('string representation is the symbol', function() {
+       expect(seat.north + '').to.equal('N');
+    });
+
 });
