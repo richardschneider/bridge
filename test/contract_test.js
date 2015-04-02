@@ -15,7 +15,7 @@ describe('Contract', function() {
         var contract = new bridge.Contract();
         contract.level = 3;
         contract.denomination = 'NT';
-        contract.declaror = 'S';
+        contract.declaror = bridge.seat.south;
         contract.risk = 'X';
         expect(contract.toString()).to.equal('3NTX by S');
     });
