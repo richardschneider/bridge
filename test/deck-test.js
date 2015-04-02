@@ -37,4 +37,4 @@ describe('Dealt deck', function() {
         expect(hand[seat.west].cards.length).to.equal(13);
     });
 
-})
+});
