@@ -2,8 +2,8 @@
   "name": "bridgejs",
   "description": "Javascript model for contract (duplicate) bridge",
   "version": "0.1.0",
-  "homepage": "https://github.com/richardschneider/bridgejs",
-  "bugs": "https://github.com/richardschneider/bridgejs/issues",
+  "homepage": "https://github.com/richardschneider/bridge",
+  "bugs": "https://github.com/richardschneider/bridge/issues",
   "license": "MIT",
   "main": "index.js",
   "author": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/richardschneider/bridgejs"
+    "url": "https://github.com/richardschneider/bridge"
   },
   "keywords": [
     "bridge",
