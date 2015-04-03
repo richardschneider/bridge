@@ -64,10 +64,15 @@ gulp.task('bump', ['test'], function () {
 
   return gulp.src(['./package.json', './bower.json'])
     .pipe(plugins.bump({ type: bumpType }))
-    .pipe(gulp.dest('./'))
-    .pipe(plugins.git.commit('bumps version'))
-    .pipe(plugins.filter('package.json'))
-    .pipe(tag_version());
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('release', ['compress', 'bump'], function () {
+    return gulp.src(['./package.json', './bower.json', 'dist/**/*'])
+        .pipe(plugins.git.add())
+        .pipe(plugins.git.commit('rew release'))
+        .pipe(plugins.filter('package.json'))
+        .pipe(tag_version());
 });
 
 gulp.task('watch', ['test'], function () {
@@ -76,6 +81,4 @@ gulp.task('watch', ['test'], function () {
 
 gulp.task('test', ['lint', 'istanbul']);
 
-gulp.task('release', ['bump']);
-
-gulp.task('default', ['test', 'compress']);
+gulp.task('default', ['test']);
