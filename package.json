@@ -1,7 +1,7 @@
 {
   "name": "bridgejs",
   "description": "Javascript model for contract (duplicate) bridge",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/richardschneider/bridgejs",
   "bugs": "https://github.com/richardschneider/bridgejs/issues",
   "license": "MIT",
@@ -34,6 +34,7 @@
     "gulp-mocha": "^1.1.0",
     "gulp-plumber": "^0.6.5",
     "gulp-rename": "^1.2.2",
+    "gulp-tag-version": "^1.2.1",
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.1",
     "jshint-stylish": "^0.4.0",
