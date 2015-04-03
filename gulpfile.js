@@ -4,6 +4,7 @@ var gulp   = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var tag_version = require('gulp-tag-version');
 
 var paths = {
   lint: ['./lib/**/*.js'],
@@ -63,13 +64,10 @@ gulp.task('bump', ['test'], function () {
 
   return gulp.src(['./package.json', './bower.json'])
     .pipe(plugins.bump({ type: bumpType }))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./'))
     .pipe(plugins.git.commit('bumps version'))
-
-        // read only one file to get the version number
-//        .pipe(filter('package.json'))
-        // **tag it in the repository**
-//        .pipe(tag_version());
+    .pipe(plugins.filter('package.json'))
+    .pipe(tag_version());
 });
 
 gulp.task('watch', ['test'], function () {
