@@ -51,6 +51,13 @@ gulp.task('browserify', function() {
         .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('compress', ['browserify'], function() {
+    return gulp.src('./dist/bridge.js')
+        .pipe(plugins.uglify())
+        .pipe(plugins.rename({suffix: '.min'}))
+        .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('bump', ['test'], function () {
   var bumpType = plugins.util.env.type || 'patch'; // major.minor.patch
 
@@ -67,4 +74,4 @@ gulp.task('test', ['lint', 'istanbul']);
 
 gulp.task('release', ['bump']);
 
-gulp.task('default', ['test', 'browserify']);
+gulp.task('default', ['test', 'compress']);
