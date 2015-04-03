@@ -1,7 +1,7 @@
 {
   "name": "Bridge.JS",
   "main": "dist/bridge.js",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "homepage": "https://github.com/richardschneider/bridge",
   "authors": [
     "Richard Schneider <makaretu@gmail.com>"
