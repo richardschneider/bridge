@@ -9,7 +9,7 @@ Install it for your project
     
 Include it your HTML page
 
-    <script src="dist/bridge.min.js"></script>
+    <script src="./bower-modules/bridge.js/dist/bridge.min.js"></script>
     
 Use it
 
