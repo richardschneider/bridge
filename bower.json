@@ -26,6 +26,7 @@
     "test",
     "coverage",
     "lib",
-    "index.js"
+    "index.js",
+    "gulpfile.js"
   ]
 }

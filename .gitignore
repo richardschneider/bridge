@@ -1,5 +1,5 @@
 node_modules/
-temp/npm-debug.log
+temp/
 .DS_Store
 .idea
 coverage/
