@@ -19,4 +19,14 @@ describe('Hand', function() {
         expect(hand.cards[3]).to.equal(card.CA);
     });
 
+    it('string representation is the cards', function() {
+        var hand = new bridge.Hand();
+        hand.cards.push(card.CA);
+        hand.cards.push(card.DA);
+        hand.cards.push(card.HA);
+        hand.cards.push(card.SA);
+        hand.sort();
+        expect(hand + '').to.equal('AS AH AD AC');
+    });
+
 });
