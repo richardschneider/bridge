@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bridge.JS sample</title>
+</head>
+<body>
+  <script src="dist/bridge.js"></script>
+  <script>
+      var hands = new bridge.Deck().shuffle().deal(bridge.seat.west);
+      alert("North's hand  " + hands.N);
+  </script>
+</body>
+</html>

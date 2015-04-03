@@ -2,6 +2,8 @@
 
 var gulp   = require('gulp');
 var plugins = require('gulp-load-plugins')();
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
 
 var paths = {
   lint: ['./lib/**/*.js'],
@@ -42,6 +44,13 @@ gulp.task('istanbul', function (cb) {
     });
 });
 
+gulp.task('browserify', function() {
+    return browserify('./index.js', { standalone: 'bridge'})
+        .bundle()
+        .pipe(source('bridge.js'))
+        .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('bump', ['test'], function () {
   var bumpType = plugins.util.env.type || 'patch'; // major.minor.patch
 
@@ -58,4 +67,4 @@ gulp.task('test', ['lint', 'istanbul']);
 
 gulp.task('release', ['bump']);
 
-gulp.task('default', ['test']);
+gulp.task('default', ['test', 'browserify']);

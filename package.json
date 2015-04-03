@@ -5,7 +5,7 @@
   "homepage": "https://github.com/richardschneider/bridgejs",
   "bugs": "https://github.com/richardschneider/bridgejs/issues",
   "license": "MIT",
-  "main": "lib/bridge.js",
+  "main": "index.js",
   "author": {
     "name": "Richard Schneider",
     "email": "makaretu@gmail.com"
@@ -22,6 +22,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "browserify": "9.0.1",
     "chai": "^2.2.0",
     "gulp": "^3.8.8",
     "gulp-bump": "^0.1.11",
@@ -33,7 +34,8 @@
     "gulp-plumber": "^0.6.5",
     "gulp-util": "^3.0.1",
     "jshint-stylish": "^0.4.0",
-    "should": "^4.0.4"
+    "should": "^4.0.4",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "test": "gulp test"
