@@ -61,9 +61,15 @@ gulp.task('compress', ['browserify'], function() {
 gulp.task('bump', ['test'], function () {
   var bumpType = plugins.util.env.type || 'patch'; // major.minor.patch
 
-  return gulp.src(['./package.json'])
+  return gulp.src(['./package.json', './bower.json'])
     .pipe(plugins.bump({ type: bumpType }))
     .pipe(gulp.dest('./'));
+    .pipe(plugins.git.commit('bumps version'))
+
+        // read only one file to get the version number
+//        .pipe(filter('package.json'))
+        // **tag it in the repository**
+//        .pipe(tag_version());
 });
 
 gulp.task('watch', ['test'], function () {
