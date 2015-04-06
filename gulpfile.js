@@ -67,12 +67,19 @@ gulp.task('bump', ['test'], function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('release', ['compress', 'bump'], function () {
+gulp.task('tag', ['compress', 'bump'], function () {
     return gulp.src(['./package.json', './bower.json', 'dist/**/*'])
         .pipe(plugins.git.add())
-        .pipe(plugins.git.commit('rew release'))
+        .pipe(plugins.git.commit('new release'))
         .pipe(plugins.filter('package.json'))
         .pipe(tag_version());
+});
+
+gulp.task('release', ['tag'], function (cb) {
+    return plugins.git.push('origin', 'master', {args: '--tags'}, function (err) {
+        if (err) throw err;
+        cb();
+    });
 });
 
 gulp.task('watch', ['test'], function () {
