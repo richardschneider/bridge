@@ -29,4 +29,15 @@ describe('Hand', function() {
         expect(hand + '').to.equal('AS AH AD AC');
     });
 
+    it('cards can be filter by suit', function () {
+        var hand = new bridge.Hand();
+        hand.cards.push(card.CA);
+        hand.cards.push(card.SK);
+        hand.cards.push(card.DA);
+        hand.cards.push(card.HA);
+        hand.cards.push(card.SA);
+        var spades = hand.sort().cardsWithSuit('S');
+        expect(spades[0]).to.equal(card.SA);
+        expect(spades[1]).to.equal(card.SK);
+    });
 });
