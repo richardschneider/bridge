@@ -75,4 +75,35 @@ describe('Auction', function() {
 
     });
 
+    describe('Doubling', function() {
+        it('should allow a rho double', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(['1C', 'X']);
+            expect(auction.bids.length).equal(2);
+        });
+
+        it('should allow a lho double', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(['1C', '-', '-', 'X']);
+            expect(auction.bids.length).equal(4);
+        });
+
+        it('should throw when doubling partner', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', '-', 'X']); }).to.throw('Doubling your partner is not allowed');
+        });
+
+        it('should throw when opposition has no contract', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(['X']); }).to.throw('Cannot double when opposition has no contract');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['-', 'X']); }).to.throw('Cannot double when opposition has no contract');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['-', '-', '-', 'X']); }).to.throw('Cannot double when opposition has no contract');
+        });
+
+    });
+
 });
