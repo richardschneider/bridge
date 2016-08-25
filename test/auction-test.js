@@ -48,6 +48,15 @@ describe('Auction', function() {
             expect(auction.bids[1]).to.equal(bid['2C']);
         });
 
+        it('should allow mulitple bids', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(bid['1C'], '1S', '-', '-', '-');
+            expect(auction.bids.length).equal(5);
+            expect(auction.bids[0]).to.equal(bid['1C']);
+            expect(auction.bids[1]).to.equal(bid['1S']);
+            expect(auction.isClosed()).to.equal(true);
+        });
+
         it('should throw when not a bid', function() {
             var auction = new Auction(seat.south);
             expect(function() { auction.bid(1); }).to.throw('Invalid bid');
@@ -104,6 +113,25 @@ describe('Auction', function() {
             expect(function() { auction.bid(['-', '-', '-', 'X']); }).to.throw('Cannot double when opposition has no contract');
         });
 
+    });
+
+    describe ('Next seat to bid', function() {
+        it('should be dealer with no bidding', function() {
+            var auction = new Auction(seat.south);
+            expect(auction.nextSeatToBid()).to.equal(seat.south);
+        });
+
+        it('should be null when auction is closed', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', '1S', '-', '-', '-');
+            expect(auction.nextSeatToBid()).to.equal(null);
+        });
+
+        it('should follow the bidding from the dealer', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', '1S', '-', '-', 'X');
+            expect(auction.nextSeatToBid()).to.equal(seat.west);
+        });
     });
 
 });
