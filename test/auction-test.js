@@ -134,4 +134,51 @@ describe('Auction', function() {
         });
     });
 
+    describe('Contract', function() {
+        it('should have level and denomination equal to the last bid', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', '1S', '-', '-', '-');
+            var contract = auction.contract();
+            expect(contract.level).to.equal(1);
+            expect(contract.denomination).to.equal('S');
+        });
+
+        it('should have risk "X" when last bid is doubled', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C');
+            expect(auction.contract().risk).equal('');
+
+            auction.bid('X');
+            expect(auction.contract().risk).equal('X');
+
+            auction.bid('-');
+            expect(auction.contract().risk).equal('X');
+
+            auction.bid('1S');
+            expect(auction.contract().risk).equal('');
+        });
+
+        it('should have risk "XX" when last bid is redoubled', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X');
+            expect(auction.contract().risk).equal('X');
+
+            auction.bid('XX');
+            expect(auction.contract().risk).equal('XX');
+
+            auction.bid('-');
+            expect(auction.contract().risk).equal('XX');
+
+            auction.bid('1S');
+            expect(auction.contract().risk).equal('');
+        });
+
+        it('should have declaror equal to first partner to bid the denomination', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', '2C', '-', '5C');
+            expect(auction.contract().declaror).equal(seat.west);
+        });
+
+    });
+
 });
