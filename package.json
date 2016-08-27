@@ -28,13 +28,16 @@
     "gulp": "^3.9.1",
     "gulp-coveralls": "^0.1.4",
     "gulp-jshint": "^2.0.1",
+    "gulp-rename": "^1.2.2",
     "gulp-spawn-mocha": "^2.2.2",
+    "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
     "mocha": "*",
     "semantic-release": "^4.3.5",
     "should": "^4.0.4",
-    "validate-commit-msg": "^2.6.1"
+    "validate-commit-msg": "^2.6.1",
+    "vinyl-source-stream": "^1.1.0"
   },
   "config": {
     "ghooks": {

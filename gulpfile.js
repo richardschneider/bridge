@@ -1,10 +1,13 @@
 'use strict';
 
 var gulp = require('gulp');
+var rename = require('gulp-rename');
 var jshint = require('gulp-jshint');
 var mocha = require('gulp-spawn-mocha');
 var browserify = require('browserify');
+var uglify = require('gulp-uglify');
 var coveralls = require('gulp-coveralls');
+var source = require('vinyl-source-stream');
 
 var DEBUG = process.env.NODE_ENV === 'debug',
     CI = process.env.CI === 'true';
@@ -53,8 +56,8 @@ gulp.task('browserify', function() {
 
 gulp.task('compress', ['browserify'], function() {
     return gulp.src('./dist/bridge.js')
-        .pipe(plugins.uglify())
-        .pipe(plugins.rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./dist/'));
 });
 
