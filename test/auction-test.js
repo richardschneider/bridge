@@ -102,6 +102,11 @@ describe('Auction', function() {
             expect(function() { auction.bid(['1C', '-', 'X']); }).to.throw('Doubling your partner is not allowed');
         });
 
+        it('should throw when opposition is already at risk', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'X', '-', 'X']); }).to.throw('Opposition is already at risk');
+        });
+
         it('should throw when opposition has no contract', function() {
             var auction = new Auction(seat.south);
             expect(function() { auction.bid(['X']); }).to.throw('Cannot double when opposition has no contract');
