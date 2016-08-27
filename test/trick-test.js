@@ -8,7 +8,7 @@ describe('Trick', function() {
 
     it('leader is 1st to play a card', function() {
         var trick = new bridge.Trick();
-        expect(trick.leader()).to.be.undefined;
+        expect(trick.leader()).to.be.undefined();
         trick.play.push({ seat: seat.west} );
         expect(trick.leader()).to.equal(seat.west);
         trick.play.push({ seat: seat.east} );
@@ -19,7 +19,7 @@ describe('Trick', function() {
         var contract = new bridge.Contract();
         contract.denomination = 'NT';
         var trick = new bridge.Trick();
-        expect(trick.winner()).to.be.undefined;
+        expect(trick.winner()).to.be.undefined();
         trick.play.push({ seat: seat.north, card: bridge.card.S2 } );
         trick.play.push({ seat: seat.east, card: bridge.card.SK } );
         trick.play.push({ seat: seat.south, card: bridge.card.HA } );
@@ -31,7 +31,7 @@ describe('Trick', function() {
         var contract = new bridge.Contract();
         contract.denomination = 'NT';
         var trick = new bridge.Trick();
-        expect(trick.winner()).to.be.undefined;
+        expect(trick.winner()).to.be.undefined();
 
         trick.play.push({ seat: seat.north, card: bridge.card.S3 } );
         trick.play.push({ seat: seat.east, card: bridge.card.SK } );
@@ -44,7 +44,7 @@ describe('Trick', function() {
         var contract = new bridge.Contract();
         contract.denomination = 'H';
         var trick = new bridge.Trick();
-        expect(trick.winner()).to.be.undefined;
+        expect(trick.winner()).to.be.undefined();
         trick.play.push({ seat: seat.north, card: bridge.card.SA } );
         trick.play.push({ seat: seat.east, card: bridge.card.HQ } );
         trick.play.push({ seat: seat.south, card: bridge.card.HK } );

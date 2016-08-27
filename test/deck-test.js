@@ -22,7 +22,7 @@ describe('Deck', function() {
         expect(deck.cards.length).to.equal(52);
         for (var i = 0; i < 52; ++i)
         {
-            expect(deck.cards[i]).to.exist;
+            expect(deck.cards[i]).to.exist();
         }
     });
 

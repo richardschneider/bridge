@@ -16,24 +16,24 @@ describe('Bid', function() {
 
     it('can be pass', function() {
         var bid = bridge.bid['-'];
-        expect(bid.isPass).to.be.true;
+        expect(bid.isPass).equal(true);
     });
 
     it('can be double', function() {
         var bid = bridge.bid['X'];
-        expect(bid.isDouble).to.be.true;
+        expect(bid.isDouble).equal(true);
     });
 
     it('can be redouble', function() {
         var bid = bridge.bid['XX'];
-        expect(bid.isRedouble).to.be.true;
+        expect(bid.isRedouble).equal(true);
     });
 
     it('has suit color', function() {
-        expect(bridge.bid['1C'].isRed).to.be.false;
-        expect(bridge.bid['1D'].isRed).to.be.true;
-        expect(bridge.bid['1H'].isRed).to.be.true;
-        expect(bridge.bid['1S'].isRed).to.be.false;
+        expect(bridge.bid['1C'].isRed).equal(false);
+        expect(bridge.bid['1D'].isRed).equal(true);
+        expect(bridge.bid['1H'].isRed).equal(true);
+        expect(bridge.bid['1S'].isRed).equal(false);
     });
 
     it('is ordered by denomination within level', function() {
