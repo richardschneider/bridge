@@ -24,7 +24,7 @@ describe('Trick', function() {
         trick.play.push({ seat: seat.east, card: bridge.card.SK } );
         trick.play.push({ seat: seat.south, card: bridge.card.HA } );
         trick.play.push({ seat: seat.west, card: bridge.card.S3 } );
-        expect(trick.winner(contract)).to.exist;
+        expect(trick.winner(contract)).to.exist();
     });
 
     it('winner has the highest rank of the 1st suit played', function() {
