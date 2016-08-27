@@ -44,7 +44,7 @@ describe('Seat', function() {
     });
 
     it('string representation is the name', function() {
-       expect(seat.north + '').to.equal('north');
+       expect(seat.north.toString()).to.equal('north');
     });
 
     it('has a symbol', function() {

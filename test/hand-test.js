@@ -26,7 +26,7 @@ describe('Hand', function() {
         hand.cards.push(card.HA);
         hand.cards.push(card.SA);
         hand.sort();
-        expect(hand + '').to.equal('AS AH AD AC');
+        expect(hand.toString()).to.equal('AS AH AD AC');
     });
 
     it('cards can be filter by suit', function () {
