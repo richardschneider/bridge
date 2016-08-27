@@ -1,4 +1,6 @@
-# bridge.js
+# bridge
+[![Travis build status](https://travis-ci.org/richardschneider/bridge.svg)](https://travis-ci.org/richardschneider/bridge)
+
 A javascript model for contract (duplicate) bridge.
 
 ## Getting started
