@@ -1,5 +1,6 @@
 # bridge
 [![Travis build status](https://travis-ci.org/richardschneider/bridge.svg)](https://travis-ci.org/richardschneider/bridge)
+[![Coverage Status](https://coveralls.io/repos/github/richardschneider/bridge/badge.svg?branch=master)](https://coveralls.io/github/richardschneider/bridge?branch=master)
 
 A javascript model for contract (duplicate) bridge.
 

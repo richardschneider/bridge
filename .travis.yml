@@ -6,7 +6,7 @@ cache:
   directories:
     - node_modules
 script:
-  - gulp test
+  - gulp ci
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
