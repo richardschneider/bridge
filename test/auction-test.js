@@ -97,6 +97,18 @@ describe('Auction', function() {
             expect(auction.bids.length).equal(4);
         });
 
+        it('should allow declarors partner to bid after a double', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X', '1S');
+            expect(auction.contract().toString()).equal('1S by N');
+        });
+
+        it('should allow declaror to bid after a double', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X', '-', '-', '1S');
+            expect(auction.contract().toString()).equal('1S by S');
+        });
+
         it('should throw when doubling partner', function() {
             var auction = new Auction(seat.south);
             expect(function() { auction.bid(['1C', '-', 'X']); }).to.throw('Doubling your partner is not allowed');
@@ -116,6 +128,48 @@ describe('Auction', function() {
 
             auction = new Auction(seat.south);
             expect(function() { auction.bid(['-', '-', '-', 'X']); }).to.throw('Cannot double when opposition has no contract');
+        });
+
+    });
+
+    describe('Redoubling', function() {
+        it('should allow partner to redouble a doubled contract', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X', 'XX', '-', '-', '-');
+            expect(auction.contract().toString()).equal('1CXX by S');
+        });
+
+        it('should allow declaror to redouble a doubled contract', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X', '-', '-', 'XX');
+            expect(auction.contract().toString()).equal('1CXX by S');
+
+            auction = new Auction(seat.south);
+            auction.bid('1C', '-', '-', 'X', 'XX');
+            expect(auction.contract().toString()).equal('1CXX by S');
+        });
+
+        it('should throw on all other cases', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(['XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', '-', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', '-', '-', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'X', '-', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'X', '1S', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'X', '1S', '-', 'XX']); }).to.throw('Invalid bid');
         });
 
     });
