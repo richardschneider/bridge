@@ -7,11 +7,11 @@ var source = require('vinyl-source-stream');
 var tag_version = require('gulp-tag-version');
 
 var paths = {
-  lint: ['./lib/**/*.js'],
   watch: ['./gulpfile.js', './lib/**', './test/**/*.js', '!test/{temp,temp/**}'],
   tests: ['./test/**/*.js', '!test/{temp,temp/**}'],
-  source: ['./lib/*.js']
+  source: ['./lib/*.js', './bin/*']
 };
+paths.lint = paths.source.concat(paths.tests);
 
 var plumberConf = {};
 
@@ -77,7 +77,7 @@ gulp.task('tag', ['compress', 'bump'], function () {
 
 gulp.task('release', ['tag'], function (cb) {
     return plugins.git.push('origin', 'master', {args: '--tags'}, function (err) {
-        if (err) throw err;
+        if (err) { throw err; }
         cb();
     });
 });
