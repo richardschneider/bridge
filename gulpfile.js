@@ -42,11 +42,6 @@ gulp.task('istanbul', function () {
     }));
 });
 
-gulp.task('coveralls', ['istanbul'], function () {
-  return gulp.src('./coverage/lcov.info')
-    .pipe(coveralls());
-});
-
 gulp.task('browserify', function() {
     return browserify('./index.js', { standalone: 'bridge'})
         .bundle()
@@ -61,6 +56,10 @@ gulp.task('compress', ['browserify'], function() {
         .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('coverage', function () {
+  return gulp.src('./coverage/lcov.info')
+    .pipe(coveralls());
+});
+
 gulp.task('test',    ['lint', 'istanbul']);
-gulp.task('ci',      ['test', 'coveralls']);
 gulp.task('default', ['test']);
