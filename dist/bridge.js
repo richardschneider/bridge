@@ -3,7 +3,135 @@
 
 module.exports = require('./lib/bridge');
 
-},{"./lib/bridge":3}],2:[function(require,module,exports){
+},{"./lib/bridge":4}],2:[function(require,module,exports){
+/*
+ * auction.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2016 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+var bids = require('./bid');
+var Contract = require('./contract');
+
+/** The history of bids. */
+function Auction(dealer) {
+    this.bids = [];
+    this.dealer = dealer;
+}
+
+Auction.prototype.bid = function(bid) {
+    var self = this, seat, contract;
+
+    // Argument overloading
+    if (arguments.length > 1) {
+        bid = Array.prototype.slice.call(arguments);
+    }
+    if (Array.isArray(bid)) {
+        bid.forEach(function(b) { self.bid(b); });
+        return;
+    }
+    if (typeof bid === 'string' || bid instanceof String) {
+        bid = bids[bid];
+    }
+    if (typeof bid !== 'object' || Object.getPrototypeOf(bid).constructor.name !== 'Bid') {
+        throw new Error('Invalid bid');
+    }
+
+    // Can the specified Bid be applied?
+    if (this.isClosed()) {
+        throw new Error('Bidding not allowed, auction is closed');
+    }
+    if (bid.isPass) {
+        // you can always pass
+    } else if (bid.isDouble) {
+        seat = this.nextSeatToBid();
+        contract = this.contract();
+        if (contract.declaror === undefined) {
+            throw new Error('Cannot double when opposition has no contract');
+        }
+        if (contract.declaror === seat.partner) {
+            throw new Error('Doubling your partner is not allowed');
+        }
+        if (contract.risk !== '') {
+            throw new Error('Opposition is already at risk');
+        }
+    } else if (bid.isRedouble) {
+        seat = this.nextSeatToBid();
+        contract = this.contract();
+        if (!(contract.risk === 'X' && (seat === contract.declaror || seat.partner === contract.declaror))) {
+            throw new Error('Invalid bid');
+        }
+    } else {
+        var higherBids = this.bids.some(function(b) {return b.order > bid.order;});
+        if (higherBids) {
+            throw new Error('Insufficient bid');
+        }
+    }
+
+    // All is okay
+    this.bids.push(bid);
+};
+
+Auction.prototype.isClosed = function() {
+    if (this.bids.length < 4) {
+        return false;
+    }
+
+    return this.bids
+        .slice(-3)
+        .every(function(b) { return b === bids.pass; });
+};
+
+Auction.prototype.nextSeatToBid = function() {
+    if (this.isClosed()) {
+        return null;
+    }
+
+    return this.bids.reduce(function(seat) { return seat.next; }, this.dealer);
+};
+
+Auction.prototype.contract = function() {
+    var seat = this.dealer;
+    var contract = this.bids.reduce(function(contract, bid) {
+        if (bid.isPass) {
+
+        } else if (bid.isDouble) {
+            contract.risk = 'X';
+        } else if (bid.isRedouble) {
+            contract.risk = 'XX';
+        } else {
+            contract.risk = '';
+            contract.level = bid.level;
+            contract.denomination = bid.denomination;
+            contract.declaror = seat;
+        }
+        seat = seat.next;
+        return contract;
+    }, new Contract());
+
+    // declaror is the first partner to bid the contract's denomination
+    if (contract.declaror) {
+        seat = this.dealer;
+        for (var i = 0; i < this.bids.length; i++) {
+            var bid = this.bids[i];
+            if (bid.denomination === contract.denomination && (seat === contract.declaror || seat === contract.declaror.partner)) {
+                contract.declaror = seat;
+                break;
+            }
+            seat = seat.next;
+        }
+    }
+
+    return contract;
+};
+
+module.exports = Auction;
+
+},{"./bid":3,"./contract":6}],3:[function(require,module,exports){
 /*
  * bid.js
  * https://github.com/richardschneider/bridgejs
@@ -91,7 +219,7 @@ bid.redouble = bid['XX'];
 
 module.exports = bid;
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /*
  * Bridge.JS
  * https://github.com/richardschneider/bridgejs
@@ -112,8 +240,9 @@ model.Contract = require('./contract');
 model.Trick = require('./trick');
 model.Deck = require('./deck');
 model.Hand = require('./hand');
+model.Auction = require('./auction');
 
-},{"./bid":2,"./card":4,"./contract":5,"./deck":6,"./hand":7,"./seat":8,"./trick":9}],4:[function(require,module,exports){
+},{"./auction":2,"./bid":3,"./card":5,"./contract":6,"./deck":7,"./hand":8,"./seat":9,"./trick":10}],5:[function(require,module,exports){
 /*
  * card.js
  * https://github.com/richardschneider/bridgejs
@@ -177,7 +306,7 @@ for (var rank in rankOffset) {
 
 module.exports = cards;
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*
  * contract.js
  * https://github.com/richardschneider/bridgejs
@@ -199,7 +328,7 @@ function Contract() {
 }
 
 Contract.prototype.toString = function() {
-    if (this.level === 0) {
+    if (this.isPassedIn()) {
         return '-';
     }
     return this.level +
@@ -208,9 +337,11 @@ Contract.prototype.toString = function() {
         ' by ' + this.declaror.symbol;
 };
 
+Contract.prototype.isPassedIn = function() { return this.level === 0; };
+
 module.exports = Contract;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*
  * deck.js
  * https://github.com/richardschneider/bridgejs
@@ -267,7 +398,7 @@ Deck.prototype.deal = function(dealer) {
 
 module.exports = Deck;
 
-},{"./card":4,"./hand":7,"./seat":8}],7:[function(require,module,exports){
+},{"./card":5,"./hand":8,"./seat":9}],8:[function(require,module,exports){
 /*
  * hand.js
  * https://github.com/richardschneider/bridgejs
@@ -286,23 +417,18 @@ function Hand() {
 
 /** sort by descending order */
 Hand.prototype.sort = function () {
-    this.cards.sort(function (a, b) {
-        return b.order - a.order;
-    });
+    this.cards
+        .sort(function (a, b) {
+            return b.order - a.order;
+        });
     return this;
 };
 
 Hand.prototype.cardsWithSuit = function (suit) {
-    var cards = [],
-        card,
-        i;
-    for (i = 0; i < this.cards.length; ++i) {
-        card = this.cards[i];
-        if (card.suit === suit) {
-            cards.push(card);
-        }
-    }
-    return cards;
+    return this.cards
+        .filter(function (card) {
+            return card.suit === suit;
+        });
 };
 
 Hand.prototype.toString = function () {
@@ -319,7 +445,7 @@ Hand.prototype.toString = function () {
 
 module.exports = Hand;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*
  * seat.js
  * https://github.com/richardschneider/bridgejs
@@ -383,7 +509,7 @@ seat.W = seat.west;
 
 module.exports = seat;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*
  * trick.js
  * https://github.com/richardschneider/bridgejs

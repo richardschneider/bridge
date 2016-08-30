@@ -1,115 +1,1445 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict'
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.spec = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
 
-exports.toByteArray = toByteArray
-exports.fromByteArray = fromByteArray
+var Auction = require('../').Auction;
+var seat = require('../').seat;
+var bid = require('../').bid;
+var expect = require('chai').expect;
 
-var lookup = []
-var revLookup = []
-var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array
+describe('Auction', function() {
 
-function init () {
-  var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-  for (var i = 0, len = code.length; i < len; ++i) {
-    lookup[i] = code[i]
-    revLookup[code.charCodeAt(i)] = i
-  }
+    it('should have a dealer', function() {
+        expect(new Auction(seat.north).dealer).to.equal(seat.north);
+    });
 
-  revLookup['-'.charCodeAt(0)] = 62
-  revLookup['_'.charCodeAt(0)] = 63
+    it('should have the bidding history', function() {
+         expect(new Auction(seat.north).bids).to.be.a('array');
+    });
+
+    it('should be closed with 3 passes after a bid', function() {
+        var auction = new Auction(seat.south);
+        expect(auction.isClosed()).equal(false);
+
+        auction.bid(['-', '-', '-']);
+        expect(auction.isClosed()).equal(false);
+
+        auction.bid('-');
+        expect(auction.isClosed()).equal(true);
+
+        auction = new Auction(seat.south);
+        auction.bid(['1S', '-', '-', '-']);
+        expect(auction.isClosed()).equal(true);
+    });
+
+    describe('Bidding', function() {
+        it('should allow adding a Bid object or a string', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(bid['1S']);
+            auction.bid('2C');
+            expect(auction.bids.length).equal(2);
+            expect(auction.bids[0]).to.equal(bid['1S']);
+            expect(auction.bids[1]).to.equal(bid['2C']);
+        });
+
+        it('should allow adding an array of Bid object or a string', function() {
+            var auction = new Auction(seat.south);
+            auction.bid([bid['1S'], '2C']);
+            expect(auction.bids.length).equal(2);
+            expect(auction.bids[0]).to.equal(bid['1S']);
+            expect(auction.bids[1]).to.equal(bid['2C']);
+        });
+
+        it('should allow mulitple bids', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(bid['1C'], '1S', '-', '-', '-');
+            expect(auction.bids.length).equal(5);
+            expect(auction.bids[0]).to.equal(bid['1C']);
+            expect(auction.bids[1]).to.equal(bid['1S']);
+            expect(auction.isClosed()).to.equal(true);
+        });
+
+        it('should throw when not a bid', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(1); }).to.throw('Invalid bid');
+        });
+
+        it('should allow a pass', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(bid.pass);
+            expect(auction.bids.length).equal(1);
+        });
+
+        it('should throw on insufficient bid', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1S');
+            auction.bid('2C');
+            expect(function() { auction.bid('1D'); }).to.throw('Insufficient bid');
+            expect(auction.bids.length).equal(2);
+        });
+
+        it('should throw when auction is closed', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(['1S', '-', '-', '-']);
+            expect(function() { auction.bid('4S'); }).to.throw('Bidding not allowed, auction is closed');
+        });
+
+    });
+
+    describe('Doubling', function() {
+        it('should allow a rho double', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(['1C', 'X']);
+            expect(auction.bids.length).equal(2);
+        });
+
+        it('should allow a lho double', function() {
+            var auction = new Auction(seat.south);
+            auction.bid(['1C', '-', '-', 'X']);
+            expect(auction.bids.length).equal(4);
+        });
+
+        it('should allow declarors partner to bid after a double', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X', '1S');
+            expect(auction.contract().toString()).equal('1S by N');
+        });
+
+        it('should allow declaror to bid after a double', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X', '-', '-', '1S');
+            expect(auction.contract().toString()).equal('1S by S');
+        });
+
+        it('should throw when doubling partner', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', '-', 'X']); }).to.throw('Doubling your partner is not allowed');
+        });
+
+        it('should throw when opposition is already at risk', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'X', '-', 'X']); }).to.throw('Opposition is already at risk');
+        });
+
+        it('should throw when opposition has no contract', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(['X']); }).to.throw('Cannot double when opposition has no contract');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['-', 'X']); }).to.throw('Cannot double when opposition has no contract');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['-', '-', '-', 'X']); }).to.throw('Cannot double when opposition has no contract');
+        });
+
+    });
+
+    describe('Redoubling', function() {
+        it('should allow partner to redouble a doubled contract', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X', 'XX', '-', '-', '-');
+            expect(auction.contract().toString()).equal('1CXX by S');
+        });
+
+        it('should allow declaror to redouble a doubled contract', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X', '-', '-', 'XX');
+            expect(auction.contract().toString()).equal('1CXX by S');
+
+            auction = new Auction(seat.south);
+            auction.bid('1C', '-', '-', 'X', 'XX');
+            expect(auction.contract().toString()).equal('1CXX by S');
+        });
+
+        it('should throw on all other cases', function() {
+            var auction = new Auction(seat.south);
+            expect(function() { auction.bid(['XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', '-', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', '-', '-', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'X', '-', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'X', '1S', 'XX']); }).to.throw('Invalid bid');
+
+            auction = new Auction(seat.south);
+            expect(function() { auction.bid(['1C', 'X', '1S', '-', 'XX']); }).to.throw('Invalid bid');
+        });
+
+    });
+
+    describe ('Next seat to bid', function() {
+        it('should be dealer with no bidding', function() {
+            var auction = new Auction(seat.south);
+            expect(auction.nextSeatToBid()).to.equal(seat.south);
+        });
+
+        it('should be null when auction is closed', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', '1S', '-', '-', '-');
+            expect(auction.nextSeatToBid()).to.equal(null);
+        });
+
+        it('should follow the bidding from the dealer', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', '1S', '-', '-', 'X');
+            expect(auction.nextSeatToBid()).to.equal(seat.west);
+        });
+    });
+
+    describe('Contract', function() {
+        it('should have level and denomination equal to the last bid', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', '1S', '-', '-', '-');
+            var contract = auction.contract();
+            expect(contract.level).to.equal(1);
+            expect(contract.denomination).to.equal('S');
+        });
+
+        it('should have risk "X" when last bid is doubled', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C');
+            expect(auction.contract().risk).equal('');
+
+            auction.bid('X');
+            expect(auction.contract().risk).equal('X');
+
+            auction.bid('-');
+            expect(auction.contract().risk).equal('X');
+
+            auction.bid('1S');
+            expect(auction.contract().risk).equal('');
+        });
+
+        it('should have risk "XX" when last bid is redoubled', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', 'X');
+            expect(auction.contract().risk).equal('X');
+
+            auction.bid('XX');
+            expect(auction.contract().risk).equal('XX');
+
+            auction.bid('-');
+            expect(auction.contract().risk).equal('XX');
+
+            auction.bid('1S');
+            expect(auction.contract().risk).equal('');
+        });
+
+        it('should have declaror equal to first partner to bid the denomination', function() {
+            var auction = new Auction(seat.south);
+            auction.bid('1C', '2C', '-', '5C');
+            expect(auction.contract().declaror).equal(seat.west);
+        });
+
+    });
+
+});
+
+},{"../":10,"chai":24}],2:[function(require,module,exports){
+'use strict';
+
+var bridge = require('../');
+var expect = require('chai').expect;
+
+describe('Bid', function() {
+    it('has level and denonimation', function() {
+        var bid = bridge.bid['1NT'];
+        expect(bid.level).to.equal(1);
+        expect(bid.denomination).to.equal('NT');
+
+        bid = bridge.bid['7S'];
+        expect(bid.level).to.equal(7);
+        expect(bid.denomination).to.equal('S');
+    });
+
+    it('can be pass', function() {
+        var bid = bridge.bid['-'];
+        expect(bid.isPass).equal(true);
+    });
+
+    it('can be double', function() {
+        var bid = bridge.bid['X'];
+        expect(bid.isDouble).equal(true);
+    });
+
+    it('can be redouble', function() {
+        var bid = bridge.bid['XX'];
+        expect(bid.isRedouble).equal(true);
+    });
+
+    it('has suit color', function() {
+        expect(bridge.bid['1C'].isRed).equal(false);
+        expect(bridge.bid['1D'].isRed).equal(true);
+        expect(bridge.bid['1H'].isRed).equal(true);
+        expect(bridge.bid['1S'].isRed).equal(false);
+    });
+
+    it('is ordered by denomination within level', function() {
+        var club = bridge.bid['1C'];
+        var diamond = bridge.bid['1D'];
+        var heart = bridge.bid['1H'];
+        var spade = bridge.bid['1S'];
+        var notrump = bridge.bid['1NT'];
+        expect(club.order).below(diamond.order);
+        expect(diamond.order).below(heart.order);
+        expect(heart.order).below(spade.order);
+        expect(spade.order).below(notrump.order);
+    });
+
+    it('is ordered by level', function() {
+        expect(bridge.bid['1C'].order).below(bridge.bid['2C'].order);
+        expect(bridge.bid['2C'].order).below(bridge.bid['3C'].order);
+        expect(bridge.bid['3C'].order).below(bridge.bid['4C'].order);
+        expect(bridge.bid['4C'].order).below(bridge.bid['5C'].order);
+        expect(bridge.bid['5C'].order).below(bridge.bid['6C'].order);
+        expect(bridge.bid['6C'].order).below(bridge.bid['7C'].order);
+    });
+
+    it('1C is lowest', function() {
+        expect(bridge.bid['1C'].order).to.equal(1);
+    });
+
+    it('7NT is highest', function() {
+        expect(bridge.bid['7NT'].order).to.equal(35);
+    });
+
+    it('string representation is the bid', function() {
+        expect(bridge.bid['3D'].toString()).to.equal('3D');
+        expect(bridge.bid.pass.toString()).to.equal('-');
+        expect(bridge.bid.double.toString()).to.equal('X');
+        expect(bridge.bid.redouble.toString()).to.equal('XX');
+    });
+
+
+});
+
+},{"../":10,"chai":24}],3:[function(require,module,exports){
+'use strict';
+
+var bridge = require('../');
+var expect = require('chai').expect;
+
+describe('Card', function() {
+
+    it('has rank and suit', function() {
+        var card = bridge.card['2S'];
+        expect(card.rank).to.equal('2');
+        expect(card.suit).to.equal('S');
+    });
+
+    it('string form is rank and suit', function() {
+        var card = bridge.card['2S'];
+        expect(card.toString()).to.equal('2S');
+    });
+
+    it('rank can be 10 or T', function() {
+        var card = bridge.card['10S'];
+        expect(card.rank).to.equal('10');
+        expect(card.suit).to.equal('S');
+
+        card = bridge.card['TS'];
+        expect(card.rank).to.equal('10');
+        expect(card.suit).to.equal('S');
+    });
+
+    it('is ordered by suit', function() {
+        var club = bridge.card['AC'];
+        var diamond = bridge.card['AD'];
+        var heart = bridge.card['AH'];
+        var spade = bridge.card['AS'];
+        expect(club.order).below(diamond.order);
+        expect(diamond.order).below(heart.order);
+        expect(heart.order).below(spade.order);
+    });
+
+    it('is ordered by rank within suit', function() {
+        var S2 = bridge.card['2S'];
+        var S3 = bridge.card['3S'];
+        var S4 = bridge.card['4S'];
+        var S5 = bridge.card['5S'];
+        var S6 = bridge.card['6S'];
+        var S7 = bridge.card['7S'];
+        var S8 = bridge.card['8S'];
+        var S9 = bridge.card['9S'];
+        var ST = bridge.card['TS'];
+        var SJ = bridge.card['JS'];
+        var SQ = bridge.card['QS'];
+        var SK = bridge.card['KS'];
+        var SA = bridge.card['AS'];
+        expect(S2.order).below(S3.order);
+        expect(S3.order).below(S4.order);
+        expect(S4.order).below(S5.order);
+        expect(S5.order).below(S6.order);
+        expect(S6.order).below(S7.order);
+        expect(S7.order).below(S8.order);
+        expect(S8.order).below(S9.order);
+        expect(S9.order).below(ST.order);
+        expect(ST.order).below(SJ.order);
+        expect(SJ.order).below(SQ.order);
+        expect(SQ.order).below(SK.order);
+        expect(SK.order).below(SA.order);
+    });
+
+    it('2C is lowest', function() {
+        var C2 = bridge.card['2C'];
+        expect(C2.order).to.equal(1);
+    });
+
+    it('AS is highest', function() {
+        var AS = bridge.card['AS'];
+        expect(AS.order).to.equal(52);
+    });
+
+    it('has an SVG image', function() {
+        expect(bridge.card.AS.imageUrl()).to.contain('.svg');
+    });
+
+});
+
+},{"../":10,"chai":24}],4:[function(require,module,exports){
+module.exports = require('chai')
+    .use(require('dirty-chai'));
+
+},{"chai":24,"dirty-chai":57}],5:[function(require,module,exports){
+'use strict';
+
+var bridge = require('../');
+var expect = require('chai').expect;
+
+describe('Contract', function() {
+
+    it('should default to passed in', function() {
+        var contract = new bridge.Contract();
+        expect(contract.toString()).to.equal('-');
+        expect(contract.level).to.equal(0);
+        expect(contract.isPassedIn()).to.equal(true);
+    });
+
+    it('should have the level, denomination, risk and declaror', function() {
+        var contract = new bridge.Contract();
+        contract.level = 3;
+        contract.denomination = 'NT';
+        contract.declaror = bridge.seat.south;
+        contract.risk = 'X';
+        expect(contract.toString()).to.equal('3NTX by S');
+        expect(contract.isPassedIn()).to.equal(false);
+    });
+
+});
+
+},{"../":10,"chai":24}],6:[function(require,module,exports){
+'use strict';
+
+var bridge = require('../');
+var seat = bridge.seat;
+var expect = require('chai').expect;
+
+describe('Deck', function() {
+
+    it('has 52 cards', function() {
+        var deck = new bridge.Deck();
+        expect(deck.cards.length).to.equal(52);
+    });
+
+    it('ordered from lowest to highest', function() {
+        var deck = new bridge.Deck();
+        expect(deck.cards[0]).to.equal(bridge.card.C2);
+        expect(deck.cards[51]).to.equal(bridge.card.SA);
+    });
+
+    it('can be shuffled but NOT tested', function() {
+        var deck = new bridge.Deck().shuffle();
+        expect(deck.cards.length).to.equal(52);
+        for (var i = 0; i < 52; ++i)
+        {
+            expect(deck.cards[i]).to.exist();
+        }
+    });
+
+});
+
+describe('Dealt deck', function() {
+    it('each player has 13 cards', function() {
+        var hand = new bridge.Deck().shuffle().deal(seat.west);
+        expect(hand[seat.north].cards.length).to.equal(13);
+        expect(hand[seat.south].cards.length).to.equal(13);
+        expect(hand[seat.east].cards.length).to.equal(13);
+        expect(hand[seat.west].cards.length).to.equal(13);
+    });
+
+});
+
+},{"../":10,"chai":24}],7:[function(require,module,exports){
+'use strict';
+
+var bridge = require('../');
+var card = bridge.card;
+var expect = require('chai').expect;
+
+describe('Hand', function() {
+
+    it('sorts by descending order', function() {
+        var hand = new bridge.Hand();
+        hand.cards.push(card.CA);
+        hand.cards.push(card.DA);
+        hand.cards.push(card.HA);
+        hand.cards.push(card.SA);
+        hand.sort();
+        expect(hand.cards[0]).to.equal(card.SA);
+        expect(hand.cards[1]).to.equal(card.HA);
+        expect(hand.cards[2]).to.equal(card.DA);
+        expect(hand.cards[3]).to.equal(card.CA);
+    });
+
+    it('string representation is the cards', function() {
+        var hand = new bridge.Hand();
+        hand.cards.push(card.CA);
+        hand.cards.push(card.DA);
+        hand.cards.push(card.HA);
+        hand.cards.push(card.SA);
+        hand.sort();
+        expect(hand.toString()).to.equal('AS AH AD AC');
+    });
+
+    it('cards can be filter by suit', function () {
+        var hand = new bridge.Hand();
+        hand.cards.push(card.CA);
+        hand.cards.push(card.SK);
+        hand.cards.push(card.DA);
+        hand.cards.push(card.HA);
+        hand.cards.push(card.SA);
+        var spades = hand.sort().cardsWithSuit('S');
+        expect(spades[0]).to.equal(card.SA);
+        expect(spades[1]).to.equal(card.SK);
+    });
+});
+
+},{"../":10,"chai":24}],8:[function(require,module,exports){
+'use strict';
+
+var seat = require('../').seat;
+var expect = require('chai').expect;
+
+describe('Seat', function() {
+
+    it('has 4 seats N, S, E and W', function() {
+        expect(seat.north).to.exist();
+        expect(seat.south).to.exist();
+        expect(seat.east).to.exist();
+        expect(seat.west).to.exist();
+
+        expect(seat.north.symbol).to.equal('N');
+        expect(seat.south.symbol).to.equal('S');
+        expect(seat.east.symbol).to.equal('E');
+        expect(seat.west.symbol).to.equal('W');
+
+        expect(seat.north).to.equal(seat.N);
+        expect(seat.south).to.equal(seat.S);
+        expect(seat.east).to.equal(seat.E);
+        expect(seat.west).to.equal(seat.W);
+    });
+
+    it('partner is directly opposite', function() {
+       expect(seat.north.partner).to.equal(seat.south);
+       expect(seat.south.partner).to.equal(seat.north);
+       expect(seat.east.partner).to.equal(seat.west);
+       expect(seat.west.partner).to.equal(seat.east);
+    });
+
+    it('has right hand opponent', function() {
+       expect(seat.north.rho).to.equal(seat.west);
+       expect(seat.south.rho).to.equal(seat.east);
+       expect(seat.east.rho).to.equal(seat.north);
+       expect(seat.west.rho).to.equal(seat.south);
+    });
+
+    it('has left hand opponent', function() {
+       expect(seat.north.lho).to.equal(seat.east);
+       expect(seat.south.lho).to.equal(seat.west);
+       expect(seat.east.lho).to.equal(seat.south);
+       expect(seat.west.lho).to.equal(seat.north);
+    });
+
+    it('string representation is the name', function() {
+       expect(seat.north.toString()).to.equal('north');
+    });
+
+    it('has a symbol', function() {
+       expect(seat.north.symbol).to.equal('N');
+       expect(seat.south.symbol).to.equal('S');
+       expect(seat.east.symbol).to.equal('E');
+       expect(seat.west.symbol).to.equal('W');
+    });
+
+});
+
+},{"../":10,"chai":24}],9:[function(require,module,exports){
+'use strict';
+
+var bridge = require('../');
+var seat = bridge.seat;
+var expect = require('chai').expect;
+
+describe('Trick', function() {
+
+    it('leader is 1st to play a card', function() {
+        var trick = new bridge.Trick();
+        expect(trick.leader()).to.be.undefined();
+        trick.play.push({ seat: seat.west} );
+        expect(trick.leader()).to.equal(seat.west);
+        trick.play.push({ seat: seat.east} );
+        expect(trick.leader()).to.equal(seat.west);
+    });
+
+    it('winner is declared after 4 cards are played', function() {
+        var contract = new bridge.Contract();
+        contract.denomination = 'NT';
+        var trick = new bridge.Trick();
+        expect(trick.winner()).to.be.undefined();
+        trick.play.push({ seat: seat.north, card: bridge.card.S2 } );
+        trick.play.push({ seat: seat.east, card: bridge.card.SK } );
+        trick.play.push({ seat: seat.south, card: bridge.card.HA } );
+        trick.play.push({ seat: seat.west, card: bridge.card.S3 } );
+        expect(trick.winner(contract)).to.exist();
+    });
+
+    it('winner has the highest rank of the 1st suit played', function() {
+        var contract = new bridge.Contract();
+        contract.denomination = 'NT';
+        var trick = new bridge.Trick();
+        expect(trick.winner()).to.be.undefined();
+
+        trick.play.push({ seat: seat.north, card: bridge.card.S3 } );
+        trick.play.push({ seat: seat.east, card: bridge.card.SK } );
+        trick.play.push({ seat: seat.south, card: bridge.card.HA } );
+        trick.play.push({ seat: seat.west, card: bridge.card.S2 } );
+        expect(trick.winner(contract)).to.equal(seat.east);
+    });
+
+    it('winner has the highest trump', function() {
+        var contract = new bridge.Contract();
+        contract.denomination = 'H';
+        var trick = new bridge.Trick();
+        expect(trick.winner()).to.be.undefined();
+        trick.play.push({ seat: seat.north, card: bridge.card.SA } );
+        trick.play.push({ seat: seat.east, card: bridge.card.HQ } );
+        trick.play.push({ seat: seat.south, card: bridge.card.HK } );
+        trick.play.push({ seat: seat.west, card: bridge.card.S2 } );
+        expect(trick.winner(contract)).to.equal(seat.south);
+    });
+
+});
+
+},{"../":10,"chai":24}],10:[function(require,module,exports){
+'use strict';
+
+module.exports = require('./lib/bridge');
+
+},{"./lib/bridge":13}],11:[function(require,module,exports){
+/*
+ * auction.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2016 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+var bids = require('./bid');
+var Contract = require('./contract');
+
+/** The history of bids. */
+function Auction(dealer) {
+    this.bids = [];
+    this.dealer = dealer;
 }
 
-init()
+Auction.prototype.bid = function(bid) {
+    var self = this, seat, contract;
 
-function toByteArray (b64) {
-  var i, j, l, tmp, placeHolders, arr
-  var len = b64.length
+    // Argument overloading
+    if (arguments.length > 1) {
+        bid = Array.prototype.slice.call(arguments);
+    }
+    if (Array.isArray(bid)) {
+        bid.forEach(function(b) { self.bid(b); });
+        return;
+    }
+    if (typeof bid === 'string' || bid instanceof String) {
+        bid = bids[bid];
+    }
+    if (typeof bid !== 'object' || Object.getPrototypeOf(bid).constructor.name !== 'Bid') {
+        throw new Error('Invalid bid');
+    }
 
-  if (len % 4 > 0) {
-    throw new Error('Invalid string. Length must be a multiple of 4')
-  }
+    // Can the specified Bid be applied?
+    if (this.isClosed()) {
+        throw new Error('Bidding not allowed, auction is closed');
+    }
+    if (bid.isPass) {
+        // you can always pass
+    } else if (bid.isDouble) {
+        seat = this.nextSeatToBid();
+        contract = this.contract();
+        if (contract.declaror === undefined) {
+            throw new Error('Cannot double when opposition has no contract');
+        }
+        if (contract.declaror === seat.partner) {
+            throw new Error('Doubling your partner is not allowed');
+        }
+        if (contract.risk !== '') {
+            throw new Error('Opposition is already at risk');
+        }
+    } else if (bid.isRedouble) {
+        seat = this.nextSeatToBid();
+        contract = this.contract();
+        if (!(contract.risk === 'X' && (seat === contract.declaror || seat.partner === contract.declaror))) {
+            throw new Error('Invalid bid');
+        }
+    } else {
+        var higherBids = this.bids.some(function(b) {return b.order > bid.order;});
+        if (higherBids) {
+            throw new Error('Insufficient bid');
+        }
+    }
 
-  // the number of equal signs (place holders)
-  // if there are two placeholders, than the two characters before it
-  // represent one byte
-  // if there is only one, then the three characters before it represent 2 bytes
-  // this is just a cheap hack to not do indexOf twice
-  placeHolders = b64[len - 2] === '=' ? 2 : b64[len - 1] === '=' ? 1 : 0
+    // All is okay
+    this.bids.push(bid);
+};
 
-  // base64 is 4/3 + up to two characters of the original data
-  arr = new Arr(len * 3 / 4 - placeHolders)
+Auction.prototype.isClosed = function() {
+    if (this.bids.length < 4) {
+        return false;
+    }
 
-  // if there are placeholders, only get up to the last complete 4 chars
-  l = placeHolders > 0 ? len - 4 : len
+    return this.bids
+        .slice(-3)
+        .every(function(b) { return b === bids.pass; });
+};
 
-  var L = 0
+Auction.prototype.nextSeatToBid = function() {
+    if (this.isClosed()) {
+        return null;
+    }
 
-  for (i = 0, j = 0; i < l; i += 4, j += 3) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 18) | (revLookup[b64.charCodeAt(i + 1)] << 12) | (revLookup[b64.charCodeAt(i + 2)] << 6) | revLookup[b64.charCodeAt(i + 3)]
-    arr[L++] = (tmp >> 16) & 0xFF
-    arr[L++] = (tmp >> 8) & 0xFF
-    arr[L++] = tmp & 0xFF
-  }
+    return this.bids.reduce(function(seat) { return seat.next; }, this.dealer);
+};
 
-  if (placeHolders === 2) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 2) | (revLookup[b64.charCodeAt(i + 1)] >> 4)
-    arr[L++] = tmp & 0xFF
-  } else if (placeHolders === 1) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 10) | (revLookup[b64.charCodeAt(i + 1)] << 4) | (revLookup[b64.charCodeAt(i + 2)] >> 2)
-    arr[L++] = (tmp >> 8) & 0xFF
-    arr[L++] = tmp & 0xFF
-  }
+Auction.prototype.contract = function() {
+    var seat = this.dealer;
+    var contract = this.bids.reduce(function(contract, bid) {
+        if (bid.isPass) {
 
-  return arr
+        } else if (bid.isDouble) {
+            contract.risk = 'X';
+        } else if (bid.isRedouble) {
+            contract.risk = 'XX';
+        } else {
+            contract.risk = '';
+            contract.level = bid.level;
+            contract.denomination = bid.denomination;
+            contract.declaror = seat;
+        }
+        seat = seat.next;
+        return contract;
+    }, new Contract());
+
+    // declaror is the first partner to bid the contract's denomination
+    if (contract.declaror) {
+        seat = this.dealer;
+        for (var i = 0; i < this.bids.length; i++) {
+            var bid = this.bids[i];
+            if (bid.denomination === contract.denomination && (seat === contract.declaror || seat === contract.declaror.partner)) {
+                contract.declaror = seat;
+                break;
+            }
+            seat = seat.next;
+        }
+    }
+
+    return contract;
+};
+
+module.exports = Auction;
+
+},{"./bid":12,"./contract":15}],12:[function(require,module,exports){
+/*
+ * bid.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2015 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+var denominationOffset = {
+        'C': 1,
+        'D': 2,
+        'H': 3,
+        'S': 4,
+        'NT': 5,
+    };
+
+function Bid(s) {
+    this.level = (+(s.charAt(0))) || undefined;
+    this.denomination = this.level ? s.substr(1) : undefined;
+    this.order = ((this.level - 1) * 5) + denominationOffset[this.denomination];
+    this.isDouble = s === 'X';
+    this.isRedouble = s === 'XX';
+    this.isPass = s === '-' || s === 'P' || s === '/' || s === 'Pass';
+    this.isRed = this.denomination === 'H' || this.denomination === 'D';
+    this.isBlack = this.denomination === 'S' || this.denomination === 'C';
 }
 
-function tripletToBase64 (num) {
-  return lookup[num >> 18 & 0x3F] + lookup[num >> 12 & 0x3F] + lookup[num >> 6 & 0x3F] + lookup[num & 0x3F]
+Bid.prototype.toString = function() {
+    if (this.isPass) {
+        return '-';
+    } else if (this.isDouble) {
+        return 'X';
+    } else if (this.isRedouble) {
+        return 'XX';
+    }
+
+    return this.level + this.denomination;
+};
+
+var bid = {
+    '-': new Bid('-'),
+    'X': new Bid('X'),
+    'XX': new Bid('XX'),
+    '1C': new Bid('1C'),
+    '1D': new Bid('1D'),
+    '1H': new Bid('1H'),
+    '1S': new Bid('1S'),
+    '1NT': new Bid('1NT'),
+    '2C': new Bid('2C'),
+    '2D': new Bid('2D'),
+    '2H': new Bid('2H'),
+    '2S': new Bid('2S'),
+    '2NT': new Bid('2NT'),
+    '3C': new Bid('3C'),
+    '3D': new Bid('3D'),
+    '3H': new Bid('3H'),
+    '3S': new Bid('3S'),
+    '3NT': new Bid('3NT'),
+    '4C': new Bid('4C'),
+    '4D': new Bid('4D'),
+    '4H': new Bid('4H'),
+    '4S': new Bid('4S'),
+    '4NT': new Bid('4NT'),
+    '5C': new Bid('5C'),
+    '5D': new Bid('5D'),
+    '5H': new Bid('5H'),
+    '5S': new Bid('5S'),
+    '5NT': new Bid('5NT'),
+    '6C': new Bid('6C'),
+    '6D': new Bid('6D'),
+    '6H': new Bid('6H'),
+    '6S': new Bid('6S'),
+    '6NT': new Bid('6NT'),
+    '7C': new Bid('7C'),
+    '7D': new Bid('7D'),
+    '7H': new Bid('7H'),
+    '7S': new Bid('7S'),
+    '7NT': new Bid('7NT'),
+};
+bid.pass = bid['-'];
+bid.double = bid['X'];
+bid.redouble = bid['XX'];
+
+module.exports = bid;
+
+},{}],13:[function(require,module,exports){
+/*
+ * Bridge.JS
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2015 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+var model = module.exports = {};
+
+model.card = require('./card');
+model.bid = require('./bid');
+model.seat = require('./seat');
+
+model.Contract = require('./contract');
+model.Trick = require('./trick');
+model.Deck = require('./deck');
+model.Hand = require('./hand');
+model.Auction = require('./auction');
+
+},{"./auction":11,"./bid":12,"./card":14,"./contract":15,"./deck":16,"./hand":17,"./seat":18,"./trick":19}],14:[function(require,module,exports){
+/*
+ * card.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2015 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+var rankOffset = {
+    '2': 1,
+    '3': 2,
+    '4': 3,
+    '5': 4,
+    '6': 5,
+    '7': 6,
+    '8': 7,
+    '9': 8,
+    '10': 9,
+    'J': 10,
+    'Q': 11,
+    'K': 12,
+    'A': 13
+};
+
+var suitOffset = {
+    'C': 0 * 13,
+    'D': 1 * 13,
+    'H': 2 * 13,
+    'S': 3 * 13
+};
+
+function Card(rank, suit) {
+    this.rank = rank;
+    this.suit = suit;
+    this.order = rankOffset[this.rank] + suitOffset[this.suit];
 }
 
-function encodeChunk (uint8, start, end) {
-  var tmp
-  var output = []
-  for (var i = start; i < end; i += 3) {
-    tmp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2])
-    output.push(tripletToBase64(tmp))
-  }
-  return output.join('')
+Card.prototype.toString = function() {
+    return this.rank + this.suit;
+};
+
+Card.prototype.imageUrl = function() {
+    return 'cards/' + this.rank + this.suit + '.svg';
+};
+
+var cards = {all: []};
+for (var rank in rankOffset) {
+    for (var suit in suitOffset) {
+        var card = new Card(rank, suit);
+        cards.all.push(card);
+        cards[rank + suit] = card;
+        cards[suit + rank] = card;
+        if (rank === '10') {
+            cards['T' + suit] = card;
+            cards[suit + 'T'] = card;
+        }
+    }
 }
 
-function fromByteArray (uint8) {
-  var tmp
-  var len = uint8.length
-  var extraBytes = len % 3 // if we have 1 byte left, pad 2 bytes
-  var output = ''
-  var parts = []
-  var maxChunkLength = 16383 // must be multiple of 3
+module.exports = cards;
 
-  // go through the array every three bytes, we'll deal with trailing stuff later
-  for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
-    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)))
-  }
+},{}],15:[function(require,module,exports){
+/*
+ * contract.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2015 Richard Schneider
+ * Licensed under the MIT license.
+ */
 
-  // pad the end with zeros, but make sure to not forget the extra bytes
-  if (extraBytes === 1) {
-    tmp = uint8[len - 1]
-    output += lookup[tmp >> 2]
-    output += lookup[(tmp << 4) & 0x3F]
-    output += '=='
-  } else if (extraBytes === 2) {
-    tmp = (uint8[len - 2] << 8) + (uint8[len - 1])
-    output += lookup[tmp >> 10]
-    output += lookup[(tmp >> 4) & 0x3F]
-    output += lookup[(tmp << 2) & 0x3F]
-    output += '='
-  }
+'use strict';
 
-  parts.push(output)
-
-  return parts.join('')
+/*
+ * Contract
+ */
+function Contract() {
+    this.risk = '';  // '', 'X' or 'XX'
+    this.level = 0;  // 1 - 7, 0 is 'passed in'
+    this.denomination = undefined; // 'S', 'H', 'D', 'C' or 'NT'
+    this.declaror = undefined;  // a seat
 }
 
-},{}],2:[function(require,module,exports){
+Contract.prototype.toString = function() {
+    if (this.isPassedIn()) {
+        return '-';
+    }
+    return this.level +
+        this.denomination +
+        this.risk +
+        ' by ' + this.declaror.symbol;
+};
+
+Contract.prototype.isPassedIn = function() { return this.level === 0; };
+
+module.exports = Contract;
+
+},{}],16:[function(require,module,exports){
+/*
+ * deck.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2015 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+var card = require('./card');
+var seat = require('./seat');
+var Hand = require('./hand');
+
+/** 52 standard playing card */
+function Deck() {
+    this.cards = card.all.slice();
+}
+
+/** Randomises the cards using the Fisher-Yates shuffle algorithm. */
+Deck.prototype.shuffle = function(rng) {
+    rng = rng || Math.random;
+    var cards = this.cards,
+        n = cards.length,               // The number of items left to shuffle (loop invariant)
+        k, t;
+    while (n > 1) {
+        k = Math.floor(rng() * n--);    // 0 <= k < n
+        t = cards[n];                   // swap elements n and k
+        cards[n] = cards[k];
+        cards[k] = t;
+    }
+    return this;                        // for a fluent style.
+};
+
+/** Generates a hand for each seat. */
+Deck.prototype.deal = function(dealer) {
+    var player = dealer,
+        hands = {};
+    hands[seat.north] = new Hand();
+    hands[seat.south] = new Hand();
+    hands[seat.east] = new Hand();
+    hands[seat.west] = new Hand();
+    for (var i = 0; i < this.cards.length; ++i)
+    {
+        player = player.next;
+        hands[player].cards.push(this.cards[i]);
+    }
+    hands[seat.north].sort();
+    hands[seat.south].sort();
+    hands[seat.east].sort();
+    hands[seat.west].sort();
+    return hands;
+};
+
+module.exports = Deck;
+
+},{"./card":14,"./hand":17,"./seat":18}],17:[function(require,module,exports){
+/*
+ * hand.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2015 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+/** A player's cards and facts. */
+function Hand() {
+    this.cards = [];
+    this.facts = [];
+}
+
+/** sort by descending order */
+Hand.prototype.sort = function () {
+    this.cards
+        .sort(function (a, b) {
+            return b.order - a.order;
+        });
+    return this;
+};
+
+Hand.prototype.cardsWithSuit = function (suit) {
+    return this.cards
+        .filter(function (card) {
+            return card.suit === suit;
+        });
+};
+
+Hand.prototype.toString = function () {
+    var s = '',
+        i;
+    for (i = 0; i < this.cards.length; ++i) {
+        if (i !== 0) {
+            s += ' ';
+        }
+        s += this.cards[i].toString();
+    }
+    return s;
+};
+
+module.exports = Hand;
+
+},{}],18:[function(require,module,exports){
+/*
+ * seat.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2015 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+/*
+ * Seat
+ */
+function Seat() {
+    this.symbol = '';
+}
+
+Seat.prototype.toString = function() {
+    return this.name;
+};
+
+var seat = {
+    north: new Seat(),
+    east: new Seat(),
+    south: new Seat(),
+    west: new Seat()
+};
+
+seat.north.symbol = 'N';
+seat.north.name = 'north';
+seat.north.partner = seat.south;
+seat.north.rho = seat.west;
+seat.north.lho = seat.east;
+seat.north.next = seat.east;
+
+seat.south.symbol = 'S';
+seat.south.name = 'south';
+seat.south.partner = seat.north;
+seat.south.rho = seat.east;
+seat.south.lho = seat.west;
+seat.south.next = seat.west;
+
+seat.east.symbol = 'E';
+seat.east.name = 'east';
+seat.east.partner = seat.west;
+seat.east.rho = seat.north;
+seat.east.lho = seat.south;
+seat.east.next = seat.south;
+
+seat.west.symbol = 'W';
+seat.west.name = 'west';
+seat.west.partner = seat.east;
+seat.west.rho = seat.south;
+seat.west.lho = seat.north;
+seat.west.next = seat.north;
+
+seat.N = seat.north;
+seat.S = seat.south;
+seat.E = seat.east;
+seat.W = seat.west;
+
+module.exports = seat;
+
+},{}],19:[function(require,module,exports){
+/*
+ * trick.js
+ * https://github.com/richardschneider/bridgejs
+ *
+ * Copyright (c) 2015 Richard Schneider
+ * Licensed under the MIT license.
+ */
+
+'use strict';
+
+/** A round in the game */
+function Trick() {
+    this.play = [];  // each object has a card and seat property.
+}
+
+/** The 1st seat to play a card */
+Trick.prototype.leader = function() {
+    return this.play.length < 1 ? undefined : this.play[0].seat;
+};
+
+/** The seat that has won the trick */
+Trick.prototype.winner = function(contract) {
+    if (this.play.length < 4) {
+        return undefined;
+    }
+
+    var play, bestSeat, bestOrder = -10000, order;
+    for (var i = 0; i < 4; ++i)
+    {
+        play = this.play[i];
+        order = play.card.order;
+        if (play.card.suit === contract.denomination) {
+            order *= 1000;
+        }
+        if (order > bestOrder) {
+            bestOrder = order;
+            bestSeat = play.seat;
+        }
+    }
+
+    return bestSeat;
+};
+
+module.exports = Trick;
+
+},{}],20:[function(require,module,exports){
+/*!
+ * assertion-error
+ * Copyright(c) 2013 Jake Luer <jake@qualiancy.com>
+ * MIT Licensed
+ */
+
+/*!
+ * Return a function that will copy properties from
+ * one object to another excluding any originally
+ * listed. Returned function will create a new `{}`.
+ *
+ * @param {String} excluded properties ...
+ * @return {Function}
+ */
+
+function exclude () {
+  var excludes = [].slice.call(arguments);
+
+  function excludeProps (res, obj) {
+    Object.keys(obj).forEach(function (key) {
+      if (!~excludes.indexOf(key)) res[key] = obj[key];
+    });
+  }
+
+  return function extendExclude () {
+    var args = [].slice.call(arguments)
+      , i = 0
+      , res = {};
+
+    for (; i < args.length; i++) {
+      excludeProps(res, args[i]);
+    }
+
+    return res;
+  };
+};
+
+/*!
+ * Primary Exports
+ */
+
+module.exports = AssertionError;
+
+/**
+ * ### AssertionError
+ *
+ * An extension of the JavaScript `Error` constructor for
+ * assertion and validation scenarios.
+ *
+ * @param {String} message
+ * @param {Object} properties to include (optional)
+ * @param {callee} start stack function (optional)
+ */
+
+function AssertionError (message, _props, ssf) {
+  var extend = exclude('name', 'message', 'stack', 'constructor', 'toJSON')
+    , props = extend(_props || {});
+
+  // default values
+  this.message = message || 'Unspecified AssertionError';
+  this.showDiff = false;
+
+  // copy from properties
+  for (var key in props) {
+    this[key] = props[key];
+  }
+
+  // capture stack trace
+  ssf = ssf || arguments.callee;
+  if (ssf && Error.captureStackTrace) {
+    Error.captureStackTrace(this, ssf);
+  } else {
+    try {
+      throw new Error();
+    } catch(e) {
+      this.stack = e.stack;
+    }
+  }
+}
+
+/*!
+ * Inherit from Error.prototype
+ */
+
+AssertionError.prototype = Object.create(Error.prototype);
+
+/*!
+ * Statically set name
+ */
+
+AssertionError.prototype.name = 'AssertionError';
+
+/*!
+ * Ensure correct constructor
+ */
+
+AssertionError.prototype.constructor = AssertionError;
+
+/**
+ * Allow errors to be converted to JSON for static transfer.
+ *
+ * @param {Boolean} include stack (default: `true`)
+ * @return {Object} object that can be `JSON.stringify`
+ */
+
+AssertionError.prototype.toJSON = function (stack) {
+  var extend = exclude('constructor', 'toJSON', 'stack')
+    , props = extend({ name: this.name }, this);
+
+  // include stack if exists and not turned off
+  if (false !== stack && this.stack) {
+    props.stack = this.stack;
+  }
+
+  return props;
+};
+
+},{}],21:[function(require,module,exports){
+var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+;(function (exports) {
+	'use strict';
+
+  var Arr = (typeof Uint8Array !== 'undefined')
+    ? Uint8Array
+    : Array
+
+	var PLUS   = '+'.charCodeAt(0)
+	var SLASH  = '/'.charCodeAt(0)
+	var NUMBER = '0'.charCodeAt(0)
+	var LOWER  = 'a'.charCodeAt(0)
+	var UPPER  = 'A'.charCodeAt(0)
+	var PLUS_URL_SAFE = '-'.charCodeAt(0)
+	var SLASH_URL_SAFE = '_'.charCodeAt(0)
+
+	function decode (elt) {
+		var code = elt.charCodeAt(0)
+		if (code === PLUS ||
+		    code === PLUS_URL_SAFE)
+			return 62 // '+'
+		if (code === SLASH ||
+		    code === SLASH_URL_SAFE)
+			return 63 // '/'
+		if (code < NUMBER)
+			return -1 //no match
+		if (code < NUMBER + 10)
+			return code - NUMBER + 26 + 26
+		if (code < UPPER + 26)
+			return code - UPPER
+		if (code < LOWER + 26)
+			return code - LOWER + 26
+	}
+
+	function b64ToByteArray (b64) {
+		var i, j, l, tmp, placeHolders, arr
+
+		if (b64.length % 4 > 0) {
+			throw new Error('Invalid string. Length must be a multiple of 4')
+		}
+
+		// the number of equal signs (place holders)
+		// if there are two placeholders, than the two characters before it
+		// represent one byte
+		// if there is only one, then the three characters before it represent 2 bytes
+		// this is just a cheap hack to not do indexOf twice
+		var len = b64.length
+		placeHolders = '=' === b64.charAt(len - 2) ? 2 : '=' === b64.charAt(len - 1) ? 1 : 0
+
+		// base64 is 4/3 + up to two characters of the original data
+		arr = new Arr(b64.length * 3 / 4 - placeHolders)
+
+		// if there are placeholders, only get up to the last complete 4 chars
+		l = placeHolders > 0 ? b64.length - 4 : b64.length
+
+		var L = 0
+
+		function push (v) {
+			arr[L++] = v
+		}
+
+		for (i = 0, j = 0; i < l; i += 4, j += 3) {
+			tmp = (decode(b64.charAt(i)) << 18) | (decode(b64.charAt(i + 1)) << 12) | (decode(b64.charAt(i + 2)) << 6) | decode(b64.charAt(i + 3))
+			push((tmp & 0xFF0000) >> 16)
+			push((tmp & 0xFF00) >> 8)
+			push(tmp & 0xFF)
+		}
+
+		if (placeHolders === 2) {
+			tmp = (decode(b64.charAt(i)) << 2) | (decode(b64.charAt(i + 1)) >> 4)
+			push(tmp & 0xFF)
+		} else if (placeHolders === 1) {
+			tmp = (decode(b64.charAt(i)) << 10) | (decode(b64.charAt(i + 1)) << 4) | (decode(b64.charAt(i + 2)) >> 2)
+			push((tmp >> 8) & 0xFF)
+			push(tmp & 0xFF)
+		}
+
+		return arr
+	}
+
+	function uint8ToBase64 (uint8) {
+		var i,
+			extraBytes = uint8.length % 3, // if we have 1 byte left, pad 2 bytes
+			output = "",
+			temp, length
+
+		function encode (num) {
+			return lookup.charAt(num)
+		}
+
+		function tripletToBase64 (num) {
+			return encode(num >> 18 & 0x3F) + encode(num >> 12 & 0x3F) + encode(num >> 6 & 0x3F) + encode(num & 0x3F)
+		}
+
+		// go through the array every three bytes, we'll deal with trailing stuff later
+		for (i = 0, length = uint8.length - extraBytes; i < length; i += 3) {
+			temp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2])
+			output += tripletToBase64(temp)
+		}
+
+		// pad the end with zeros, but make sure to not forget the extra bytes
+		switch (extraBytes) {
+			case 1:
+				temp = uint8[uint8.length - 1]
+				output += encode(temp >> 2)
+				output += encode((temp << 4) & 0x3F)
+				output += '=='
+				break
+			case 2:
+				temp = (uint8[uint8.length - 2] << 8) + (uint8[uint8.length - 1])
+				output += encode(temp >> 10)
+				output += encode((temp >> 4) & 0x3F)
+				output += encode((temp << 2) & 0x3F)
+				output += '='
+				break
+		}
+
+		return output
+	}
+
+	exports.toByteArray = b64ToByteArray
+	exports.fromByteArray = uint8ToBase64
+}(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
+
+},{}],22:[function(require,module,exports){
 (function (global){
 /*!
  * The buffer module from node.js, for the browser.
@@ -128,6 +1458,9 @@ var isArray = require('isarray')
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
 exports.INSPECT_MAX_BYTES = 50
+Buffer.poolSize = 8192 // not used by this implementation
+
+var rootParent = {}
 
 /**
  * If `Buffer.TYPED_ARRAY_SUPPORT`:
@@ -145,6 +1478,9 @@ exports.INSPECT_MAX_BYTES = 50
  *   - Firefox 4-29 lacks support for adding new properties to `Uint8Array` instances,
  *     See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438.
  *
+ *   - Safari 5-7 lacks support for changing the `Object.prototype.constructor` property
+ *     on objects.
+ *
  *   - Chrome 9-10 is missing the `TypedArray.prototype.subarray` function.
  *
  *   - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
@@ -157,16 +1493,14 @@ Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
   ? global.TYPED_ARRAY_SUPPORT
   : typedArraySupport()
 
-/*
- * Export kMaxLength after typed array support is determined.
- */
-exports.kMaxLength = kMaxLength()
-
 function typedArraySupport () {
+  function Bar () {}
   try {
     var arr = new Uint8Array(1)
-    arr.__proto__ = {__proto__: Uint8Array.prototype, foo: function () { return 42 }}
+    arr.foo = function () { return 42 }
+    arr.constructor = Bar
     return arr.foo() === 42 && // typed array instances can be augmented
+        arr.constructor === Bar && // constructor can be set
         typeof arr.subarray === 'function' && // chrome 9-10 lack `subarray`
         arr.subarray(1, 1).byteLength === 0 // ie10 has broken `subarray`
   } catch (e) {
@@ -180,252 +1514,184 @@ function kMaxLength () {
     : 0x3fffffff
 }
 
-function createBuffer (that, length) {
-  if (kMaxLength() < length) {
-    throw new RangeError('Invalid typed array length')
-  }
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    // Return an augmented `Uint8Array` instance, for best performance
-    that = new Uint8Array(length)
-    that.__proto__ = Buffer.prototype
-  } else {
-    // Fallback: Return an object instance of the Buffer class
-    if (that === null) {
-      that = new Buffer(length)
-    }
-    that.length = length
-  }
-
-  return that
-}
-
 /**
- * The Buffer constructor returns instances of `Uint8Array` that have their
- * prototype changed to `Buffer.prototype`. Furthermore, `Buffer` is a subclass of
- * `Uint8Array`, so the returned instances will have all the node `Buffer` methods
- * and the `Uint8Array` methods. Square bracket notation works as expected -- it
- * returns a single octet.
+ * Class: Buffer
+ * =============
  *
- * The `Uint8Array` prototype remains unmodified.
+ * The Buffer constructor returns instances of `Uint8Array` that are augmented
+ * with function properties for all the node `Buffer` API functions. We use
+ * `Uint8Array` so that square bracket notation works as expected -- it returns
+ * a single octet.
+ *
+ * By augmenting the instances, we can avoid modifying the `Uint8Array`
+ * prototype.
  */
+function Buffer (arg) {
+  if (!(this instanceof Buffer)) {
+    // Avoid going through an ArgumentsAdaptorTrampoline in the common case.
+    if (arguments.length > 1) return new Buffer(arg, arguments[1])
+    return new Buffer(arg)
+  }
 
-function Buffer (arg, encodingOrOffset, length) {
-  if (!Buffer.TYPED_ARRAY_SUPPORT && !(this instanceof Buffer)) {
-    return new Buffer(arg, encodingOrOffset, length)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) {
+    this.length = 0
+    this.parent = undefined
   }
 
   // Common case.
   if (typeof arg === 'number') {
-    if (typeof encodingOrOffset === 'string') {
-      throw new Error(
-        'If encoding is specified then the first argument must be a string'
-      )
-    }
-    return allocUnsafe(this, arg)
-  }
-  return from(this, arg, encodingOrOffset, length)
-}
-
-Buffer.poolSize = 8192 // not used by this implementation
-
-// TODO: Legacy, not needed anymore. Remove in next major version.
-Buffer._augment = function (arr) {
-  arr.__proto__ = Buffer.prototype
-  return arr
-}
-
-function from (that, value, encodingOrOffset, length) {
-  if (typeof value === 'number') {
-    throw new TypeError('"value" argument must not be a number')
+    return fromNumber(this, arg)
   }
 
-  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
-    return fromArrayBuffer(that, value, encodingOrOffset, length)
+  // Slightly less common case.
+  if (typeof arg === 'string') {
+    return fromString(this, arg, arguments.length > 1 ? arguments[1] : 'utf8')
   }
 
-  if (typeof value === 'string') {
-    return fromString(that, value, encodingOrOffset)
-  }
-
-  return fromObject(that, value)
+  // Unusual.
+  return fromObject(this, arg)
 }
 
-/**
- * Functionally equivalent to Buffer(arg, encoding) but throws a TypeError
- * if value is a number.
- * Buffer.from(str[, encoding])
- * Buffer.from(array)
- * Buffer.from(buffer)
- * Buffer.from(arrayBuffer[, byteOffset[, length]])
- **/
-Buffer.from = function (value, encodingOrOffset, length) {
-  return from(null, value, encodingOrOffset, length)
-}
-
-if (Buffer.TYPED_ARRAY_SUPPORT) {
-  Buffer.prototype.__proto__ = Uint8Array.prototype
-  Buffer.__proto__ = Uint8Array
-  if (typeof Symbol !== 'undefined' && Symbol.species &&
-      Buffer[Symbol.species] === Buffer) {
-    // Fix subarray() in ES2016. See: https://github.com/feross/buffer/pull/97
-    Object.defineProperty(Buffer, Symbol.species, {
-      value: null,
-      configurable: true
-    })
-  }
-}
-
-function assertSize (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('"size" argument must be a number')
-  } else if (size < 0) {
-    throw new RangeError('"size" argument must not be negative')
-  }
-}
-
-function alloc (that, size, fill, encoding) {
-  assertSize(size)
-  if (size <= 0) {
-    return createBuffer(that, size)
-  }
-  if (fill !== undefined) {
-    // Only pay attention to encoding if it's a string. This
-    // prevents accidentally sending in a number that would
-    // be interpretted as a start offset.
-    return typeof encoding === 'string'
-      ? createBuffer(that, size).fill(fill, encoding)
-      : createBuffer(that, size).fill(fill)
-  }
-  return createBuffer(that, size)
-}
-
-/**
- * Creates a new filled Buffer instance.
- * alloc(size[, fill[, encoding]])
- **/
-Buffer.alloc = function (size, fill, encoding) {
-  return alloc(null, size, fill, encoding)
-}
-
-function allocUnsafe (that, size) {
-  assertSize(size)
-  that = createBuffer(that, size < 0 ? 0 : checked(size) | 0)
+function fromNumber (that, length) {
+  that = allocate(that, length < 0 ? 0 : checked(length) | 0)
   if (!Buffer.TYPED_ARRAY_SUPPORT) {
-    for (var i = 0; i < size; ++i) {
+    for (var i = 0; i < length; i++) {
       that[i] = 0
     }
   }
   return that
 }
 
-/**
- * Equivalent to Buffer(num), by default creates a non-zero-filled Buffer instance.
- * */
-Buffer.allocUnsafe = function (size) {
-  return allocUnsafe(null, size)
-}
-/**
- * Equivalent to SlowBuffer(num), by default creates a non-zero-filled Buffer instance.
- */
-Buffer.allocUnsafeSlow = function (size) {
-  return allocUnsafe(null, size)
-}
-
 function fromString (that, string, encoding) {
-  if (typeof encoding !== 'string' || encoding === '') {
-    encoding = 'utf8'
-  }
+  if (typeof encoding !== 'string' || encoding === '') encoding = 'utf8'
 
-  if (!Buffer.isEncoding(encoding)) {
-    throw new TypeError('"encoding" must be a valid string encoding')
-  }
-
+  // Assumption: byteLength() return value is always < kMaxLength.
   var length = byteLength(string, encoding) | 0
-  that = createBuffer(that, length)
+  that = allocate(that, length)
 
-  var actual = that.write(string, encoding)
-
-  if (actual !== length) {
-    // Writing a hex string, for example, that contains invalid characters will
-    // cause everything after the first invalid character to be ignored. (e.g.
-    // 'abxxcd' will be treated as 'ab')
-    that = that.slice(0, actual)
-  }
-
+  that.write(string, encoding)
   return that
 }
 
-function fromArrayLike (that, array) {
-  var length = array.length < 0 ? 0 : checked(array.length) | 0
-  that = createBuffer(that, length)
+function fromObject (that, object) {
+  if (Buffer.isBuffer(object)) return fromBuffer(that, object)
+
+  if (isArray(object)) return fromArray(that, object)
+
+  if (object == null) {
+    throw new TypeError('must start with number, buffer, array or string')
+  }
+
+  if (typeof ArrayBuffer !== 'undefined') {
+    if (object.buffer instanceof ArrayBuffer) {
+      return fromTypedArray(that, object)
+    }
+    if (object instanceof ArrayBuffer) {
+      return fromArrayBuffer(that, object)
+    }
+  }
+
+  if (object.length) return fromArrayLike(that, object)
+
+  return fromJsonObject(that, object)
+}
+
+function fromBuffer (that, buffer) {
+  var length = checked(buffer.length) | 0
+  that = allocate(that, length)
+  buffer.copy(that, 0, 0, length)
+  return that
+}
+
+function fromArray (that, array) {
+  var length = checked(array.length) | 0
+  that = allocate(that, length)
   for (var i = 0; i < length; i += 1) {
     that[i] = array[i] & 255
   }
   return that
 }
 
-function fromArrayBuffer (that, array, byteOffset, length) {
-  array.byteLength // this throws if `array` is not a valid ArrayBuffer
-
-  if (byteOffset < 0 || array.byteLength < byteOffset) {
-    throw new RangeError('\'offset\' is out of bounds')
-  }
-
-  if (array.byteLength < byteOffset + (length || 0)) {
-    throw new RangeError('\'length\' is out of bounds')
-  }
-
-  if (byteOffset === undefined && length === undefined) {
-    array = new Uint8Array(array)
-  } else if (length === undefined) {
-    array = new Uint8Array(array, byteOffset)
-  } else {
-    array = new Uint8Array(array, byteOffset, length)
-  }
-
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    // Return an augmented `Uint8Array` instance, for best performance
-    that = array
-    that.__proto__ = Buffer.prototype
-  } else {
-    // Fallback: Return an object instance of the Buffer class
-    that = fromArrayLike(that, array)
+// Duplicate of fromArray() to keep fromArray() monomorphic.
+function fromTypedArray (that, array) {
+  var length = checked(array.length) | 0
+  that = allocate(that, length)
+  // Truncating the elements is probably not what people expect from typed
+  // arrays with BYTES_PER_ELEMENT > 1 but it's compatible with the behavior
+  // of the old Buffer constructor.
+  for (var i = 0; i < length; i += 1) {
+    that[i] = array[i] & 255
   }
   return that
 }
 
-function fromObject (that, obj) {
-  if (Buffer.isBuffer(obj)) {
-    var len = checked(obj.length) | 0
-    that = createBuffer(that, len)
+function fromArrayBuffer (that, array) {
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    // Return an augmented `Uint8Array` instance, for best performance
+    array.byteLength
+    that = Buffer._augment(new Uint8Array(array))
+  } else {
+    // Fallback: Return an object instance of the Buffer class
+    that = fromTypedArray(that, new Uint8Array(array))
+  }
+  return that
+}
 
-    if (that.length === 0) {
-      return that
-    }
+function fromArrayLike (that, array) {
+  var length = checked(array.length) | 0
+  that = allocate(that, length)
+  for (var i = 0; i < length; i += 1) {
+    that[i] = array[i] & 255
+  }
+  return that
+}
 
-    obj.copy(that, 0, 0, len)
-    return that
+// Deserialize { type: 'Buffer', data: [1,2,3,...] } into a Buffer object.
+// Returns a zero-length buffer for inputs that don't conform to the spec.
+function fromJsonObject (that, object) {
+  var array
+  var length = 0
+
+  if (object.type === 'Buffer' && isArray(object.data)) {
+    array = object.data
+    length = checked(array.length) | 0
+  }
+  that = allocate(that, length)
+
+  for (var i = 0; i < length; i += 1) {
+    that[i] = array[i] & 255
+  }
+  return that
+}
+
+if (Buffer.TYPED_ARRAY_SUPPORT) {
+  Buffer.prototype.__proto__ = Uint8Array.prototype
+  Buffer.__proto__ = Uint8Array
+} else {
+  // pre-set for values that may exist in the future
+  Buffer.prototype.length = undefined
+  Buffer.prototype.parent = undefined
+}
+
+function allocate (that, length) {
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    // Return an augmented `Uint8Array` instance, for best performance
+    that = Buffer._augment(new Uint8Array(length))
+    that.__proto__ = Buffer.prototype
+  } else {
+    // Fallback: Return an object instance of the Buffer class
+    that.length = length
+    that._isBuffer = true
   }
 
-  if (obj) {
-    if ((typeof ArrayBuffer !== 'undefined' &&
-        obj.buffer instanceof ArrayBuffer) || 'length' in obj) {
-      if (typeof obj.length !== 'number' || isnan(obj.length)) {
-        return createBuffer(that, 0)
-      }
-      return fromArrayLike(that, obj)
-    }
+  var fromPool = length !== 0 && length <= Buffer.poolSize >>> 1
+  if (fromPool) that.parent = rootParent
 
-    if (obj.type === 'Buffer' && isArray(obj.data)) {
-      return fromArrayLike(that, obj.data)
-    }
-  }
-
-  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
+  return that
 }
 
 function checked (length) {
-  // Note: cannot use `length < kMaxLength()` here because that fails when
+  // Note: cannot use `length < kMaxLength` here because that fails when
   // length is NaN (which is otherwise coerced to zero.)
   if (length >= kMaxLength()) {
     throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
@@ -434,11 +1700,12 @@ function checked (length) {
   return length | 0
 }
 
-function SlowBuffer (length) {
-  if (+length != length) { // eslint-disable-line eqeqeq
-    length = 0
-  }
-  return Buffer.alloc(+length)
+function SlowBuffer (subject, encoding) {
+  if (!(this instanceof SlowBuffer)) return new SlowBuffer(subject, encoding)
+
+  var buf = new Buffer(subject, encoding)
+  delete buf.parent
+  return buf
 }
 
 Buffer.isBuffer = function isBuffer (b) {
@@ -455,12 +1722,17 @@ Buffer.compare = function compare (a, b) {
   var x = a.length
   var y = b.length
 
-  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
-    if (a[i] !== b[i]) {
-      x = a[i]
-      y = b[i]
-      break
-    }
+  var i = 0
+  var len = Math.min(x, y)
+  while (i < len) {
+    if (a[i] !== b[i]) break
+
+    ++i
+  }
+
+  if (i !== len) {
+    x = a[i]
+    y = b[i]
   }
 
   if (x < y) return -1
@@ -474,9 +1746,9 @@ Buffer.isEncoding = function isEncoding (encoding) {
     case 'utf8':
     case 'utf-8':
     case 'ascii':
-    case 'latin1':
     case 'binary':
     case 'base64':
+    case 'raw':
     case 'ucs2':
     case 'ucs-2':
     case 'utf16le':
@@ -488,46 +1760,32 @@ Buffer.isEncoding = function isEncoding (encoding) {
 }
 
 Buffer.concat = function concat (list, length) {
-  if (!isArray(list)) {
-    throw new TypeError('"list" argument must be an Array of Buffers')
-  }
+  if (!isArray(list)) throw new TypeError('list argument must be an Array of Buffers.')
 
   if (list.length === 0) {
-    return Buffer.alloc(0)
+    return new Buffer(0)
   }
 
   var i
   if (length === undefined) {
     length = 0
-    for (i = 0; i < list.length; ++i) {
+    for (i = 0; i < list.length; i++) {
       length += list[i].length
     }
   }
 
-  var buffer = Buffer.allocUnsafe(length)
+  var buf = new Buffer(length)
   var pos = 0
-  for (i = 0; i < list.length; ++i) {
-    var buf = list[i]
-    if (!Buffer.isBuffer(buf)) {
-      throw new TypeError('"list" argument must be an Array of Buffers')
-    }
-    buf.copy(buffer, pos)
-    pos += buf.length
+  for (i = 0; i < list.length; i++) {
+    var item = list[i]
+    item.copy(buf, pos)
+    pos += item.length
   }
-  return buffer
+  return buf
 }
 
 function byteLength (string, encoding) {
-  if (Buffer.isBuffer(string)) {
-    return string.length
-  }
-  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' &&
-      (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
-    return string.byteLength
-  }
-  if (typeof string !== 'string') {
-    string = '' + string
-  }
+  if (typeof string !== 'string') string = '' + string
 
   var len = string.length
   if (len === 0) return 0
@@ -537,12 +1795,13 @@ function byteLength (string, encoding) {
   for (;;) {
     switch (encoding) {
       case 'ascii':
-      case 'latin1':
       case 'binary':
+      // Deprecated
+      case 'raw':
+      case 'raws':
         return len
       case 'utf8':
       case 'utf-8':
-      case undefined:
         return utf8ToBytes(string).length
       case 'ucs2':
       case 'ucs-2':
@@ -565,39 +1824,13 @@ Buffer.byteLength = byteLength
 function slowToString (encoding, start, end) {
   var loweredCase = false
 
-  // No need to verify that "this.length <= MAX_UINT32" since it's a read-only
-  // property of a typed array.
-
-  // This behaves neither like String nor Uint8Array in that we set start/end
-  // to their upper/lower bounds if the value passed is out of range.
-  // undefined is handled specially as per ECMA-262 6th Edition,
-  // Section 13.3.3.7 Runtime Semantics: KeyedBindingInitialization.
-  if (start === undefined || start < 0) {
-    start = 0
-  }
-  // Return early if start > this.length. Done here to prevent potential uint32
-  // coercion fail below.
-  if (start > this.length) {
-    return ''
-  }
-
-  if (end === undefined || end > this.length) {
-    end = this.length
-  }
-
-  if (end <= 0) {
-    return ''
-  }
-
-  // Force coersion to uint32. This will also coerce falsey/NaN values to 0.
-  end >>>= 0
-  start >>>= 0
-
-  if (end <= start) {
-    return ''
-  }
+  start = start | 0
+  end = end === undefined || end === Infinity ? this.length : end | 0
 
   if (!encoding) encoding = 'utf8'
+  if (start < 0) start = 0
+  if (end > this.length) end = this.length
+  if (end <= start) return ''
 
   while (true) {
     switch (encoding) {
@@ -611,9 +1844,8 @@ function slowToString (encoding, start, end) {
       case 'ascii':
         return asciiSlice(this, start, end)
 
-      case 'latin1':
       case 'binary':
-        return latin1Slice(this, start, end)
+        return binarySlice(this, start, end)
 
       case 'base64':
         return base64Slice(this, start, end)
@@ -630,53 +1862,6 @@ function slowToString (encoding, start, end) {
         loweredCase = true
     }
   }
-}
-
-// The property is used by `Buffer.isBuffer` and `is-buffer` (in Safari 5-7) to detect
-// Buffer instances.
-Buffer.prototype._isBuffer = true
-
-function swap (b, n, m) {
-  var i = b[n]
-  b[n] = b[m]
-  b[m] = i
-}
-
-Buffer.prototype.swap16 = function swap16 () {
-  var len = this.length
-  if (len % 2 !== 0) {
-    throw new RangeError('Buffer size must be a multiple of 16-bits')
-  }
-  for (var i = 0; i < len; i += 2) {
-    swap(this, i, i + 1)
-  }
-  return this
-}
-
-Buffer.prototype.swap32 = function swap32 () {
-  var len = this.length
-  if (len % 4 !== 0) {
-    throw new RangeError('Buffer size must be a multiple of 32-bits')
-  }
-  for (var i = 0; i < len; i += 4) {
-    swap(this, i, i + 3)
-    swap(this, i + 1, i + 2)
-  }
-  return this
-}
-
-Buffer.prototype.swap64 = function swap64 () {
-  var len = this.length
-  if (len % 8 !== 0) {
-    throw new RangeError('Buffer size must be a multiple of 64-bits')
-  }
-  for (var i = 0; i < len; i += 8) {
-    swap(this, i, i + 7)
-    swap(this, i + 1, i + 6)
-    swap(this, i + 2, i + 5)
-    swap(this, i + 3, i + 4)
-  }
-  return this
 }
 
 Buffer.prototype.toString = function toString () {
@@ -702,197 +1887,63 @@ Buffer.prototype.inspect = function inspect () {
   return '<Buffer ' + str + '>'
 }
 
-Buffer.prototype.compare = function compare (target, start, end, thisStart, thisEnd) {
-  if (!Buffer.isBuffer(target)) {
-    throw new TypeError('Argument must be a Buffer')
-  }
-
-  if (start === undefined) {
-    start = 0
-  }
-  if (end === undefined) {
-    end = target ? target.length : 0
-  }
-  if (thisStart === undefined) {
-    thisStart = 0
-  }
-  if (thisEnd === undefined) {
-    thisEnd = this.length
-  }
-
-  if (start < 0 || end > target.length || thisStart < 0 || thisEnd > this.length) {
-    throw new RangeError('out of range index')
-  }
-
-  if (thisStart >= thisEnd && start >= end) {
-    return 0
-  }
-  if (thisStart >= thisEnd) {
-    return -1
-  }
-  if (start >= end) {
-    return 1
-  }
-
-  start >>>= 0
-  end >>>= 0
-  thisStart >>>= 0
-  thisEnd >>>= 0
-
-  if (this === target) return 0
-
-  var x = thisEnd - thisStart
-  var y = end - start
-  var len = Math.min(x, y)
-
-  var thisCopy = this.slice(thisStart, thisEnd)
-  var targetCopy = target.slice(start, end)
-
-  for (var i = 0; i < len; ++i) {
-    if (thisCopy[i] !== targetCopy[i]) {
-      x = thisCopy[i]
-      y = targetCopy[i]
-      break
-    }
-  }
-
-  if (x < y) return -1
-  if (y < x) return 1
-  return 0
+Buffer.prototype.compare = function compare (b) {
+  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
+  if (this === b) return 0
+  return Buffer.compare(this, b)
 }
 
-// Finds either the first index of `val` in `buffer` at offset >= `byteOffset`,
-// OR the last index of `val` in `buffer` at offset <= `byteOffset`.
-//
-// Arguments:
-// - buffer - a Buffer to search
-// - val - a string, Buffer, or number
-// - byteOffset - an index into `buffer`; will be clamped to an int32
-// - encoding - an optional encoding, relevant is val is a string
-// - dir - true for indexOf, false for lastIndexOf
-function bidirectionalIndexOf (buffer, val, byteOffset, encoding, dir) {
-  // Empty buffer means no match
-  if (buffer.length === 0) return -1
+Buffer.prototype.indexOf = function indexOf (val, byteOffset) {
+  if (byteOffset > 0x7fffffff) byteOffset = 0x7fffffff
+  else if (byteOffset < -0x80000000) byteOffset = -0x80000000
+  byteOffset >>= 0
 
-  // Normalize byteOffset
-  if (typeof byteOffset === 'string') {
-    encoding = byteOffset
-    byteOffset = 0
-  } else if (byteOffset > 0x7fffffff) {
-    byteOffset = 0x7fffffff
-  } else if (byteOffset < -0x80000000) {
-    byteOffset = -0x80000000
-  }
-  byteOffset = +byteOffset  // Coerce to Number.
-  if (isNaN(byteOffset)) {
-    // byteOffset: it it's undefined, null, NaN, "foo", etc, search whole buffer
-    byteOffset = dir ? 0 : (buffer.length - 1)
-  }
+  if (this.length === 0) return -1
+  if (byteOffset >= this.length) return -1
 
-  // Normalize byteOffset: negative offsets start from the end of the buffer
-  if (byteOffset < 0) byteOffset = buffer.length + byteOffset
-  if (byteOffset >= buffer.length) {
-    if (dir) return -1
-    else byteOffset = buffer.length - 1
-  } else if (byteOffset < 0) {
-    if (dir) byteOffset = 0
-    else return -1
-  }
+  // Negative offsets start from the end of the buffer
+  if (byteOffset < 0) byteOffset = Math.max(this.length + byteOffset, 0)
 
-  // Normalize val
   if (typeof val === 'string') {
-    val = Buffer.from(val, encoding)
+    if (val.length === 0) return -1 // special case: looking for empty string always fails
+    return String.prototype.indexOf.call(this, val, byteOffset)
+  }
+  if (Buffer.isBuffer(val)) {
+    return arrayIndexOf(this, val, byteOffset)
+  }
+  if (typeof val === 'number') {
+    if (Buffer.TYPED_ARRAY_SUPPORT && Uint8Array.prototype.indexOf === 'function') {
+      return Uint8Array.prototype.indexOf.call(this, val, byteOffset)
+    }
+    return arrayIndexOf(this, [ val ], byteOffset)
   }
 
-  // Finally, search either indexOf (if dir is true) or lastIndexOf
-  if (Buffer.isBuffer(val)) {
-    // Special case: looking for empty string/buffer always fails
-    if (val.length === 0) {
-      return -1
-    }
-    return arrayIndexOf(buffer, val, byteOffset, encoding, dir)
-  } else if (typeof val === 'number') {
-    val = val & 0xFF // Search for a byte value [0-255]
-    if (Buffer.TYPED_ARRAY_SUPPORT &&
-        typeof Uint8Array.prototype.indexOf === 'function') {
-      if (dir) {
-        return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset)
+  function arrayIndexOf (arr, val, byteOffset) {
+    var foundIndex = -1
+    for (var i = 0; byteOffset + i < arr.length; i++) {
+      if (arr[byteOffset + i] === val[foundIndex === -1 ? 0 : i - foundIndex]) {
+        if (foundIndex === -1) foundIndex = i
+        if (i - foundIndex + 1 === val.length) return byteOffset + foundIndex
       } else {
-        return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset)
+        foundIndex = -1
       }
     }
-    return arrayIndexOf(buffer, [ val ], byteOffset, encoding, dir)
+    return -1
   }
 
   throw new TypeError('val must be string, number or Buffer')
 }
 
-function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
-  var indexSize = 1
-  var arrLength = arr.length
-  var valLength = val.length
-
-  if (encoding !== undefined) {
-    encoding = String(encoding).toLowerCase()
-    if (encoding === 'ucs2' || encoding === 'ucs-2' ||
-        encoding === 'utf16le' || encoding === 'utf-16le') {
-      if (arr.length < 2 || val.length < 2) {
-        return -1
-      }
-      indexSize = 2
-      arrLength /= 2
-      valLength /= 2
-      byteOffset /= 2
-    }
-  }
-
-  function read (buf, i) {
-    if (indexSize === 1) {
-      return buf[i]
-    } else {
-      return buf.readUInt16BE(i * indexSize)
-    }
-  }
-
-  var i
-  if (dir) {
-    var foundIndex = -1
-    for (i = byteOffset; i < arrLength; i++) {
-      if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
-        if (foundIndex === -1) foundIndex = i
-        if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
-      } else {
-        if (foundIndex !== -1) i -= i - foundIndex
-        foundIndex = -1
-      }
-    }
-  } else {
-    if (byteOffset + valLength > arrLength) byteOffset = arrLength - valLength
-    for (i = byteOffset; i >= 0; i--) {
-      var found = true
-      for (var j = 0; j < valLength; j++) {
-        if (read(arr, i + j) !== read(val, j)) {
-          found = false
-          break
-        }
-      }
-      if (found) return i
-    }
-  }
-
-  return -1
+// `get` is deprecated
+Buffer.prototype.get = function get (offset) {
+  console.log('.get() is deprecated. Access using array indexes instead.')
+  return this.readUInt8(offset)
 }
 
-Buffer.prototype.includes = function includes (val, byteOffset, encoding) {
-  return this.indexOf(val, byteOffset, encoding) !== -1
-}
-
-Buffer.prototype.indexOf = function indexOf (val, byteOffset, encoding) {
-  return bidirectionalIndexOf(this, val, byteOffset, encoding, true)
-}
-
-Buffer.prototype.lastIndexOf = function lastIndexOf (val, byteOffset, encoding) {
-  return bidirectionalIndexOf(this, val, byteOffset, encoding, false)
+// `set` is deprecated
+Buffer.prototype.set = function set (v, offset) {
+  console.log('.set() is deprecated. Access using array indexes instead.')
+  return this.writeUInt8(v, offset)
 }
 
 function hexWrite (buf, string, offset, length) {
@@ -909,14 +1960,14 @@ function hexWrite (buf, string, offset, length) {
 
   // must be an even number of digits
   var strLen = string.length
-  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string')
+  if (strLen % 2 !== 0) throw new Error('Invalid hex string')
 
   if (length > strLen / 2) {
     length = strLen / 2
   }
-  for (var i = 0; i < length; ++i) {
+  for (var i = 0; i < length; i++) {
     var parsed = parseInt(string.substr(i * 2, 2), 16)
-    if (isNaN(parsed)) return i
+    if (isNaN(parsed)) throw new Error('Invalid hex string')
     buf[offset + i] = parsed
   }
   return i
@@ -930,7 +1981,7 @@ function asciiWrite (buf, string, offset, length) {
   return blitBuffer(asciiToBytes(string), buf, offset, length)
 }
 
-function latin1Write (buf, string, offset, length) {
+function binaryWrite (buf, string, offset, length) {
   return asciiWrite(buf, string, offset, length)
 }
 
@@ -965,16 +2016,17 @@ Buffer.prototype.write = function write (string, offset, length, encoding) {
     }
   // legacy write(string, encoding, offset, length) - remove in v0.13
   } else {
-    throw new Error(
-      'Buffer.write(string, encoding, offset[, length]) is no longer supported'
-    )
+    var swap = encoding
+    encoding = offset
+    offset = length | 0
+    length = swap
   }
 
   var remaining = this.length - offset
   if (length === undefined || length > remaining) length = remaining
 
   if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
-    throw new RangeError('Attempt to write outside buffer bounds')
+    throw new RangeError('attempt to write outside buffer bounds')
   }
 
   if (!encoding) encoding = 'utf8'
@@ -992,9 +2044,8 @@ Buffer.prototype.write = function write (string, offset, length, encoding) {
       case 'ascii':
         return asciiWrite(this, string, offset, length)
 
-      case 'latin1':
       case 'binary':
-        return latin1Write(this, string, offset, length)
+        return binaryWrite(this, string, offset, length)
 
       case 'base64':
         // Warning: maxLength not taken into account in base64Write
@@ -1129,17 +2180,17 @@ function asciiSlice (buf, start, end) {
   var ret = ''
   end = Math.min(buf.length, end)
 
-  for (var i = start; i < end; ++i) {
+  for (var i = start; i < end; i++) {
     ret += String.fromCharCode(buf[i] & 0x7F)
   }
   return ret
 }
 
-function latin1Slice (buf, start, end) {
+function binarySlice (buf, start, end) {
   var ret = ''
   end = Math.min(buf.length, end)
 
-  for (var i = start; i < end; ++i) {
+  for (var i = start; i < end; i++) {
     ret += String.fromCharCode(buf[i])
   }
   return ret
@@ -1152,7 +2203,7 @@ function hexSlice (buf, start, end) {
   if (!end || end < 0 || end > len) end = len
 
   var out = ''
-  for (var i = start; i < end; ++i) {
+  for (var i = start; i < end; i++) {
     out += toHex(buf[i])
   }
   return out
@@ -1190,15 +2241,16 @@ Buffer.prototype.slice = function slice (start, end) {
 
   var newBuf
   if (Buffer.TYPED_ARRAY_SUPPORT) {
-    newBuf = this.subarray(start, end)
-    newBuf.__proto__ = Buffer.prototype
+    newBuf = Buffer._augment(this.subarray(start, end))
   } else {
     var sliceLen = end - start
     newBuf = new Buffer(sliceLen, undefined)
-    for (var i = 0; i < sliceLen; ++i) {
+    for (var i = 0; i < sliceLen; i++) {
       newBuf[i] = this[i + start]
     }
   }
+
+  if (newBuf.length) newBuf.parent = this.parent || this
 
   return newBuf
 }
@@ -1368,19 +2420,16 @@ Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
 }
 
 function checkInt (buf, value, offset, ext, max, min) {
-  if (!Buffer.isBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance')
-  if (value > max || value < min) throw new RangeError('"value" argument is out of bounds')
-  if (offset + ext > buf.length) throw new RangeError('Index out of range')
+  if (!Buffer.isBuffer(buf)) throw new TypeError('buffer must be a Buffer instance')
+  if (value > max || value < min) throw new RangeError('value is out of bounds')
+  if (offset + ext > buf.length) throw new RangeError('index out of range')
 }
 
 Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
   value = +value
   offset = offset | 0
   byteLength = byteLength | 0
-  if (!noAssert) {
-    var maxBytes = Math.pow(2, 8 * byteLength) - 1
-    checkInt(this, value, offset, byteLength, maxBytes, 0)
-  }
+  if (!noAssert) checkInt(this, value, offset, byteLength, Math.pow(2, 8 * byteLength), 0)
 
   var mul = 1
   var i = 0
@@ -1396,10 +2445,7 @@ Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, 
   value = +value
   offset = offset | 0
   byteLength = byteLength | 0
-  if (!noAssert) {
-    var maxBytes = Math.pow(2, 8 * byteLength) - 1
-    checkInt(this, value, offset, byteLength, maxBytes, 0)
-  }
+  if (!noAssert) checkInt(this, value, offset, byteLength, Math.pow(2, 8 * byteLength), 0)
 
   var i = byteLength - 1
   var mul = 1
@@ -1422,7 +2468,7 @@ Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
 
 function objectWriteUInt16 (buf, value, offset, littleEndian) {
   if (value < 0) value = 0xffff + value + 1
-  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; ++i) {
+  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; i++) {
     buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
       (littleEndian ? i : 1 - i) * 8
   }
@@ -1456,7 +2502,7 @@ Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert
 
 function objectWriteUInt32 (buf, value, offset, littleEndian) {
   if (value < 0) value = 0xffffffff + value + 1
-  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; ++i) {
+  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; i++) {
     buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
   }
 }
@@ -1502,12 +2548,9 @@ Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, no
 
   var i = 0
   var mul = 1
-  var sub = 0
+  var sub = value < 0 ? 1 : 0
   this[offset] = value & 0xFF
   while (++i < byteLength && (mul *= 0x100)) {
-    if (value < 0 && sub === 0 && this[offset + i - 1] !== 0) {
-      sub = 1
-    }
     this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
   }
 
@@ -1525,12 +2568,9 @@ Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, no
 
   var i = byteLength - 1
   var mul = 1
-  var sub = 0
+  var sub = value < 0 ? 1 : 0
   this[offset + i] = value & 0xFF
   while (--i >= 0 && (mul *= 0x100)) {
-    if (value < 0 && sub === 0 && this[offset + i + 1] !== 0) {
-      sub = 1
-    }
     this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
   }
 
@@ -1605,8 +2645,9 @@ Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) 
 }
 
 function checkIEEE754 (buf, value, offset, ext, max, min) {
-  if (offset + ext > buf.length) throw new RangeError('Index out of range')
-  if (offset < 0) throw new RangeError('Index out of range')
+  if (value > max || value < min) throw new RangeError('value is out of bounds')
+  if (offset + ext > buf.length) throw new RangeError('index out of range')
+  if (offset < 0) throw new RangeError('index out of range')
 }
 
 function writeFloat (buf, value, offset, littleEndian, noAssert) {
@@ -1671,90 +2712,142 @@ Buffer.prototype.copy = function copy (target, targetStart, start, end) {
 
   if (this === target && start < targetStart && targetStart < end) {
     // descending copy from end
-    for (i = len - 1; i >= 0; --i) {
+    for (i = len - 1; i >= 0; i--) {
       target[i + targetStart] = this[i + start]
     }
   } else if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
     // ascending copy from start
-    for (i = 0; i < len; ++i) {
+    for (i = 0; i < len; i++) {
       target[i + targetStart] = this[i + start]
     }
   } else {
-    Uint8Array.prototype.set.call(
-      target,
-      this.subarray(start, start + len),
-      targetStart
-    )
+    target._set(this.subarray(start, start + len), targetStart)
   }
 
   return len
 }
 
-// Usage:
-//    buffer.fill(number[, offset[, end]])
-//    buffer.fill(buffer[, offset[, end]])
-//    buffer.fill(string[, offset[, end]][, encoding])
-Buffer.prototype.fill = function fill (val, start, end, encoding) {
-  // Handle string cases:
-  if (typeof val === 'string') {
-    if (typeof start === 'string') {
-      encoding = start
-      start = 0
-      end = this.length
-    } else if (typeof end === 'string') {
-      encoding = end
-      end = this.length
-    }
-    if (val.length === 1) {
-      var code = val.charCodeAt(0)
-      if (code < 256) {
-        val = code
-      }
-    }
-    if (encoding !== undefined && typeof encoding !== 'string') {
-      throw new TypeError('encoding must be a string')
-    }
-    if (typeof encoding === 'string' && !Buffer.isEncoding(encoding)) {
-      throw new TypeError('Unknown encoding: ' + encoding)
-    }
-  } else if (typeof val === 'number') {
-    val = val & 255
-  }
+// fill(value, start=0, end=buffer.length)
+Buffer.prototype.fill = function fill (value, start, end) {
+  if (!value) value = 0
+  if (!start) start = 0
+  if (!end) end = this.length
 
-  // Invalid ranges are not set to a default, so can range check early.
-  if (start < 0 || this.length < start || this.length < end) {
-    throw new RangeError('Out of range index')
-  }
+  if (end < start) throw new RangeError('end < start')
 
-  if (end <= start) {
-    return this
-  }
+  // Fill 0 bytes; we're done
+  if (end === start) return
+  if (this.length === 0) return
 
-  start = start >>> 0
-  end = end === undefined ? this.length : end >>> 0
-
-  if (!val) val = 0
+  if (start < 0 || start >= this.length) throw new RangeError('start out of bounds')
+  if (end < 0 || end > this.length) throw new RangeError('end out of bounds')
 
   var i
-  if (typeof val === 'number') {
-    for (i = start; i < end; ++i) {
-      this[i] = val
+  if (typeof value === 'number') {
+    for (i = start; i < end; i++) {
+      this[i] = value
     }
   } else {
-    var bytes = Buffer.isBuffer(val)
-      ? val
-      : utf8ToBytes(new Buffer(val, encoding).toString())
+    var bytes = utf8ToBytes(value.toString())
     var len = bytes.length
-    for (i = 0; i < end - start; ++i) {
-      this[i + start] = bytes[i % len]
+    for (i = start; i < end; i++) {
+      this[i] = bytes[i % len]
     }
   }
 
   return this
 }
 
+/**
+ * Creates a new `ArrayBuffer` with the *copied* memory of the buffer instance.
+ * Added in Node 0.12. Only available in browsers that support ArrayBuffer.
+ */
+Buffer.prototype.toArrayBuffer = function toArrayBuffer () {
+  if (typeof Uint8Array !== 'undefined') {
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      return (new Buffer(this)).buffer
+    } else {
+      var buf = new Uint8Array(this.length)
+      for (var i = 0, len = buf.length; i < len; i += 1) {
+        buf[i] = this[i]
+      }
+      return buf.buffer
+    }
+  } else {
+    throw new TypeError('Buffer.toArrayBuffer not supported in this browser')
+  }
+}
+
 // HELPER FUNCTIONS
 // ================
+
+var BP = Buffer.prototype
+
+/**
+ * Augment a Uint8Array *instance* (not the Uint8Array class!) with Buffer methods
+ */
+Buffer._augment = function _augment (arr) {
+  arr.constructor = Buffer
+  arr._isBuffer = true
+
+  // save reference to original Uint8Array set method before overwriting
+  arr._set = arr.set
+
+  // deprecated
+  arr.get = BP.get
+  arr.set = BP.set
+
+  arr.write = BP.write
+  arr.toString = BP.toString
+  arr.toLocaleString = BP.toString
+  arr.toJSON = BP.toJSON
+  arr.equals = BP.equals
+  arr.compare = BP.compare
+  arr.indexOf = BP.indexOf
+  arr.copy = BP.copy
+  arr.slice = BP.slice
+  arr.readUIntLE = BP.readUIntLE
+  arr.readUIntBE = BP.readUIntBE
+  arr.readUInt8 = BP.readUInt8
+  arr.readUInt16LE = BP.readUInt16LE
+  arr.readUInt16BE = BP.readUInt16BE
+  arr.readUInt32LE = BP.readUInt32LE
+  arr.readUInt32BE = BP.readUInt32BE
+  arr.readIntLE = BP.readIntLE
+  arr.readIntBE = BP.readIntBE
+  arr.readInt8 = BP.readInt8
+  arr.readInt16LE = BP.readInt16LE
+  arr.readInt16BE = BP.readInt16BE
+  arr.readInt32LE = BP.readInt32LE
+  arr.readInt32BE = BP.readInt32BE
+  arr.readFloatLE = BP.readFloatLE
+  arr.readFloatBE = BP.readFloatBE
+  arr.readDoubleLE = BP.readDoubleLE
+  arr.readDoubleBE = BP.readDoubleBE
+  arr.writeUInt8 = BP.writeUInt8
+  arr.writeUIntLE = BP.writeUIntLE
+  arr.writeUIntBE = BP.writeUIntBE
+  arr.writeUInt16LE = BP.writeUInt16LE
+  arr.writeUInt16BE = BP.writeUInt16BE
+  arr.writeUInt32LE = BP.writeUInt32LE
+  arr.writeUInt32BE = BP.writeUInt32BE
+  arr.writeIntLE = BP.writeIntLE
+  arr.writeIntBE = BP.writeIntBE
+  arr.writeInt8 = BP.writeInt8
+  arr.writeInt16LE = BP.writeInt16LE
+  arr.writeInt16BE = BP.writeInt16BE
+  arr.writeInt32LE = BP.writeInt32LE
+  arr.writeInt32BE = BP.writeInt32BE
+  arr.writeFloatLE = BP.writeFloatLE
+  arr.writeFloatBE = BP.writeFloatBE
+  arr.writeDoubleLE = BP.writeDoubleLE
+  arr.writeDoubleBE = BP.writeDoubleBE
+  arr.fill = BP.fill
+  arr.inspect = BP.inspect
+  arr.toArrayBuffer = BP.toArrayBuffer
+
+  return arr
+}
 
 var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
 
@@ -1787,7 +2880,7 @@ function utf8ToBytes (string, units) {
   var leadSurrogate = null
   var bytes = []
 
-  for (var i = 0; i < length; ++i) {
+  for (var i = 0; i < length; i++) {
     codePoint = string.charCodeAt(i)
 
     // is surrogate component
@@ -1862,7 +2955,7 @@ function utf8ToBytes (string, units) {
 
 function asciiToBytes (str) {
   var byteArray = []
-  for (var i = 0; i < str.length; ++i) {
+  for (var i = 0; i < str.length; i++) {
     // Node's code seems to be doing this and not & 0x7F..
     byteArray.push(str.charCodeAt(i) & 0xFF)
   }
@@ -1872,7 +2965,7 @@ function asciiToBytes (str) {
 function utf16leToBytes (str, units) {
   var c, hi, lo
   var byteArray = []
-  for (var i = 0; i < str.length; ++i) {
+  for (var i = 0; i < str.length; i++) {
     if ((units -= 2) < 0) break
 
     c = str.charCodeAt(i)
@@ -1890,790 +2983,25 @@ function base64ToBytes (str) {
 }
 
 function blitBuffer (src, dst, offset, length) {
-  for (var i = 0; i < length; ++i) {
+  for (var i = 0; i < length; i++) {
     if ((i + offset >= dst.length) || (i >= src.length)) break
     dst[i + offset] = src[i]
   }
   return i
 }
 
-function isnan (val) {
-  return val !== val // eslint-disable-line no-self-compare
-}
-
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"base64-js":1,"ieee754":3,"isarray":4}],3:[function(require,module,exports){
-exports.read = function (buffer, offset, isLE, mLen, nBytes) {
-  var e, m
-  var eLen = nBytes * 8 - mLen - 1
-  var eMax = (1 << eLen) - 1
-  var eBias = eMax >> 1
-  var nBits = -7
-  var i = isLE ? (nBytes - 1) : 0
-  var d = isLE ? -1 : 1
-  var s = buffer[offset + i]
-
-  i += d
-
-  e = s & ((1 << (-nBits)) - 1)
-  s >>= (-nBits)
-  nBits += eLen
-  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-
-  m = e & ((1 << (-nBits)) - 1)
-  e >>= (-nBits)
-  nBits += mLen
-  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-
-  if (e === 0) {
-    e = 1 - eBias
-  } else if (e === eMax) {
-    return m ? NaN : ((s ? -1 : 1) * Infinity)
-  } else {
-    m = m + Math.pow(2, mLen)
-    e = e - eBias
-  }
-  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
-}
-
-exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
-  var e, m, c
-  var eLen = nBytes * 8 - mLen - 1
-  var eMax = (1 << eLen) - 1
-  var eBias = eMax >> 1
-  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
-  var i = isLE ? 0 : (nBytes - 1)
-  var d = isLE ? 1 : -1
-  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
-
-  value = Math.abs(value)
-
-  if (isNaN(value) || value === Infinity) {
-    m = isNaN(value) ? 1 : 0
-    e = eMax
-  } else {
-    e = Math.floor(Math.log(value) / Math.LN2)
-    if (value * (c = Math.pow(2, -e)) < 1) {
-      e--
-      c *= 2
-    }
-    if (e + eBias >= 1) {
-      value += rt / c
-    } else {
-      value += rt * Math.pow(2, 1 - eBias)
-    }
-    if (value * c >= 2) {
-      e++
-      c /= 2
-    }
-
-    if (e + eBias >= eMax) {
-      m = 0
-      e = eMax
-    } else if (e + eBias >= 1) {
-      m = (value * c - 1) * Math.pow(2, mLen)
-      e = e + eBias
-    } else {
-      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
-      e = 0
-    }
-  }
-
-  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
-
-  e = (e << mLen) | m
-  eLen += mLen
-  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
-
-  buffer[offset + i - d] |= s * 128
-}
-
-},{}],4:[function(require,module,exports){
+},{"base64-js":21,"ieee754":58,"isarray":23}],23:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],5:[function(require,module,exports){
-'use strict';
-
-module.exports = require('./lib/bridge');
-
-},{"./lib/bridge":8}],6:[function(require,module,exports){
-/*
- * auction.js
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2016 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-var bids = require('./bid');
-var Contract = require('./contract');
-
-/** The history of bids. */
-function Auction(dealer) {
-    this.bids = [];
-    this.dealer = dealer;
-}
-
-Auction.prototype.bid = function(bid) {
-    var self = this, seat, contract;
-
-    // Argument overloading
-    if (arguments.length > 1) {
-        bid = Array.prototype.slice.call(arguments);
-    }
-    if (Array.isArray(bid)) {
-        bid.forEach(function(b) { self.bid(b); });
-        return;
-    }
-    if (typeof bid === 'string' || bid instanceof String) {
-        bid = bids[bid];
-    }
-    if (typeof bid !== 'object' || Object.getPrototypeOf(bid).constructor.name !== 'Bid') {
-        throw new Error('Invalid bid');
-    }
-
-    // Can the specified Bid be applied?
-    if (this.isClosed()) {
-        throw new Error('Bidding not allowed, auction is closed');
-    }
-    if (bid.isPass) {
-        // you can always pass
-    } else if (bid.isDouble) {
-        seat = this.nextSeatToBid();
-        contract = this.contract();
-        if (contract.declaror === undefined) {
-            throw new Error('Cannot double when opposition has no contract');
-        }
-        if (contract.declaror === seat.partner) {
-            throw new Error('Doubling your partner is not allowed');
-        }
-        if (contract.risk !== '') {
-            throw new Error('Opposition is already at risk');
-        }
-    } else if (bid.isRedouble) {
-        seat = this.nextSeatToBid();
-        contract = this.contract();
-        if (!(contract.risk === 'X' && (seat === contract.declaror || seat.partner === contract.declaror))) {
-            throw new Error('Invalid bid');
-        }
-    } else {
-        var higherBids = this.bids.some(function(b) {return b.order > bid.order;});
-        if (higherBids) {
-            throw new Error('Insufficient bid');
-        }
-    }
-
-    // All is okay
-    this.bids.push(bid);
-};
-
-Auction.prototype.isClosed = function() {
-    if (this.bids.length < 4) {
-        return false;
-    }
-
-    return this.bids
-        .slice(-3)
-        .every(function(b) { return b === bids.pass; });
-};
-
-Auction.prototype.nextSeatToBid = function() {
-    if (this.isClosed()) {
-        return null;
-    }
-
-    return this.bids.reduce(function(seat) { return seat.next; }, this.dealer);
-};
-
-Auction.prototype.contract = function() {
-    var seat = this.dealer;
-    var contract = this.bids.reduce(function(contract, bid) {
-        if (bid.isPass) {
-
-        } else if (bid.isDouble) {
-            contract.risk = 'X';
-        } else if (bid.isRedouble) {
-            contract.risk = 'XX';
-        } else {
-            contract.risk = '';
-            contract.level = bid.level;
-            contract.denomination = bid.denomination;
-            contract.declaror = seat;
-        }
-        seat = seat.next;
-        return contract;
-    }, new Contract());
-
-    // declaror is the first partner to bid the contract's denomination
-    if (contract.declaror) {
-        seat = this.dealer;
-        for (var i = 0; i < this.bids.length; i++) {
-            var bid = this.bids[i];
-            if (bid.denomination === contract.denomination && (seat === contract.declaror || seat === contract.declaror.partner)) {
-                contract.declaror = seat;
-                break;
-            }
-            seat = seat.next;
-        }
-    }
-
-    return contract;
-};
-
-module.exports = Auction;
-
-},{"./bid":7,"./contract":10}],7:[function(require,module,exports){
-/*
- * bid.js
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2015 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-var denominationOffset = {
-        'C': 1,
-        'D': 2,
-        'H': 3,
-        'S': 4,
-        'NT': 5,
-    };
-
-function Bid(s) {
-    this.level = (+(s.charAt(0))) || undefined;
-    this.denomination = this.level ? s.substr(1) : undefined;
-    this.order = ((this.level - 1) * 5) + denominationOffset[this.denomination];
-    this.isDouble = s === 'X';
-    this.isRedouble = s === 'XX';
-    this.isPass = s === '-' || s === 'P' || s === '/' || s === 'Pass';
-    this.isRed = this.denomination === 'H' || this.denomination === 'D';
-    this.isBlack = this.denomination === 'S' || this.denomination === 'C';
-}
-
-Bid.prototype.toString = function() {
-    if (this.isPass) {
-        return '-';
-    } else if (this.isDouble) {
-        return 'X';
-    } else if (this.isRedouble) {
-        return 'XX';
-    }
-
-    return this.level + this.denomination;
-};
-
-var bid = {
-    '-': new Bid('-'),
-    'X': new Bid('X'),
-    'XX': new Bid('XX'),
-    '1C': new Bid('1C'),
-    '1D': new Bid('1D'),
-    '1H': new Bid('1H'),
-    '1S': new Bid('1S'),
-    '1NT': new Bid('1NT'),
-    '2C': new Bid('2C'),
-    '2D': new Bid('2D'),
-    '2H': new Bid('2H'),
-    '2S': new Bid('2S'),
-    '2NT': new Bid('2NT'),
-    '3C': new Bid('3C'),
-    '3D': new Bid('3D'),
-    '3H': new Bid('3H'),
-    '3S': new Bid('3S'),
-    '3NT': new Bid('3NT'),
-    '4C': new Bid('4C'),
-    '4D': new Bid('4D'),
-    '4H': new Bid('4H'),
-    '4S': new Bid('4S'),
-    '4NT': new Bid('4NT'),
-    '5C': new Bid('5C'),
-    '5D': new Bid('5D'),
-    '5H': new Bid('5H'),
-    '5S': new Bid('5S'),
-    '5NT': new Bid('5NT'),
-    '6C': new Bid('6C'),
-    '6D': new Bid('6D'),
-    '6H': new Bid('6H'),
-    '6S': new Bid('6S'),
-    '6NT': new Bid('6NT'),
-    '7C': new Bid('7C'),
-    '7D': new Bid('7D'),
-    '7H': new Bid('7H'),
-    '7S': new Bid('7S'),
-    '7NT': new Bid('7NT'),
-};
-bid.pass = bid['-'];
-bid.double = bid['X'];
-bid.redouble = bid['XX'];
-
-module.exports = bid;
-
-},{}],8:[function(require,module,exports){
-/*
- * Bridge.JS
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2015 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-var model = module.exports = {};
-
-model.card = require('./card');
-model.bid = require('./bid');
-model.seat = require('./seat');
-
-model.Contract = require('./contract');
-model.Trick = require('./trick');
-model.Deck = require('./deck');
-model.Hand = require('./hand');
-model.Auction = require('./auction');
-
-},{"./auction":6,"./bid":7,"./card":9,"./contract":10,"./deck":11,"./hand":12,"./seat":13,"./trick":14}],9:[function(require,module,exports){
-/*
- * card.js
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2015 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-var rankOffset = {
-    '2': 1,
-    '3': 2,
-    '4': 3,
-    '5': 4,
-    '6': 5,
-    '7': 6,
-    '8': 7,
-    '9': 8,
-    '10': 9,
-    'J': 10,
-    'Q': 11,
-    'K': 12,
-    'A': 13
-};
-
-var suitOffset = {
-    'C': 0 * 13,
-    'D': 1 * 13,
-    'H': 2 * 13,
-    'S': 3 * 13
-};
-
-function Card(rank, suit) {
-    this.rank = rank;
-    this.suit = suit;
-    this.order = rankOffset[this.rank] + suitOffset[this.suit];
-}
-
-Card.prototype.toString = function() {
-    return this.rank + this.suit;
-};
-
-Card.prototype.imageUrl = function() {
-    return 'cards/' + this.rank + this.suit + '.svg';
-};
-
-var cards = {all: []};
-for (var rank in rankOffset) {
-    for (var suit in suitOffset) {
-        var card = new Card(rank, suit);
-        cards.all.push(card);
-        cards[rank + suit] = card;
-        cards[suit + rank] = card;
-        if (rank === '10') {
-            cards['T' + suit] = card;
-            cards[suit + 'T'] = card;
-        }
-    }
-}
-
-module.exports = cards;
-
-},{}],10:[function(require,module,exports){
-/*
- * contract.js
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2015 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-/*
- * Contract
- */
-function Contract() {
-    this.risk = '';  // '', 'X' or 'XX'
-    this.level = 0;  // 1 - 7, 0 is 'passed in'
-    this.denomination = undefined; // 'S', 'H', 'D', 'C' or 'NT'
-    this.declaror = undefined;  // a seat
-}
-
-Contract.prototype.toString = function() {
-    if (this.isPassedIn()) {
-        return '-';
-    }
-    return this.level +
-        this.denomination +
-        this.risk +
-        ' by ' + this.declaror.symbol;
-};
-
-Contract.prototype.isPassedIn = function() { return this.level === 0; };
-
-module.exports = Contract;
-
-},{}],11:[function(require,module,exports){
-/*
- * deck.js
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2015 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-var card = require('./card');
-var seat = require('./seat');
-var Hand = require('./hand');
-
-/** 52 standard playing card */
-function Deck() {
-    this.cards = card.all.slice();
-}
-
-/** Randomises the cards using the Fisher-Yates shuffle algorithm. */
-Deck.prototype.shuffle = function(rng) {
-    rng = rng || Math.random;
-    var cards = this.cards,
-        n = cards.length,               // The number of items left to shuffle (loop invariant)
-        k, t;
-    while (n > 1) {
-        k = Math.floor(rng() * n--);    // 0 <= k < n
-        t = cards[n];                   // swap elements n and k
-        cards[n] = cards[k];
-        cards[k] = t;
-    }
-    return this;                        // for a fluent style.
-};
-
-/** Generates a hand for each seat. */
-Deck.prototype.deal = function(dealer) {
-    var player = dealer,
-        hands = {};
-    hands[seat.north] = new Hand();
-    hands[seat.south] = new Hand();
-    hands[seat.east] = new Hand();
-    hands[seat.west] = new Hand();
-    for (var i = 0; i < this.cards.length; ++i)
-    {
-        player = player.next;
-        hands[player].cards.push(this.cards[i]);
-    }
-    hands[seat.north].sort();
-    hands[seat.south].sort();
-    hands[seat.east].sort();
-    hands[seat.west].sort();
-    return hands;
-};
-
-module.exports = Deck;
-
-},{"./card":9,"./hand":12,"./seat":13}],12:[function(require,module,exports){
-/*
- * hand.js
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2015 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-/** A player's cards and facts. */
-function Hand() {
-    this.cards = [];
-    this.facts = [];
-}
-
-/** sort by descending order */
-Hand.prototype.sort = function () {
-    this.cards
-        .sort(function (a, b) {
-            return b.order - a.order;
-        });
-    return this;
-};
-
-Hand.prototype.cardsWithSuit = function (suit) {
-    return this.cards
-        .filter(function (card) {
-            return card.suit === suit;
-        });
-};
-
-Hand.prototype.toString = function () {
-    var s = '',
-        i;
-    for (i = 0; i < this.cards.length; ++i) {
-        if (i !== 0) {
-            s += ' ';
-        }
-        s += this.cards[i].toString();
-    }
-    return s;
-};
-
-module.exports = Hand;
-
-},{}],13:[function(require,module,exports){
-/*
- * seat.js
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2015 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-/*
- * Seat
- */
-function Seat() {
-    this.symbol = '';
-}
-
-Seat.prototype.toString = function() {
-    return this.name;
-};
-
-var seat = {
-    north: new Seat(),
-    east: new Seat(),
-    south: new Seat(),
-    west: new Seat()
-};
-
-seat.north.symbol = 'N';
-seat.north.name = 'north';
-seat.north.partner = seat.south;
-seat.north.rho = seat.west;
-seat.north.lho = seat.east;
-seat.north.next = seat.east;
-
-seat.south.symbol = 'S';
-seat.south.name = 'south';
-seat.south.partner = seat.north;
-seat.south.rho = seat.east;
-seat.south.lho = seat.west;
-seat.south.next = seat.west;
-
-seat.east.symbol = 'E';
-seat.east.name = 'east';
-seat.east.partner = seat.west;
-seat.east.rho = seat.north;
-seat.east.lho = seat.south;
-seat.east.next = seat.south;
-
-seat.west.symbol = 'W';
-seat.west.name = 'west';
-seat.west.partner = seat.east;
-seat.west.rho = seat.south;
-seat.west.lho = seat.north;
-seat.west.next = seat.north;
-
-seat.N = seat.north;
-seat.S = seat.south;
-seat.E = seat.east;
-seat.W = seat.west;
-
-module.exports = seat;
-
-},{}],14:[function(require,module,exports){
-/*
- * trick.js
- * https://github.com/richardschneider/bridgejs
- *
- * Copyright (c) 2015 Richard Schneider
- * Licensed under the MIT license.
- */
-
-'use strict';
-
-/** A round in the game */
-function Trick() {
-    this.play = [];  // each object has a card and seat property.
-}
-
-/** The 1st seat to play a card */
-Trick.prototype.leader = function() {
-    return this.play.length < 1 ? undefined : this.play[0].seat;
-};
-
-/** The seat that has won the trick */
-Trick.prototype.winner = function(contract) {
-    if (this.play.length < 4) {
-        return undefined;
-    }
-
-    var play, bestSeat, bestOrder = -10000, order;
-    for (var i = 0; i < 4; ++i)
-    {
-        play = this.play[i];
-        order = play.card.order;
-        if (play.card.suit === contract.denomination) {
-            order *= 1000;
-        }
-        if (order > bestOrder) {
-            bestOrder = order;
-            bestSeat = play.seat;
-        }
-    }
-
-    return bestSeat;
-};
-
-module.exports = Trick;
-
-},{}],15:[function(require,module,exports){
-/*!
- * assertion-error
- * Copyright(c) 2013 Jake Luer <jake@qualiancy.com>
- * MIT Licensed
- */
-
-/*!
- * Return a function that will copy properties from
- * one object to another excluding any originally
- * listed. Returned function will create a new `{}`.
- *
- * @param {String} excluded properties ...
- * @return {Function}
- */
-
-function exclude () {
-  var excludes = [].slice.call(arguments);
-
-  function excludeProps (res, obj) {
-    Object.keys(obj).forEach(function (key) {
-      if (!~excludes.indexOf(key)) res[key] = obj[key];
-    });
-  }
-
-  return function extendExclude () {
-    var args = [].slice.call(arguments)
-      , i = 0
-      , res = {};
-
-    for (; i < args.length; i++) {
-      excludeProps(res, args[i]);
-    }
-
-    return res;
-  };
-};
-
-/*!
- * Primary Exports
- */
-
-module.exports = AssertionError;
-
-/**
- * ### AssertionError
- *
- * An extension of the JavaScript `Error` constructor for
- * assertion and validation scenarios.
- *
- * @param {String} message
- * @param {Object} properties to include (optional)
- * @param {callee} start stack function (optional)
- */
-
-function AssertionError (message, _props, ssf) {
-  var extend = exclude('name', 'message', 'stack', 'constructor', 'toJSON')
-    , props = extend(_props || {});
-
-  // default values
-  this.message = message || 'Unspecified AssertionError';
-  this.showDiff = false;
-
-  // copy from properties
-  for (var key in props) {
-    this[key] = props[key];
-  }
-
-  // capture stack trace
-  ssf = ssf || arguments.callee;
-  if (ssf && Error.captureStackTrace) {
-    Error.captureStackTrace(this, ssf);
-  } else {
-    try {
-      throw new Error();
-    } catch(e) {
-      this.stack = e.stack;
-    }
-  }
-}
-
-/*!
- * Inherit from Error.prototype
- */
-
-AssertionError.prototype = Object.create(Error.prototype);
-
-/*!
- * Statically set name
- */
-
-AssertionError.prototype.name = 'AssertionError';
-
-/*!
- * Ensure correct constructor
- */
-
-AssertionError.prototype.constructor = AssertionError;
-
-/**
- * Allow errors to be converted to JSON for static transfer.
- *
- * @param {Boolean} include stack (default: `true`)
- * @return {Object} object that can be `JSON.stringify`
- */
-
-AssertionError.prototype.toJSON = function (stack) {
-  var extend = exclude('constructor', 'toJSON', 'stack')
-    , props = extend({ name: this.name }, this);
-
-  // include stack if exists and not turned off
-  if (false !== stack && this.stack) {
-    props.stack = this.stack;
-  }
-
-  return props;
-};
-
-},{}],16:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 module.exports = require('./lib/chai');
 
-},{"./lib/chai":17}],17:[function(require,module,exports){
+},{"./lib/chai":25}],25:[function(require,module,exports){
 /*!
  * chai
  * Copyright(c) 2011-2014 Jake Luer <jake@alogicalparadox.com>
@@ -2768,7 +3096,7 @@ exports.use(should);
 var assert = require('./chai/interface/assert');
 exports.use(assert);
 
-},{"./chai/assertion":18,"./chai/config":19,"./chai/core/assertions":20,"./chai/interface/assert":21,"./chai/interface/expect":22,"./chai/interface/should":23,"./chai/utils":37,"assertion-error":15}],18:[function(require,module,exports){
+},{"./chai/assertion":26,"./chai/config":27,"./chai/core/assertions":28,"./chai/interface/assert":29,"./chai/interface/expect":30,"./chai/interface/should":31,"./chai/utils":45,"assertion-error":20}],26:[function(require,module,exports){
 /*!
  * chai
  * http://chaijs.com
@@ -2901,7 +3229,7 @@ module.exports = function (_chai, util) {
   });
 };
 
-},{"./config":19}],19:[function(require,module,exports){
+},{"./config":27}],27:[function(require,module,exports){
 module.exports = {
 
   /**
@@ -2958,7 +3286,7 @@ module.exports = {
 
 };
 
-},{}],20:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 /*!
  * chai
  * http://chaijs.com
@@ -4820,7 +5148,7 @@ module.exports = function (chai, _) {
   });
 };
 
-},{}],21:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 /*!
  * chai
  * Copyright(c) 2011-2014 Jake Luer <jake@alogicalparadox.com>
@@ -6467,7 +6795,7 @@ module.exports = function (chai, util) {
   ('isNotFrozen', 'notFrozen');
 };
 
-},{}],22:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 /*!
  * chai
  * Copyright(c) 2011-2014 Jake Luer <jake@alogicalparadox.com>
@@ -6503,7 +6831,7 @@ module.exports = function (chai, util) {
   };
 };
 
-},{}],23:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /*!
  * chai
  * Copyright(c) 2011-2014 Jake Luer <jake@alogicalparadox.com>
@@ -6706,7 +7034,7 @@ module.exports = function (chai, util) {
   chai.Should = loadShould;
 };
 
-},{}],24:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 /*!
  * Chai - addChainingMethod utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -6820,7 +7148,7 @@ module.exports = function (ctx, name, method, chainingBehavior) {
   });
 };
 
-},{"../config":19,"./flag":28,"./transferFlags":44}],25:[function(require,module,exports){
+},{"../config":27,"./flag":36,"./transferFlags":52}],33:[function(require,module,exports){
 /*!
  * Chai - addMethod utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -6866,7 +7194,7 @@ module.exports = function (ctx, name, method) {
   };
 };
 
-},{"../config":19,"./flag":28}],26:[function(require,module,exports){
+},{"../config":27,"./flag":36}],34:[function(require,module,exports){
 /*!
  * Chai - addProperty utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -6916,7 +7244,7 @@ module.exports = function (ctx, name, getter) {
   });
 };
 
-},{"../config":19,"./flag":28}],27:[function(require,module,exports){
+},{"../config":27,"./flag":36}],35:[function(require,module,exports){
 /*!
  * Chai - expectTypes utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -6960,7 +7288,7 @@ module.exports = function (obj, types) {
   }
 };
 
-},{"./flag":28,"assertion-error":15,"type-detect":49}],28:[function(require,module,exports){
+},{"./flag":36,"assertion-error":20,"type-detect":59}],36:[function(require,module,exports){
 /*!
  * Chai - flag utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -6995,7 +7323,7 @@ module.exports = function (obj, key, value) {
   }
 };
 
-},{}],29:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 /*!
  * Chai - getActual utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7017,7 +7345,7 @@ module.exports = function (obj, args) {
   return args.length > 4 ? args[4] : obj._obj;
 };
 
-},{}],30:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 /*!
  * Chai - getEnumerableProperties utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7045,7 +7373,7 @@ module.exports = function getEnumerableProperties(object) {
   return result;
 };
 
-},{}],31:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 /*!
  * Chai - message composition utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7098,7 +7426,7 @@ module.exports = function (obj, args) {
   return flagMsg ? flagMsg + ': ' + msg : msg;
 };
 
-},{"./flag":28,"./getActual":29,"./inspect":38,"./objDisplay":39}],32:[function(require,module,exports){
+},{"./flag":36,"./getActual":37,"./inspect":46,"./objDisplay":47}],40:[function(require,module,exports){
 /*!
  * Chai - getName utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7122,7 +7450,7 @@ module.exports = function (func) {
   return match && match[1] ? match[1] : "";
 };
 
-},{}],33:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 /*!
  * Chai - getPathInfo utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7235,7 +7563,7 @@ function _getPathValue (parsed, obj, index) {
   return res;
 }
 
-},{"./hasProperty":36}],34:[function(require,module,exports){
+},{"./hasProperty":44}],42:[function(require,module,exports){
 /*!
  * Chai - getPathValue utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7280,7 +7608,7 @@ module.exports = function(path, obj) {
   return info.value;
 };
 
-},{"./getPathInfo":33}],35:[function(require,module,exports){
+},{"./getPathInfo":41}],43:[function(require,module,exports){
 /*!
  * Chai - getProperties utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7318,7 +7646,7 @@ module.exports = function getProperties(object) {
   return result;
 };
 
-},{}],36:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 /*!
  * Chai - hasProperty utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7384,7 +7712,7 @@ module.exports = function hasProperty(name, obj) {
   return name in obj;
 };
 
-},{"type-detect":49}],37:[function(require,module,exports){
+},{"type-detect":59}],45:[function(require,module,exports){
 /*!
  * chai
  * Copyright(c) 2011 Jake Luer <jake@alogicalparadox.com>
@@ -7516,7 +7844,7 @@ exports.addChainableMethod = require('./addChainableMethod');
 
 exports.overwriteChainableMethod = require('./overwriteChainableMethod');
 
-},{"./addChainableMethod":24,"./addMethod":25,"./addProperty":26,"./expectTypes":27,"./flag":28,"./getActual":29,"./getMessage":31,"./getName":32,"./getPathInfo":33,"./getPathValue":34,"./hasProperty":36,"./inspect":38,"./objDisplay":39,"./overwriteChainableMethod":40,"./overwriteMethod":41,"./overwriteProperty":42,"./test":43,"./transferFlags":44,"deep-eql":45,"type-detect":49}],38:[function(require,module,exports){
+},{"./addChainableMethod":32,"./addMethod":33,"./addProperty":34,"./expectTypes":35,"./flag":36,"./getActual":37,"./getMessage":39,"./getName":40,"./getPathInfo":41,"./getPathValue":42,"./hasProperty":44,"./inspect":46,"./objDisplay":47,"./overwriteChainableMethod":48,"./overwriteMethod":49,"./overwriteProperty":50,"./test":51,"./transferFlags":52,"deep-eql":53,"type-detect":59}],46:[function(require,module,exports){
 // This is (almost) directly from Node.js utils
 // https://github.com/joyent/node/blob/f8c335d0caf47f16d31413f89aa28eda3878e3aa/lib/util.js
 
@@ -7853,7 +8181,7 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-},{"./getEnumerableProperties":30,"./getName":32,"./getProperties":35}],39:[function(require,module,exports){
+},{"./getEnumerableProperties":38,"./getName":40,"./getProperties":43}],47:[function(require,module,exports){
 /*!
  * Chai - flag utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7905,7 +8233,7 @@ module.exports = function (obj) {
   }
 };
 
-},{"../config":19,"./inspect":38}],40:[function(require,module,exports){
+},{"../config":27,"./inspect":46}],48:[function(require,module,exports){
 /*!
  * Chai - overwriteChainableMethod utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -7961,7 +8289,7 @@ module.exports = function (ctx, name, method, chainingBehavior) {
   };
 };
 
-},{}],41:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 /*!
  * Chai - overwriteMethod utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -8015,7 +8343,7 @@ module.exports = function (ctx, name, method) {
   }
 };
 
-},{}],42:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 /*!
  * Chai - overwriteProperty utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -8072,7 +8400,7 @@ module.exports = function (ctx, name, getter) {
   });
 };
 
-},{}],43:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 /*!
  * Chai - test utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -8102,7 +8430,7 @@ module.exports = function (obj, args) {
   return negate ? !expr : expr;
 };
 
-},{"./flag":28}],44:[function(require,module,exports){
+},{"./flag":36}],52:[function(require,module,exports){
 /*!
  * Chai - transferFlags utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -8149,10 +8477,10 @@ module.exports = function (assertion, object, includeAll) {
   }
 };
 
-},{}],45:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 module.exports = require('./lib/eql');
 
-},{"./lib/eql":46}],46:[function(require,module,exports){
+},{"./lib/eql":54}],54:[function(require,module,exports){
 /*!
  * deep-eql
  * Copyright(c) 2013 Jake Luer <jake@alogicalparadox.com>
@@ -8411,10 +8739,10 @@ function objectEqual(a, b, m) {
   return true;
 }
 
-},{"buffer":2,"type-detect":47}],47:[function(require,module,exports){
+},{"buffer":22,"type-detect":55}],55:[function(require,module,exports){
 module.exports = require('./lib/type');
 
-},{"./lib/type":48}],48:[function(require,module,exports){
+},{"./lib/type":56}],56:[function(require,module,exports){
 /*!
  * type-detect
  * Copyright(c) 2013 jake luer <jake@alogicalparadox.com>
@@ -8558,9 +8886,309 @@ Library.prototype.test = function (obj, type) {
   }
 };
 
-},{}],49:[function(require,module,exports){
-arguments[4][47][0].apply(exports,arguments)
-},{"./lib/type":50,"dup":47}],50:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
+'use strict';
+
+(function (dirtyChai) {
+    // Inject into various module systems
+    if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
+      // Node
+      module.exports = dirtyChai;
+    } else if (typeof define === 'function' && define.amd) {
+      // AMD
+      define(function () {
+          return dirtyChai;
+      });
+    } else {
+      // Other environment (usually <script> tag): plug in to global chai instance directly.
+      chai.use(dirtyChai);
+    }
+}(function dirtyChai(chai, util) {
+  var DEFERRED = '__deferred__';
+
+  var flag = util.flag,
+      Assertion = chai.Assertion;
+
+  // Defer some chain operation
+  function defer(ctx, deferFunc) {
+    // See if we have any deferred asserts
+    var deferred = flag(ctx, DEFERRED) || [];
+
+    deferred.push(deferFunc);
+
+    flag(ctx, DEFERRED, deferred);
+  }
+
+  // Grab and assert on any deferred operations
+  function execDeferred(ctx) {
+    var deferreds = flag(ctx, DEFERRED) || [],
+        root = ctx,
+        deferred;
+
+    // Clear the deferred asserts
+    flag(ctx, DEFERRED, undefined);
+
+    while((deferred = deferreds.shift())) {
+      var result = deferred.call(root);
+      if(result !== undefined) {
+        root = result;
+      }
+    }
+
+    return root;
+  }
+
+  function applyMessageToLastDeferred(ctx, msg) {
+    var deferreds = flag(ctx, DEFERRED);
+    if(deferreds && deferreds.length > 0) {
+      deferreds.splice(-1, 0, function() {
+        flag(this, 'message', msg);
+      });
+    }
+  }
+
+  function convertAssertionPropertyToChainMethod(name, getter) {
+    if(getter) {
+      Assertion.addChainableMethod(name,
+        function newMethod(msg) {
+          if(msg) { applyMessageToLastDeferred(this, msg); }
+
+          // Execute any deferred asserts when the method is executed
+          return execDeferred(this);
+        },
+        function newProperty() {
+          // Flag deferred assert here
+          defer(this, getter);
+        });
+    }
+  }
+
+  /**
+   * Checks to see if a getter calls the `this.assert` function
+   *
+   * This is not super-reliable since we don't know the required
+   * preconditions for the getter. A best option would be for chai
+   * to differentiate between asserting properties and ones that only chain.
+   */
+  function callsAssert(getter) {
+    var stub = {
+      assertCalled: false,
+      assert: function() {
+        this.assertCalled = true;
+      }
+    };
+
+    try {
+      getter.call(stub);
+    } catch(e) {
+      // This most likely happened because we don't meet the getter's preconditions
+      // Error on the side of conversion
+      stub.assertCalled = true;
+    }
+
+    return stub.assertCalled;
+  }
+
+  // Get a list of all the assertion object's properties
+  var properties = Object.getOwnPropertyNames(Assertion.prototype)
+    .map(function(name) { var descriptor = Object.getOwnPropertyDescriptor(Assertion.prototype, name); descriptor.name = name; return descriptor; });
+
+  // For all pure function assertions, exec deferreds before the original function body.
+  properties
+    .filter(function(property) { return property.name !== 'assert' && property.name !== 'constructor' && typeof property.value === 'function'; })
+    .forEach(function(property) {
+      Assertion.overwriteMethod(property.name, function(_super) {
+        return function() {
+          var result = execDeferred(this);
+          return _super.apply(result, arguments);
+        };
+      });
+    });
+
+  // For chainable methods, defer the getter, exec deferreds before the assertion function
+  properties
+    .filter(function(property) { return Assertion.prototype.__methods.hasOwnProperty(property.name); })
+    .forEach(function(property) {
+      Assertion.overwriteChainableMethod(property.name, function(_super) {
+        return function() {
+          // Method call of the chainable method
+          var result = execDeferred(this);
+          return _super.apply(result, arguments);
+        };
+      }, function(_super) {
+        return function() {
+          // Getter of chainable method
+          defer(this, _super);
+        };
+      });
+    });
+
+  var getters = properties.filter(function(property) {
+    return property.name !== '_obj' &&
+    typeof property.get === 'function' &&
+    !Assertion.prototype.__methods.hasOwnProperty(property.name);
+  });
+
+  // For all pure properties, defer the getter
+  getters
+    .filter(function(property) { return !callsAssert(property.get); })
+    .forEach(function(property) {
+      Assertion.overwriteProperty(property.name, function(_super) {
+        return function() {
+          defer(this, _super);
+        };
+      });
+    });
+
+  // For all assertion properties, convert it to a chainable
+  getters
+    .filter(function(property) { return callsAssert(property.get); })
+    .forEach(function(property) {
+      convertAssertionPropertyToChainMethod(property.name, property.get);
+    });
+
+
+  Assertion.addMethod('ensure', function() { return execDeferred(this); });
+
+
+  // Hook new property creations
+  var addProperty = util.addProperty;
+  util.addProperty = function(ctx, name, getter) {
+    addProperty.apply(util, arguments);
+
+    // Convert to chained property
+    convertAssertionPropertyToChainMethod(name, getter);
+  };
+
+  // Hook new method assertions
+  var addMethod = util.addMethod;
+  util.addMethod = function(ctx, name) {
+    addMethod.apply(util, arguments);
+    Assertion.overwriteMethod(name, function(_super) {
+      return function() {
+        var result = execDeferred(this);
+        return _super.apply(result, arguments);
+      };
+    });
+  };
+
+  // Hook new chainable methods
+  var addChainableMethod = util.addChainableMethod;
+  util.addChainableMethod = function(ctx, name) {
+    // When overwriting an existing property, don't patch it
+    var patch = true;
+    if(Assertion.prototype.hasOwnProperty(name)) {
+      patch = false;
+    }
+
+    addChainableMethod.apply(util, arguments);
+    if(patch) {
+      Assertion.overwriteChainableMethod(name, function(_super) {
+        return function() {
+          // Method call of the chainable method
+          var result = execDeferred(this);
+          return _super.apply(result, arguments);
+        };
+      }, function(_super) {
+        return function() {
+          // Getter of chainable method
+          defer(this, _super);
+        };
+      });
+    }
+  };
+
+}));
+
+},{}],58:[function(require,module,exports){
+exports.read = function (buffer, offset, isLE, mLen, nBytes) {
+  var e, m
+  var eLen = nBytes * 8 - mLen - 1
+  var eMax = (1 << eLen) - 1
+  var eBias = eMax >> 1
+  var nBits = -7
+  var i = isLE ? (nBytes - 1) : 0
+  var d = isLE ? -1 : 1
+  var s = buffer[offset + i]
+
+  i += d
+
+  e = s & ((1 << (-nBits)) - 1)
+  s >>= (-nBits)
+  nBits += eLen
+  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+
+  m = e & ((1 << (-nBits)) - 1)
+  e >>= (-nBits)
+  nBits += mLen
+  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+
+  if (e === 0) {
+    e = 1 - eBias
+  } else if (e === eMax) {
+    return m ? NaN : ((s ? -1 : 1) * Infinity)
+  } else {
+    m = m + Math.pow(2, mLen)
+    e = e - eBias
+  }
+  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
+}
+
+exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
+  var e, m, c
+  var eLen = nBytes * 8 - mLen - 1
+  var eMax = (1 << eLen) - 1
+  var eBias = eMax >> 1
+  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
+  var i = isLE ? 0 : (nBytes - 1)
+  var d = isLE ? 1 : -1
+  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
+
+  value = Math.abs(value)
+
+  if (isNaN(value) || value === Infinity) {
+    m = isNaN(value) ? 1 : 0
+    e = eMax
+  } else {
+    e = Math.floor(Math.log(value) / Math.LN2)
+    if (value * (c = Math.pow(2, -e)) < 1) {
+      e--
+      c *= 2
+    }
+    if (e + eBias >= 1) {
+      value += rt / c
+    } else {
+      value += rt * Math.pow(2, 1 - eBias)
+    }
+    if (value * c >= 2) {
+      e++
+      c /= 2
+    }
+
+    if (e + eBias >= eMax) {
+      m = 0
+      e = eMax
+    } else if (e + eBias >= 1) {
+      m = (value * c - 1) * Math.pow(2, mLen)
+      e = e + eBias
+    } else {
+      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
+      e = 0
+    }
+  }
+
+  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
+
+  e = (e << mLen) | m
+  eLen += mLen
+  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
+
+  buffer[offset + i - d] |= s * 128
+}
+
+},{}],59:[function(require,module,exports){
+arguments[4][55][0].apply(exports,arguments)
+},{"./lib/type":60,"dup":55}],60:[function(require,module,exports){
 /*!
  * type-detect
  * Copyright(c) 2013 jake luer <jake@alogicalparadox.com>
@@ -8696,249 +9324,5 @@ Library.prototype.test = function(obj, type) {
   }
 };
 
-},{}],51:[function(require,module,exports){
-'use strict';
-
-var Auction = require('../').Auction;
-var seat = require('../').seat;
-var bid = require('../').bid;
-var expect = require('chai').expect;
-
-describe('Auction', function() {
-
-    it('should have a dealer', function() {
-        expect(new Auction(seat.north).dealer).to.equal(seat.north);
-    });
-
-    it('should have the bidding history', function() {
-         expect(new Auction(seat.north).bids).to.be.a('array');
-    });
-
-    it('should be closed with 3 passes after a bid', function() {
-        var auction = new Auction(seat.south);
-        expect(auction.isClosed()).equal(false);
-
-        auction.bid(['-', '-', '-']);
-        expect(auction.isClosed()).equal(false);
-
-        auction.bid('-');
-        expect(auction.isClosed()).equal(true);
-
-        auction = new Auction(seat.south);
-        auction.bid(['1S', '-', '-', '-']);
-        expect(auction.isClosed()).equal(true);
-    });
-
-    describe('Bidding', function() {
-        it('should allow adding a Bid object or a string', function() {
-            var auction = new Auction(seat.south);
-            auction.bid(bid['1S']);
-            auction.bid('2C');
-            expect(auction.bids.length).equal(2);
-            expect(auction.bids[0]).to.equal(bid['1S']);
-            expect(auction.bids[1]).to.equal(bid['2C']);
-        });
-
-        it('should allow adding an array of Bid object or a string', function() {
-            var auction = new Auction(seat.south);
-            auction.bid([bid['1S'], '2C']);
-            expect(auction.bids.length).equal(2);
-            expect(auction.bids[0]).to.equal(bid['1S']);
-            expect(auction.bids[1]).to.equal(bid['2C']);
-        });
-
-        it('should allow mulitple bids', function() {
-            var auction = new Auction(seat.south);
-            auction.bid(bid['1C'], '1S', '-', '-', '-');
-            expect(auction.bids.length).equal(5);
-            expect(auction.bids[0]).to.equal(bid['1C']);
-            expect(auction.bids[1]).to.equal(bid['1S']);
-            expect(auction.isClosed()).to.equal(true);
-        });
-
-        it('should throw when not a bid', function() {
-            var auction = new Auction(seat.south);
-            expect(function() { auction.bid(1); }).to.throw('Invalid bid');
-        });
-
-        it('should allow a pass', function() {
-            var auction = new Auction(seat.south);
-            auction.bid(bid.pass);
-            expect(auction.bids.length).equal(1);
-        });
-
-        it('should throw on insufficient bid', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1S');
-            auction.bid('2C');
-            expect(function() { auction.bid('1D'); }).to.throw('Insufficient bid');
-            expect(auction.bids.length).equal(2);
-        });
-
-        it('should throw when auction is closed', function() {
-            var auction = new Auction(seat.south);
-            auction.bid(['1S', '-', '-', '-']);
-            expect(function() { auction.bid('4S'); }).to.throw('Bidding not allowed, auction is closed');
-        });
-
-    });
-
-    describe('Doubling', function() {
-        it('should allow a rho double', function() {
-            var auction = new Auction(seat.south);
-            auction.bid(['1C', 'X']);
-            expect(auction.bids.length).equal(2);
-        });
-
-        it('should allow a lho double', function() {
-            var auction = new Auction(seat.south);
-            auction.bid(['1C', '-', '-', 'X']);
-            expect(auction.bids.length).equal(4);
-        });
-
-        it('should allow declarors partner to bid after a double', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', 'X', '1S');
-            expect(auction.contract().toString()).equal('1S by N');
-        });
-
-        it('should allow declaror to bid after a double', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', 'X', '-', '-', '1S');
-            expect(auction.contract().toString()).equal('1S by S');
-        });
-
-        it('should throw when doubling partner', function() {
-            var auction = new Auction(seat.south);
-            expect(function() { auction.bid(['1C', '-', 'X']); }).to.throw('Doubling your partner is not allowed');
-        });
-
-        it('should throw when opposition is already at risk', function() {
-            var auction = new Auction(seat.south);
-            expect(function() { auction.bid(['1C', 'X', '-', 'X']); }).to.throw('Opposition is already at risk');
-        });
-
-        it('should throw when opposition has no contract', function() {
-            var auction = new Auction(seat.south);
-            expect(function() { auction.bid(['X']); }).to.throw('Cannot double when opposition has no contract');
-
-            auction = new Auction(seat.south);
-            expect(function() { auction.bid(['-', 'X']); }).to.throw('Cannot double when opposition has no contract');
-
-            auction = new Auction(seat.south);
-            expect(function() { auction.bid(['-', '-', '-', 'X']); }).to.throw('Cannot double when opposition has no contract');
-        });
-
-    });
-
-    describe('Redoubling', function() {
-        it('should allow partner to redouble a doubled contract', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', 'X', 'XX', '-', '-', '-');
-            expect(auction.contract().toString()).equal('1CXX by S');
-        });
-
-        it('should allow declaror to redouble a doubled contract', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', 'X', '-', '-', 'XX');
-            expect(auction.contract().toString()).equal('1CXX by S');
-
-            auction = new Auction(seat.south);
-            auction.bid('1C', '-', '-', 'X', 'XX');
-            expect(auction.contract().toString()).equal('1CXX by S');
-        });
-
-        it('should throw on all other cases', function() {
-            var auction = new Auction(seat.south);
-            expect(function() { auction.bid(['XX']); }).to.throw('Invalid bid');
-
-            auction = new Auction(seat.south);
-            expect(function() { auction.bid(['1C', 'XX']); }).to.throw('Invalid bid');
-
-            auction = new Auction(seat.south);
-            expect(function() { auction.bid(['1C', '-', 'XX']); }).to.throw('Invalid bid');
-
-            auction = new Auction(seat.south);
-            expect(function() { auction.bid(['1C', '-', '-', 'XX']); }).to.throw('Invalid bid');
-
-            auction = new Auction(seat.south);
-            expect(function() { auction.bid(['1C', 'X', '-', 'XX']); }).to.throw('Invalid bid');
-
-            auction = new Auction(seat.south);
-            expect(function() { auction.bid(['1C', 'X', '1S', 'XX']); }).to.throw('Invalid bid');
-
-            auction = new Auction(seat.south);
-            expect(function() { auction.bid(['1C', 'X', '1S', '-', 'XX']); }).to.throw('Invalid bid');
-        });
-
-    });
-
-    describe ('Next seat to bid', function() {
-        it('should be dealer with no bidding', function() {
-            var auction = new Auction(seat.south);
-            expect(auction.nextSeatToBid()).to.equal(seat.south);
-        });
-
-        it('should be null when auction is closed', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', '1S', '-', '-', '-');
-            expect(auction.nextSeatToBid()).to.equal(null);
-        });
-
-        it('should follow the bidding from the dealer', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', '1S', '-', '-', 'X');
-            expect(auction.nextSeatToBid()).to.equal(seat.west);
-        });
-    });
-
-    describe('Contract', function() {
-        it('should have level and denomination equal to the last bid', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', '1S', '-', '-', '-');
-            var contract = auction.contract();
-            expect(contract.level).to.equal(1);
-            expect(contract.denomination).to.equal('S');
-        });
-
-        it('should have risk "X" when last bid is doubled', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C');
-            expect(auction.contract().risk).equal('');
-
-            auction.bid('X');
-            expect(auction.contract().risk).equal('X');
-
-            auction.bid('-');
-            expect(auction.contract().risk).equal('X');
-
-            auction.bid('1S');
-            expect(auction.contract().risk).equal('');
-        });
-
-        it('should have risk "XX" when last bid is redoubled', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', 'X');
-            expect(auction.contract().risk).equal('X');
-
-            auction.bid('XX');
-            expect(auction.contract().risk).equal('XX');
-
-            auction.bid('-');
-            expect(auction.contract().risk).equal('XX');
-
-            auction.bid('1S');
-            expect(auction.contract().risk).equal('');
-        });
-
-        it('should have declaror equal to first partner to bid the denomination', function() {
-            var auction = new Auction(seat.south);
-            auction.bid('1C', '2C', '-', '5C');
-            expect(auction.contract().declaror).equal(seat.west);
-        });
-
-    });
-
+},{}]},{},[1,2,3,4,5,6,7,8,9])(9)
 });
-
-},{"../":5,"chai":16}]},{},[51]);
