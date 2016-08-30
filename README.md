@@ -10,7 +10,7 @@ the help of [semantic-release](https://github.com/semantic-release/semantic-rele
 
 ## Getting started
 
-bridge.JS is available for both node.js and the browser 
+**bridge.js** is available for both node.js and the browser.  Most modern browsers are supported.  If you want to know if your browser is compatible, run the [online test suite](https://rawgit.com/richardschneider/bridge/master/test/index.html).
 
 ### Node
 
