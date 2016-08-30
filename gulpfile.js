@@ -8,6 +8,8 @@ var browserify = require('browserify');
 var uglify = require('gulp-uglify');
 var coveralls = require('gulp-coveralls');
 var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var concat = require('gulp-concat');
 
 var DEBUG = process.env.NODE_ENV === 'debug',
     CI = process.env.CI === 'true';
@@ -42,19 +44,27 @@ gulp.task('istanbul', function () {
     }));
 });
 
-gulp.task('browserify', function() {
+gulp.task('dist', function() {
     return browserify('./index.js', { standalone: 'bridge'})
         .bundle()
         .pipe(source('bridge.js'))
-        .pipe(gulp.dest('./dist/'));
-});
-
-gulp.task('compress', ['browserify'], function() {
-    return gulp.src('./dist/bridge.js')
+        .pipe(gulp.dest('./dist/'))
+        .pipe(buffer())
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./dist/'));
 });
+
+//gulp.task('browserify-test', function() {
+//    return gulp.src(paths.test, {read: false})
+//        .pipe(concat('spec.js'))
+//        .pipe(gulp.dest('./dist/'))
+//        .pipe(browserify('./dist/spec.js', {ignore: 'chai'}).bundle())
+//        .pipe(source('bridge.spec.js'))
+//        .pipe(uglify())
+//        .pipe(gulp.dest('./dist/'))
+//    ;
+//});
 
 gulp.task('coverage', function () {
   return gulp.src('./coverage/lcov.info')
