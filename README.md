@@ -12,11 +12,11 @@ the help of [semantic-release](https://github.com/semantic-release/semantic-rele
 
 **bridge.js** is available for both node.js and the browser.  Most modern browsers are supported.  If you want to know if your browser is compatible, run the [online test suite](https://rawgit.com/richardschneider/bridge/master/test/index.html).
 
-### Node
-
 Install with [npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm)
 
     > npm install bridge.js --save
+
+### Node
 
 Include the package
 
@@ -31,9 +31,13 @@ Use it to deal a random game
 
 ### Browser
 
-Include the package
+Include the package from your project
 
-    <script src="bridge.min.js" type="text/javascript"></script>
+    <script src="./node_modules/bridge.js/dist/bridge.min.js" type="text/javascript"></script>
+
+or from the [unpkg CDN](https://unpkg.com)
+
+    <script src="https://unpkg.com/bridge.js/dist/bridge.min.js"></script>
 
 This will provide `bridge` as a global object, or `define` it if you are using [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition).
 
@@ -43,17 +47,3 @@ This will provide `bridge` as a global object, or `define` it if you are using [
           .deal(bridge.seat.west);
       alert("North's hand  " + hands.north);
     </script>
-
-
-### Bower
-
-Install it for your project
-
-    bower install bridge.js --save
-    
-Include it your HTML page
-
-    <script src="./bower-modules/bridge.js/dist/bridge.min.js"></script>
-    
-Use it
-
