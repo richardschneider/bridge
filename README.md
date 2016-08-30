@@ -4,6 +4,8 @@
 
 A javascript model for contract (duplicate) bridge.
 
+The release history and change notes are on [github](https://github.com/richardschneider/bridge/releases).
+
 ## Getting started
 
 Install it for your project

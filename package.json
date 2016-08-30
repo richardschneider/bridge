@@ -1,7 +1,6 @@
 {
   "name": "bridge.js",
   "description": "Javascript model for contract (duplicate) bridge",
-  "version": "0.2.0",
   "homepage": "https://github.com/richardschneider/bridge",
   "bugs": "https://github.com/richardschneider/bridge/issues",
   "license": "MIT",
@@ -53,6 +52,7 @@
     }
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
