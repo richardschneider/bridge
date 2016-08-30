@@ -3,11 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>Bridge tests in your browser</title>
-  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+  <style>
+    body {
+       font: 18px/1.5 "Helvetica Neue", Helvetica, sans-serif;
+       padding-left: 20px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.0.2/mocha.css" />
 </head>
 <body>
-  <div id="mocha"></div>
-  <script src="../node_modules/mocha/mocha.js"></script>
+   <p>
+        Click a <em>description title</em> to run its specs only.<br/>
+        Click a <em>spec title</em> to see its implementation.
+    </p>
+    <div id="mocha"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.0.2/mocha.js"></script>
   <script src="../dist/bridge.js"></script>
   <script>mocha.setup('bdd')</script>
   <script src="../dist/bridge.spec.js"></script>
