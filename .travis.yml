@@ -14,7 +14,7 @@ before_script:
   - npm prune
 
 script:
-  - gulp test
+  - gulp ci
 
 after_success:
   - gulp coverage

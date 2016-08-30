@@ -9,7 +9,7 @@ var uglify = require('gulp-uglify');
 var coveralls = require('gulp-coveralls');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
-var concat = require('gulp-concat');
+var glob = require('glob');
 
 var DEBUG = process.env.NODE_ENV === 'debug',
     CI = process.env.CI === 'true';
@@ -44,7 +44,7 @@ gulp.task('istanbul', function () {
     }));
 });
 
-gulp.task('dist', function() {
+gulp.task('dist-lib', function() {
     return browserify('./index.js', { standalone: 'bridge'})
         .bundle()
         .pipe(source('bridge.js'))
@@ -55,16 +55,18 @@ gulp.task('dist', function() {
         .pipe(gulp.dest('./dist/'));
 });
 
-//gulp.task('browserify-test', function() {
-//    return gulp.src(paths.test, {read: false})
-//        .pipe(concat('spec.js'))
-//        .pipe(gulp.dest('./dist/'))
-//        .pipe(browserify('./dist/spec.js', {ignore: 'chai'}).bundle())
-//        .pipe(source('bridge.spec.js'))
-//        .pipe(uglify())
-//        .pipe(gulp.dest('./dist/'))
-//    ;
-//});
+gulp.task('dist-test', function (cb) {
+  glob('./test/**/*.js', {}, function (err, files) {
+    var b = browserify({standalone: 'spec'});
+    files.forEach(function (file) {
+      b.add(file);
+    });
+    b.bundle()
+      .pipe(source('bridge.spec.js'))
+      .pipe(gulp.dest('./dist'));
+    cb();
+  });
+});
 
 gulp.task('coverage', function () {
   return gulp.src('./coverage/lcov.info')
@@ -72,4 +74,6 @@ gulp.task('coverage', function () {
 });
 
 gulp.task('test',    ['lint', 'istanbul']);
+gulp.task('dist',    ['dist-lib', 'dist-test']);
+gulp.task('ci',      ['test', 'dist']);
 gulp.task('default', ['test']);
