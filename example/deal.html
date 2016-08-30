@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Deal the hands</title>
+  <script src="../dist/bridge.min.js"></script>
+</head>
+
+<body>
+    <p>Randomly dealt</p>
+    <ul>
+        <li id='north'></li>
+        <li id='east'></li>
+        <li id='south'></li>
+        <li id='west'></li>
+    </ul>
+</body>
+
+<script>
+    var hands = new bridge.Deck()
+        .shuffle()
+        .deal(bridge.seat.west);
+
+    document.getElementById('north').innerText = 'North - ' + hands.north.toString();
+    document.getElementById('east').innerText = 'East - ' + hands.east.toString();
+    document.getElementById('south').innerText = 'South - ' + hands.south.toString();
+    document.getElementById('west').innerText = 'West - ' + hands.west.toString();
+</script>
+
+</html>
