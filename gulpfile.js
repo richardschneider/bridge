@@ -59,12 +59,16 @@ gulp.task('dist-test', function (cb) {
   glob('./test/**/*.js', {}, function (err, files) {
     var b = browserify({standalone: 'spec'});
     files.forEach(function (file) {
-      b.add(file);
+        b.add(file);
     });
     b.bundle()
-      .pipe(source('bridge.spec.js'))
-      .pipe(gulp.dest('./dist'));
-    cb();
+        .pipe(source('bridge.spec.js'))
+        .pipe(gulp.dest('./dist'))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('./dist/'));
+   cb();
   });
 });
 

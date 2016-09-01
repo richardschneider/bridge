@@ -57,11 +57,6 @@ describe('Auction', function() {
             expect(auction.isClosed()).to.equal(true);
         });
 
-        it('should throw when not a bid', function() {
-            var auction = new Auction(seat.south);
-            expect(function() { auction.bid(1); }).to.throw('Invalid bid');
-        });
-
         it('should allow a pass', function() {
             var auction = new Auction(seat.south);
             auction.bid(bid.pass);
