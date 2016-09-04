@@ -65,6 +65,10 @@ describe('Event', function() {
                 expect(event.boards[0]).to.have.property('dealer', seat.north);
                 expect(event.boards[0]).to.have.property('vulnerability', 'Nil');
                 expect(event.games[0].auction).to.have.property('dealer', seat.north);
+                expect(event.games[0].players).to.have.property(seat.north, 'Westra');
+                expect(event.games[0].players).to.have.property(seat.south, 'Leufkens');
+                expect(event.games[0].players).to.have.property(seat.east, 'Kalish');
+                expect(event.games[0].players).to.have.property(seat.west, 'Podgor');
                 // TODO: Deal
                 // TODO: Scoring
                 expect(event.games[0].contract.toString()).to.equal('5HX by S');
