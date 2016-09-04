@@ -19,7 +19,9 @@
     "contract",
     "duplicate"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "pbn": "^1.0.0"
+  },
   "devDependencies": {
     "browserify": "^9.0.1",
     "chai": "^3.5.0",
