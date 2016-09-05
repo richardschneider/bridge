@@ -41,6 +41,7 @@ describe('Board', function() {
         expect(board.isVulnerable(seat.east)).to.equal(false);
         expect(board.isVulnerable(seat.west)).to.equal(false);
     });
+
     it('should have vulnerability EW', function() {
         var board = new Board();
         board.dealer = seat.south;
@@ -49,5 +50,16 @@ describe('Board', function() {
         expect(board.isVulnerable(seat.south)).to.equal(false);
         expect(board.isVulnerable(seat.east)).to.equal(true);
         expect(board.isVulnerable(seat.west)).to.equal(true);
+    });
+
+    it('should have hand for each seat', function() {
+        var board = new Board();
+
+        expect(board).has.property('hands')
+            .and.be.instanceof(Object);
+        expect(board.hands).has.property(seat.north).and.instanceOf(Array);
+        expect(board.hands).has.property(seat.south).and.instanceOf(Array);
+        expect(board.hands).has.property(seat.east).and.instanceOf(Array);
+        expect(board.hands).has.property(seat.west).and.instanceOf(Array);
     });
 });
