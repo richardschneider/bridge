@@ -80,8 +80,8 @@ gulp.task('dist-test', function (cb) {
         .pipe(buffer())
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./dist/'));
-   cb();
+        .pipe(gulp.dest('./dist/'))
+        .on('end', function() { cb(); });
   });
 });
 
