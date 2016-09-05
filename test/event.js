@@ -37,7 +37,10 @@ describe('Event', function() {
             .that.is.instanceof(Array);
     });
 
-    describe('import PBN', function() {
+    // Only available on platforms that supports streaming.
+    if (Object.getOwnPropertyNames(fs).length !== 0) {
+        describe('import PBN', function() {
+
         it('should return a new Event', function(done) {
             var stream = fs.createReadStream('./test/sample/Schiphol.pbn');
             Event.importPbn(stream, function(err, event) {
@@ -94,5 +97,6 @@ describe('Event', function() {
         });
 
     });
+    }
 
 });
