@@ -10,6 +10,7 @@ var coveralls = require('gulp-coveralls');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var glob = require('glob');
+var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
 var DEBUG = process.env.NODE_ENV === 'debug',
     CI = process.env.CI === 'true';
@@ -44,8 +45,16 @@ gulp.task('istanbul', function () {
     }));
 });
 
+gulp.task('test-browser', ['dist'], function () {
+    return gulp.src('test/runner.html')
+        .pipe(mochaPhantomJS({reporter: 'min'}));
+});
+
 gulp.task('dist-lib', function() {
     return browserify('./index.js', { standalone: 'bridge'})
+        .ignore('pbn')
+        .ignore('fs')
+        .ignore('stream')
         .bundle()
         .pipe(source('bridge.js'))
         .pipe(gulp.dest('./dist/'))
@@ -61,7 +70,11 @@ gulp.task('dist-test', function (cb) {
     files.forEach(function (file) {
         b.add(file);
     });
-    b.bundle()
+    b
+        .ignore('pbn')
+        .ignore('fs')
+        .ignore('stream')
+        .bundle()
         .pipe(source('bridge.spec.js'))
         .pipe(gulp.dest('./dist'))
         .pipe(buffer())
@@ -79,5 +92,5 @@ gulp.task('coverage', function () {
 
 gulp.task('test',    ['lint', 'istanbul']);
 gulp.task('dist',    ['dist-lib', 'dist-test']);
-gulp.task('ci',      ['test', 'dist']);
+gulp.task('ci',      ['test', 'test-browser', 'dist']);
 gulp.task('default', ['test']);
