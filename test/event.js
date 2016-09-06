@@ -115,6 +115,19 @@ describe('Event', function() {
             });
         });
 
+        it('should process Auction section', function(done) {
+            var stream = fs.createReadStream('./test/sample/Schiphol.pbn');
+            Event.importPbn(stream, function(err, event) {
+                expect(event).to.have.property('games').of.length(1);
+                var auction = event.games[0].auction;
+                expect(auction).to.have.property('dealer', seat.north);
+                expect(auction.isClosed()).to.equal(true);
+                expect(auction.contract().toString()).to.equal('5HX by S');
+                done();
+            });
+        });
+
+
     });
     }
 
