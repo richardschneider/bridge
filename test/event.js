@@ -103,6 +103,18 @@ describe('Event', function() {
             });
         });
 
+        it('should ignore tags with value "?"', function(done) {
+            var stream = fs.createReadStream('./test/sample/kgb.pbn');
+            Event.importPbn(stream, function(err, event) {
+                expect(event).to.have.property('name', '');
+                expect(event).to.have.property('site', '');
+                expect(event).to.have.property('date', '');
+                expect(event).to.have.property('boards').of.length(99);
+                expect(event).to.have.property('games').of.length(0);
+                done();
+            });
+        });
+
     });
     }
 
