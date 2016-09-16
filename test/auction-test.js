@@ -77,6 +77,10 @@ describe('Auction', function() {
             expect(function() { auction.bid('4S'); }).to.throw('Bidding not allowed, auction is closed');
         });
 
+        it('should return the Bid object', function() {
+            var auction = new Auction(seat.south);
+            expect(auction.bid('1S')).to.equal(bid['1S']);
+        });
     });
 
     describe('Doubling', function() {
