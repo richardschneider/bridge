@@ -1,6 +1,7 @@
 'use strict';
 
 var Board = require('../').Board;
+var Hand = require('../').Hand;
 var seat = require('../').seat;
 var expect = require('chai').expect;
 
@@ -57,9 +58,9 @@ describe('Board', function() {
 
         expect(board).has.property('hands')
             .and.be.instanceof(Object);
-        expect(board.hands).has.property(seat.north).and.instanceOf(Array);
-        expect(board.hands).has.property(seat.south).and.instanceOf(Array);
-        expect(board.hands).has.property(seat.east).and.instanceOf(Array);
-        expect(board.hands).has.property(seat.west).and.instanceOf(Array);
+        expect(board.hands).has.property(seat.north).and.instanceOf(Hand);
+        expect(board.hands).has.property(seat.south).and.instanceOf(Hand);
+        expect(board.hands).has.property(seat.east).and.instanceOf(Hand);
+        expect(board.hands).has.property(seat.west).and.instanceOf(Hand);
     });
 });
