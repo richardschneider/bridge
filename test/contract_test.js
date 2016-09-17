@@ -31,6 +31,11 @@ describe('Contract', function() {
         expect(contract.dummy()).to.equal(bridge.seat.north);
     });
 
+    it('should have a undefined dummy', function() {
+        var contract = new bridge.Contract();
+        expect(contract.dummy()).to.equal(undefined);
+    });
+
     it('should have a leader', function() {
         var contract = new bridge.Contract();
         contract.level = 3;
