@@ -18,11 +18,11 @@ describe('Card', function() {
 
     it('rank can be 10 or T', function() {
         var card = bridge.card['10S'];
-        expect(card.rank).to.equal('10');
+        expect(card.rank).to.equal('T');
         expect(card.suit).to.equal('S');
 
         card = bridge.card['TS'];
-        expect(card.rank).to.equal('10');
+        expect(card.rank).to.equal('T');
         expect(card.suit).to.equal('S');
     });
 

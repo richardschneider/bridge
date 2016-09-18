@@ -72,7 +72,7 @@ describe('Event', function() {
                 expect(event.boards[0].hands).to.have.property(seat.east);
                 expect(event.boards[0].hands).to.have.property(seat.west);
                 expect(event.boards[0].hands[seat.north].cards.toString()).to.equal('6H,3H,AD,KD,QD,9D,8D,7D,AC,9C,7C,3C,2C');
-                expect(event.boards[0].hands[seat.west].cards.toString()).to.equal('KS,QS,10S,2S,AH,10H,JD,6D,5D,4D,2D,8C,5C');
+                expect(event.boards[0].hands[seat.west].cards.toString()).to.equal('KS,QS,TS,2S,AH,TH,JD,6D,5D,4D,2D,8C,5C');
 
                 expect(event).to.have.property('games').of.length(1);
                 expect(event.games[0].auction).to.have.property('dealer', seat.north);
