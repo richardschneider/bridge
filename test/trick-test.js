@@ -15,6 +15,14 @@ describe('Trick', function() {
         expect(trick.leader()).to.equal(seat.west);
     });
 
+    it('leader suit is the suit 1st card played', function() {
+        var trick = new bridge.Trick();
+        expect(trick.leaderSuit()).to.be.undefined();
+
+        trick.play.push({ seat: seat.north, card: bridge.card.S2 } );
+        expect(trick.leaderSuit()).to.equal('S');
+    });
+
     it('winner is declared after 4 cards are played', function() {
         var contract = new bridge.Contract();
         contract.denomination = 'NT';
@@ -33,10 +41,10 @@ describe('Trick', function() {
         var trick = new bridge.Trick();
         expect(trick.winner()).to.be.undefined();
 
-        trick.play.push({ seat: seat.north, card: bridge.card.S3 } );
-        trick.play.push({ seat: seat.east, card: bridge.card.SK } );
-        trick.play.push({ seat: seat.south, card: bridge.card.HA } );
-        trick.play.push({ seat: seat.west, card: bridge.card.S2 } );
+        trick.play.push({ seat: seat.north, card: bridge.card.H3 } );
+        trick.play.push({ seat: seat.east, card: bridge.card.HK } );
+        trick.play.push({ seat: seat.south, card: bridge.card.SA } );
+        trick.play.push({ seat: seat.west, card: bridge.card.H2 } );
         expect(trick.winner(contract)).to.equal(seat.east);
     });
 
