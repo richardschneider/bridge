@@ -20,7 +20,7 @@
     "duplicate"
   ],
   "dependencies": {
-    "pbn": "^1.2.0"
+    "pbn": "^1.2.1"
   },
   "devDependencies": {
     "browserify": "^9.0.8",
