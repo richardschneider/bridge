@@ -75,7 +75,8 @@ describe('Card', function() {
     });
 
     it('has an SVG image', function() {
-        expect(bridge.card.AS.imageUrl()).to.contain('.svg');
+        bridge.card.imagePath('foobar/');
+        expect(bridge.card.AS.imageUrl()).to.contain('foobar/AS.svg');
     });
 
 });
