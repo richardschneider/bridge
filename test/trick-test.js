@@ -78,6 +78,6 @@ describe('Trick', function() {
         expect(trick.card(seat.east)).to.be.undefined();
         expect(trick.card(seat.south)).to.be.undefined();
         expect(trick.card(seat.west)).to.equal(bridge.card.SA);
-    })
+    });
 
 });
