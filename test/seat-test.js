@@ -54,4 +54,12 @@ describe('Seat', function() {
        expect(seat.west.symbol).to.equal('W');
     });
 
+    it('should measure the clockwise distance between seats', function() {
+        var a = seat.west;
+        expect(seat.distance(a, seat.west)).to.equal(0);
+        expect(seat.distance(a, seat.north)).to.equal(1);
+        expect(seat.distance(a, seat.east)).to.equal(2);
+        expect(seat.distance(a, seat.south)).to.equal(3);
+    });
+
 });
