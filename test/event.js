@@ -127,6 +127,17 @@ describe('Event', function() {
             });
         });
 
+        it('should process Play section', function(done) {
+            var stream = fs.createReadStream('./test/sample/Schiphol.pbn');
+            Event.importPbn(stream, function(err, event) {
+                expect(event).to.have.property('games').of.length(1);
+                expect(event.games[0]).to.have.property('tricks').of.length(7);
+                var tricks = event.games[0].tricks;
+                expect(tricks[0].leader().symbol).to.equal('W');
+                expect(tricks[1].leader().symbol).to.equal('N');
+                done();
+            });
+        });
 
     });
     }
