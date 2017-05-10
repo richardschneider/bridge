@@ -146,4 +146,16 @@ describe('Hand', function() {
       var pbn = hand.toPBN();
       expect(pbn).to.equal('-');
     });
+
+    it('should parse a PBN hand', function() {
+        var hand = bridge.Hand.parsePBN('AKQJT.9876.543.2');
+        expect(hand.cards.length).to.equal(13);
+        expect(hand.toPBN()).to.equal('AKQJT.9876.543.2');
+    });
+
+    it('should parse an empty PBN hand', function() {
+        var hand = bridge.Hand.parsePBN('-');
+        expect(hand.cards.length).to.equal(0);
+    });
+
 });
