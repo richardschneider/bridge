@@ -1,7 +1,7 @@
 # bridge
 [![Travis build status](https://travis-ci.org/richardschneider/bridge.svg)](https://travis-ci.org/richardschneider/bridge)
 [![Coverage Status](https://coveralls.io/repos/github/richardschneider/bridge/badge.svg?branch=master)](https://coveralls.io/github/richardschneider/bridge?branch=master)
-[![npm version](https://badge.fury.io/js/bridge.js.svg)](https://badge.fury.io/js/bridge.js) 
+[![npm version](https://badge.fury.io/js/bridge.js.svg)](https://www.npmjs.com/package/bridge.js) 
 
 A javascript model for contract (duplicate) bridge.
 
