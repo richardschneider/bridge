@@ -140,4 +140,10 @@ describe('Hand', function() {
       var pbn = hand.toPBN();
       expect(pbn).to.equal('.AKQJT98765432..');
     });
+
+    it('produce PBN with no cards', function() {
+      var hand = new bridge.Hand();
+      var pbn = hand.toPBN();
+      expect(pbn).to.equal('-');
+    });
 });
