@@ -2,6 +2,7 @@
 
 var Session = require('../').Session;
 var Competition = require('../').Competition;
+var Hand = require('../').Hand;
 var seat = require('../').seat;
 var expect = require('chai').expect;
 var fs = require('fs');
@@ -143,4 +144,19 @@ describe('Session', function() {
     });
     }
 
+    it('should generate boards', function() {
+        var session = Session.generateBoards(16);
+        expect(session)
+            .to.have.property('boards')
+            .that.has.length(16);
+        
+        for (var i = 0; i < 16; ++i) {
+            var board = session.boards[i];
+            expect(board.hands).has.property(seat.north).and.instanceOf(Hand).and.has.property('cards').and.has.lengthOf(13);
+            expect(board.hands).has.property(seat.south).and.instanceOf(Hand).and.has.property('cards').and.has.lengthOf(13);
+            expect(board.hands).has.property(seat.east).and.instanceOf(Hand).and.has.property('cards').and.has.lengthOf(13);
+            expect(board.hands).has.property(seat.west).and.instanceOf(Hand).and.has.property('cards').and.has.lengthOf(13);
+        }
+    });
+    
 });
