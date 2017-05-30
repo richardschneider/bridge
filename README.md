@@ -1,7 +1,7 @@
 # bridge
 [![Travis build status](https://travis-ci.org/richardschneider/bridge.svg)](https://travis-ci.org/richardschneider/bridge)
 [![Coverage Status](https://coveralls.io/repos/github/richardschneider/bridge/badge.svg?branch=master)](https://coveralls.io/github/richardschneider/bridge?branch=master)
-[![npm version](https://badge.fury.io/js/bridge.js.svg)](https://badge.fury.io/js/bridge.js) 
+[![npm version](https://badge.fury.io/js/bridge.js.svg)](https://www.npmjs.com/package/bridge.js) 
 
 A javascript model for contract (duplicate) bridge.
 
@@ -10,7 +10,7 @@ the help of [semantic-release](https://github.com/semantic-release/semantic-rele
 
 ## Getting started
 
-**bridge.js** is available for both node.js and the browser.  Most modern browsers are supported.  If you want to know if your browser is compatible, run the [online test suite](https://unpkg.com/bridge.js/test/index.html).
+**bridge.js** is available for both node.js and the browser.  Most modern browsers are supported.  If you want to know if your browser is compatible, run the [online test suite](https://rawgit.com/richardschneider/bridge/master/test/index.html).
 
 Install with [npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm)
 

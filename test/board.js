@@ -63,4 +63,39 @@ describe('Board', function() {
         expect(board.hands).has.property(seat.east).and.instanceOf(Hand);
         expect(board.hands).has.property(seat.west).and.instanceOf(Hand);
     });
+
+    it('should calculate dealer from the board number', function() {
+        var board = new Board();
+
+        expect(board.setNumber(1).dealer).equal(seat.north);
+        expect(board.setNumber(2).dealer).equal(seat.east);
+        expect(board.setNumber(3).dealer).equal(seat.south);
+        expect(board.setNumber(4).dealer).equal(seat.west);
+        expect(board.setNumber(5).dealer).equal(seat.north);
+        expect(board.setNumber(6).dealer).equal(seat.east);
+        expect(board.setNumber(7).dealer).equal(seat.south);
+        expect(board.setNumber(8).dealer).equal(seat.west);
+    });
+
+    it('should calculate vulnerability from the board number', function() {
+        var board = new Board();
+
+        expect(board.setNumber(1).vulnerability).equal('Nil');
+        expect(board.setNumber(2).vulnerability).equal('NS');
+        expect(board.setNumber(3).vulnerability).equal('EW');
+        expect(board.setNumber(4).vulnerability).equal('All');
+        expect(board.setNumber(5).vulnerability).equal('NS');
+        expect(board.setNumber(6).vulnerability).equal('EW');
+        expect(board.setNumber(7).vulnerability).equal('All');
+        expect(board.setNumber(8).vulnerability).equal('Nil');
+        expect(board.setNumber(9).vulnerability).equal('EW');
+        expect(board.setNumber(10).vulnerability).equal('All');
+        expect(board.setNumber(11).vulnerability).equal('Nil');
+        expect(board.setNumber(12).vulnerability).equal('NS');
+        expect(board.setNumber(13).vulnerability).equal('All');
+        expect(board.setNumber(14).vulnerability).equal('Nil');
+        expect(board.setNumber(15).vulnerability).equal('NS');
+        expect(board.setNumber(16).vulnerability).equal('EW');
+        expect(board.setNumber(17).vulnerability).equal('Nil');
+    });
 });
