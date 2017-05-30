@@ -11,6 +11,7 @@ cache:
     - node_modules
 
 before_script:
+  - npm update
   - npm prune
 
 script:
