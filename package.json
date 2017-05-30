@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "browserify": "^14.4.0",
-    "chai": "^4.0.0",
+    "chai": "^3.5.0",
     "dirty-chai": "^1.2.2",
     "glob": "^7.0.6",
     "gulp": "^3.9.1",
