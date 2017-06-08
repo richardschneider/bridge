@@ -1,2 +1,2 @@
-module.exports = require('chai')
-    .use(require('dirty-chai'));
+module.exports = require('chai');
+    //.use(require('dirty-chai'));
