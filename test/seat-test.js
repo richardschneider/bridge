@@ -6,10 +6,10 @@ var expect = require('chai').expect;
 describe('Seat', function() {
 
     it('has 4 seats N, S, E and W', function() {
-        expect(seat.north).to.exist();
-        expect(seat.south).to.exist();
-        expect(seat.east).to.exist();
-        expect(seat.west).to.exist();
+        expect(seat.north).to.exist;
+        expect(seat.south).to.exist;
+        expect(seat.east).to.exist;
+        expect(seat.west).to.exist;
 
         expect(seat.north.symbol).to.equal('N');
         expect(seat.south.symbol).to.equal('S');
