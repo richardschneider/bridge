@@ -20,4 +20,12 @@ describe('PBN', function() {
         expect(s).to.equal("E:KQ9752.K74.8742. T.A93.QT93.KJ873 J6.T852.AJ65.QT9 A843.QJ6.K.A6542");
     });
 
+    it('should import a deal as hands', function() {
+        var deal = pbn.importDeal('E:KQ9752.K74.8742. T.A93.QT93.KJ873 J6.T852.AJ65.QT9 A843.QJ6.K.A6542');
+
+        expect(deal[seat.north].toPBN()).to.equal('A843.QJ6.K.A6542');
+        expect(deal[seat.south].toPBN()).to.equal('T.A93.QT93.KJ873');
+        expect(deal[seat.east].toPBN()).to.equal('KQ9752.K74.8742.');
+        expect(deal[seat.west].toPBN()).to.equal('J6.T852.AJ65.QT9');
+    });
 });
