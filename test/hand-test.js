@@ -158,4 +158,9 @@ describe('Hand', function() {
         expect(hand.cards.length).to.equal(0);
     });
 
+    it('should calculate high card points', function() {
+        var hand = bridge.Hand.parsePBN('A432.K432.QJ3.JT');
+        expect(hand.hcp()).equal(11);
+    });
+
 });
