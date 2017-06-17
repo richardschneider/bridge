@@ -76,6 +76,8 @@ describe('Session', function() {
                 expect(session.boards[0].hands[seat.north].cards.toString()).to.equal('6H,3H,AD,KD,QD,9D,8D,7D,AC,9C,7C,3C,2C');
                 expect(session.boards[0].hands[seat.west].cards.toString()).to.equal('KS,QS,TS,2S,AH,TH,JD,6D,5D,4D,2D,8C,5C');
 
+                expect(session.boards[0].deal()).to.equal('N:.63.AKQ987.A9732 A8654.KQ5.T.QJT6 J973.J98742.3.K4 KQT2.AT.J6542.85');
+
                 expect(session).to.have.property('games').of.length(1);
                 expect(session.games[0].auction).to.have.property('dealer', seat.north);
                 expect(session.games[0].players).to.have.property(seat.north, 'Westra');
@@ -141,11 +143,12 @@ describe('Session', function() {
             });
         });
 
-        it('should process all sections', function(done) {
+        it('should process multiple board definitions', function(done) {
             var stream = fs.createReadStream('./test/sample/AlsReg6-Final.pbn');
             Session.importPbn(stream, function(err, session) {
                 expect(err).to.equal(null);
                 expect(session).to.be.instanceof(Session);
+                expect(session.boards[0].deal()).to.equal('N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983');
                 done();
             });
         });
