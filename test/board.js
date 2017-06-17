@@ -98,4 +98,25 @@ describe('Board', function() {
         expect(board.setNumber(16).vulnerability).equal('EW');
         expect(board.setNumber(17).vulnerability).equal('Nil');
     });
+
+    it('should have a deal as PBN', function() {
+        var board = new Board();
+        board.setNumber(1);
+        board.hands[seat.north] = Hand.parsePBN('A843.QJ6.K.A6542');
+        board.hands[seat.east] = Hand.parsePBN('KQ9752.K74.8742.');
+        board.hands[seat.south] = Hand.parsePBN('T.A93.QT93.KJ873');
+        board.hands[seat.west] = Hand.parsePBN('J6.T852.AJ65.QT9');
+        expect(board.deal()).to.equal('N:A843.QJ6.K.A6542 KQ9752.K74.8742. T.A93.QT93.KJ873 J6.T852.AJ65.QT9');
+    });
+
+    it('should return a deal as PBN', function() {
+        var board = new Board();
+        board.setNumber(1);
+        board.deal('N:A843.QJ6.K.A6542 KQ9752.K74.8742. T.A93.QT93.KJ873 J6.T852.AJ65.QT9');
+        expect(board.hands[seat.north].toPBN()).to.equal('A843.QJ6.K.A6542');
+        expect(board.hands[seat.east].toPBN()).to.equal('KQ9752.K74.8742.');
+        expect(board.hands[seat.south].toPBN()).to.equal('T.A93.QT93.KJ873');
+        expect(board.hands[seat.west].toPBN()).to.equal('J6.T852.AJ65.QT9');
+        expect(board.deal()).to.equal('N:A843.QJ6.K.A6542 KQ9752.K74.8742. T.A93.QT93.KJ873 J6.T852.AJ65.QT9');
+    });
 });
