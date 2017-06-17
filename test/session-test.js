@@ -141,7 +141,16 @@ describe('Session', function() {
             });
         });
 
-    });
+        it('should process all sections', function(done) {
+            var stream = fs.createReadStream('./test/sample/AlsReg6-Final.pbn');
+            Session.importPbn(stream, function(err, session) {
+                expect(err).to.equal(null);
+                expect(session).to.be.instanceof(Session);
+                done();
+            });
+        });
+
+        });
     }
 
     it('should generate boards', function() {
@@ -149,7 +158,7 @@ describe('Session', function() {
         expect(session)
             .to.have.property('boards')
             .that.has.length(16);
-        
+
         for (var i = 0; i < 16; ++i) {
             var board = session.boards[i];
             expect(board.hands).has.property(seat.north).and.instanceOf(Hand).and.has.property('cards').and.has.lengthOf(13);
@@ -158,5 +167,5 @@ describe('Session', function() {
             expect(board.hands).has.property(seat.west).and.instanceOf(Hand).and.has.property('cards').and.has.lengthOf(13);
         }
     });
-    
+
 });

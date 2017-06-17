@@ -1,0 +1,9175 @@
+% PBN 1.0
+% EXPORT
+%
+[Event ""]
+[Site ""]
+[Date "1999.09.08"]
+[Board "1"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "N"]
+[Contract "6D"]
+[Result "13"]
+[Score "NS 940"]
+[Auction "N"]
+1D 2H 3C 3H
+3S Pass 4D Pass
+5C Pass 5H Pass
+6D Pass Pass Pass
+[Play "E"]
+C7 C4 C9 CJ
+DQ D4 D3 DA
+D9 DK D7 D2
+H9 C5 C3 CK
+H8 D8 H6 H7
+H2 CA C8 C2
+H5 CQ HK HT
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "N"]
+[Contract "6D"]
+[Result "13"]
+[Score "NS 940"]
+[Auction "N"]
+1D      2H      3C      3H
+Pass    4H      5D      Pass
+5H      X       6D      Pass
+Pass    Pass    
+[Play "E"]
+DQ D4 D7 DA 
+H2 D8 H6 H7 
+D9 DK D3 D2 
+H9 DJ C3 D5 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "N"]
+[Contract "5DX"]
+[Result "12"]
+[Score "NS 650"]
+[Auction "N"]
+1D 3H 4H Pass
+5D X Pass Pass
+Pass
+[Play "E"]
+HA D4 HK H7
+D9 DK D3 D2
+DQ D8 D7 DT
+H5 DJ HQ HT
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "N"]
+[Contract "6D"]
+[Result "13"]
+[Score "NS 940"]
+[Auction "N"]
+1D      2H      3C      3H
+Pass    4H      5D      Pass
+5H      X       6D      Pass
+Pass    Pass    
+[Play "E"]
+C7 C4 C3 CK 
+D9 DK D7 D2 
+DQ D4 D3 DA 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "N"]
+[Contract "5HX"]
+[Result "5"]
+[Score "NS -1400"]
+[Auction "N"]
+1D      2H      3C      3H
+Pass    4H      5D      Pass
+5H      X       Pass    Pass
+Pass    
+[Play "E"]
+D9 D4 D3 DT 
+DQ DK D7 DA 
+C7 CT C3 C2 
+H5 C6 C9 CJ 
+S3 S5 SQ SA 
+H9 C4 H6 H7 
+SK S8 S6 S4 
+S7 S9 ST SJ 
+H8 D8 HJ D6 
+H4 C5 HK HT 
+H2 CQ S2 D2 
+HA DJ HQ CK 
+H3 CA C8 D5 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "S"]
+[Contract "5C"]
+[Result "12"]
+[Score "NS 420"]
+[Auction "N"]
+1D      2H      3C      3H
+4C      Pass    5C      Pass
+Pass    Pass    
+[Play "W"]
+HK H7 H2 C4 
+C3 CK C7 C5 
+C9 C2 H9 CA 
+C8 CJ H8 CQ 
+S2 SJ SK S9 
+HQ HT H5 C6 
+D7 D2 D9 DK 
+D3 DA DQ DJ 
+S6 DT S3 D8 
+HJ D6 S7 D4 
+SQ D5 H4 S5 
+ST SA H3 S8 
+H6 S4 HA CT 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "1"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "N"]
+[Contract "5D"]
+[Result "13"]
+[Score "NS 440"]
+[Auction "N"]
+1D 3H 5D Pass
+Pass Pass
+[Play "E"]
+HA D4 H6 H7
+D9 DJ D7 DA
+DQ DK D3 D2
+C7 C4 C3 CK
+H2 C5 C8 CJ
+H3 CA C9 C2
+H4 CQ HJ S4
+H5 C6 S2 SJ
+H8 CT HQ HT
+S3 S5 S6 SA
+S7 D8 ST D5
+SK S8 SQ D6
+H9 S9 HK DT
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "S"]
+[Contract "5C"]
+[Result "12"]
+[Score "NS 420"]
+[Auction "N"]
+1NT     2H      3C      3H
+4H      Pass    5C      Pass
+Pass    Pass    
+[Play "W"]
+HK H7 H9 C4 
+C9 C2 C7 CA 
+C3 CK H5 C5 
+C8 CJ H8 C6 
+D3 D2 D9 DK 
+D7 DA DQ D4 
+ST D5 H4 DJ 
+S2 DT S7 D8 
+H6 D6 H3 S5 
+HQ HT H2 CT 
+S6 SA S3 S8 
+SQ S4 SK S9 
+HJ SJ HA CQ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "S"]
+[Contract "6C"]
+[Result "12"]
+[Score "NS 920"]
+[Auction "N"]
+1D 2H 3H 4H
+X XX 5C Pass
+6C Pass Pass Pass
+[Play "W"]
+HK H7 HA C4
+C9 CK C7 C5
+C3 C2 H5 CA
+C8 CJ S3 CQ
+D3 D2 D9 DK
+D7 DA DQ DJ
+ST DT H2 D8
+S6 SA S7 S5
+H6 D6 H4 D4
+S2 D5 H3 S9
+HQ HT H9 C6
+HJ S4 H8 CT
+SQ SJ SK S8
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "N"]
+[Contract "5D"]
+[Result "12"]
+[Score "NS 420"]
+[Auction "N"]
+1D      3H      5D      Pass
+Pass    Pass    
+[Play "E"]
+C7 C4 C3 CJ 
+D9 DK D3 D2 
+DQ DJ D7 D5 
+S7 -  -  -  
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "1"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AJ4.T7.AT652.KJ2 K73.A985432.Q9.7 985..KJ84.AQT654 QT62.KQJ6.73.983"]
+[Declarer "S"]
+[Contract "6C"]
+[Result "12"]
+[Score "NS 920"]
+[Auction "N"]
+1D      2H      3C      3H
+X       Pass    5D      Pass
+6C      Pass    Pass    Pass
+[Play "W"]
+D7 D2 D9 DJ 
+C3 CJ C7 C4 
+C9 CK H9 C5 
+C8 C2 H5 CA 
+D3 D5 DQ DK 
+S6 DA H8 D4 
+H6 DT S7 D8 
+ST D6 H4 S5 
+HK H7 HA C6 
+HQ S4 H3 CQ 
+S2 HT H2 CT 
+SQ SA S3 S9 
+HJ SJ SK S8 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.08"]
+[Board "2"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "E"]
+Pass Pass 1C 1H
+2H Pass 3C Pass
+Pass Pass
+[Play "N"]
+D5 DK D3 D6
+CK CQ C2 C3
+D2 DQ D4 D9
+C8 CJ C4 CA
+H2 C5 C7 C9
+H9 HK H4 H3
+D8 DT DJ DA
+HA H5 HJ H7
+HQ H8 S7 HT
+SJ SQ SK SA
+S9 S3 S5 S2
+D7 S4 S6 C6
+H6 CT ST S8
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "8"]
+[Score "NS 50"]
+[Auction "E"]
+Pass    Pass    1C      1H
+2H      Pass    3C      Pass
+Pass    Pass    
+[Play "N"]
+D5 DK D3 D9 
+SJ S4 S7 SA 
+S9 SQ SK S2 
+D2 S3 ST S8 
+HA H5 HJ H7 
+H2 H8 H4 H3 
+CK C5 C2 C9 
+H9 HK C4 HT 
+C8 CQ C7 C6 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "E"]
+Pass Pass 1C 1H
+2H Pass 3C Pass
+Pass Pass
+[Play "N"]
+D2 DK D4 D9
+CK CQ C2 C3
+D5 DQ D3 D6
+D8 DT DJ DA
+C8 C5 C4 C9
+H2 CJ C7 C6
+S9 S4 S5 S8
+HA H5 H4 HT
+SJ S3 S6 SA
+H9 HK HJ H3
+H6 SQ SK S2
+HQ CT ST H7
+D7 H8 S7 CA
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "E"]
+Pass    Pass    1C      1H
+2H      Pass    3C      Pass
+Pass    Pass    
+[Play "N"]
+D2 DK D3 D6 
+CK CQ C2 C3 
+D8 DQ D4 D9 
+C8 C5 C4 C9 
+H2 CJ C7 C6 
+D7 DT DJ DA 
+S9 SQ SK S2 
+SJ S3 S5 SA 
+H9 HK H4 H3 
+HQ H5 HJ H7 
+HA H8 S6 HT 
+H6 S4 S7 CA 
+D5 CT ST S8 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "E"]
+Pass    Pass    1C      1H
+2H      Pass    3C      Pass
+Pass    Pass    
+[Play "N"]
+D5 DK D3 D6 
+CK C5 C2 C9 
+D2 DT DJ DA 
+C8 CQ C4 C3 
+H2 CJ C7 CA 
+D8 DQ D4 D9 
+SJ S4 S5 S8 
+HA H5 H4 HT 
+D7 H8 S6 C6 
+H6 HK HJ H3 
+S9 S3 ST SA 
+HQ SQ S7 H7 
+H9 CT SK S2 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "8"]
+[Score "NS 50"]
+[Auction "E"]
+Pass    Pass    1C      1H
+2H      Pass    3C      Pass
+Pass    Pass    
+[Play "N"]
+D2 DK D3 D9 
+CK CQ C2 C6 
+D5 DT DJ DA 
+D8 DQ D4 D6 
+C8 C5 C4 C9 
+H6 CJ C7 C3 
+SJ S4 S5 SA 
+H9 HK H4 H3 
+HQ H5 HJ H7 
+HA H8 S6 HT 
+S9 SQ SK S8 
+D7 S3 ST S2 
+H2 CT S7 CA 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "2"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3NT"]
+[Result "8"]
+[Score "NS 50"]
+[Auction "E"]
+1C Pass 2NT Pass
+3NT Pass Pass Pass
+[Play "N"]
+H2 H5 HJ H3
+H9 HK H4 H7
+CK C5 C2 C9
+HA H8 C4 HT
+H6 CT C7 D6
+HQ CJ S5 S2
+C8 CQ S6 C3
+D2 DT D3 DA
+D5 DQ D4 D9
+D7 DK DJ S8
+S9 S3 S7 SA
+D8 S4 ST C6
+SJ SQ SK CA
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "9"]
+[Score "NS -400"]
+[Auction "E"]
+1NT     Pass    2NT     Pass
+3NT     Pass    Pass    Pass
+[Play "S"]
+S6 S2 SJ SQ 
+C2 C3 CK CQ 
+H4 HT H6 HK 
+C4 C9 C8 C5 
+D3 D6 D2 DK 
+S5 SA S9 S4 
+C7 CA H2 CT 
+D4 D9 D5 DQ 
+DJ DA D8 DT 
+HJ C6 H9 CJ 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "E"]
+Pass Pass 1C 1H
+2H Pass 3C Pass
+Pass Pass
+[Play "N"]
+D2 DK D3 D6
+CK CQ C2 C6
+D8 DT DJ DA
+D7 DQ D4 D9
+S9 S4 S5 S8
+SJ SQ SK SA
+C8 CJ C4 C3
+H2 C5 C7 C9
+H9 HK H4 H3
+H6 H5 HJ H7
+HA S3 ST S2
+D5 CT S6 HT
+HQ H8 S7 CA
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "E"]
+Pass    Pass    1C      1H
+2H      Pass    3C      Pass
+Pass    Pass    
+[Play "N"]
+D2 DK D3 D6 
+CK CQ C2 C3 
+D8 DT DJ DA 
+D7 DQ D4 D9 
+C8 C5 C4 C9 
+H2 CT C7 CA 
+SJ SQ SK S2 
+S9 S3 S7 SA 
+HA H5 H4 H3 
+D5 H8 S5 S8 
+H6 HK HJ H7 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "2"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:Q43.K85.KQT.QJT5 KT765.J4.J43.742 A82.T73.A96.A963 J9.AQ962.8752.K8"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "E"]
+Pass    Pass    1C      1H
+2H      Pass    3C      Pass
+Pass    Pass    
+[Play "N"]
+D2 DK D3 D9 
+CK C5 C2 C9 
+C8 CQ C4 C6 
+H2 CJ C7 CA 
+D8 DQ D4 D6 
+D7 DT DJ DA 
+SJ SQ SK S2 
+S9 S3 S5 SA 
+HA H5 H4 H3 
+D5 H8 S6 S8 
+H6 HK HJ HT 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.08"]
+[Board "3"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS 130"]
+[Auction "S"]
+1D 1S 1NT 2S
+3C Pass Pass Pass
+[Play "W"]
+HQ HA H8 H4
+D7 D3 D5 DJ
+SQ S2 S4 S6
+DT DQ DK DA
+C5 C2 C6 CA
+CK C4 C8 CQ
+S5 S7 SK C9
+C3 D9 D4 D2
+SA SJ S8 CJ
+H2 H5 H3 D8
+ST H6 HT D6
+HJ C7 HK H7
+S9 CT S3 H9
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS 110"]
+[Auction "S"]
+1D      1S      1NT     2S
+3C      Pass    Pass    Pass
+[Play "W"]
+SA S2 S8 S6 
+HQ HA H3 H4 
+CK C2 C6 CJ 
+H2 H5 HK H7 
+HJ H6 H8 H9 
+DT DQ DK DA 
+C5 C4 C8 CA 
+C3 C7 S3 CQ 
+D7 D9 D5 D2 
+S5 D3 D4 DJ 
+S9 S7 S4 D8 
+ST SJ SK D6 
+SQ CT HT C9 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "7"]
+[Score "NS -100"]
+[Auction "S"]
+1D 1S 1NT 2S
+3C Pass Pass Pass
+[Play "W"]
+HQ HA H3 H4
+CK C2 C6 C9
+H2 H5 HK H7
+HJ H6 H8 H9
+D7 D3 D4 D8
+C5 C4 C8 CA
+C3 C7 S8 CJ
+SQ S2 S4 S6
+SA S7 S3 CQ
+DT D9 D5 DA
+ST DQ DK D2
+S9 CT HT D6
+S5 SJ SK DJ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "S"]
+1D      1S      1NT     2S
+3C      Pass    Pass    Pass
+[Play "W"]
+HQ HA H3 H4 
+C5 C2 C8 CJ 
+H2 H5 H8 H7 
+HJ H6 HK H9 
+CK C4 C6 CQ 
+C3 CT S3 C9 
+D7 D3 D5 DJ 
+DT D9 D4 DA 
+S5 DQ DK D2 
+SQ S2 S4 S6 
+SA -  -  -  
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "W"]
+[Contract "3SX"]
+[Result "10"]
+[Score "NS -930"]
+[Auction "S"]
+1D      1S      1NT     2S
+Pass    Pass    X       Pass
+Pass    3S      Pass    Pass
+X       Pass    Pass    Pass
+[Play "N"]
+D9 D4 DA DT 
+DQ DK D2 D7 
+C2 C6 CA C5 
+D3 D5 DJ SQ 
+S2 S3 S6 ST 
+H6 HT H4 H2 
+S7 S4 H7 SA 
+C4 C8 C9 CK 
+SJ SK D6 S5 
+HA H3 H9 HQ 
+CT S8 CJ C3 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "7"]
+[Score "NS -100"]
+[Auction "S"]
+1D      1S      1NT     2S
+3C      Pass    Pass    Pass
+[Play "W"]
+SA S2 S4 S6 
+HQ HA H8 H4 
+CK CT C6 C9 
+H2 H5 HK H7 
+HJ H6 H3 H9 
+S5 S7 SK CJ 
+C3 C2 C8 CQ 
+C5 C4 D4 CA 
+DT D3 D5 DA 
+D7 DQ DK D2 
+SQ SJ S8 D6 
+ST C7 S3 D8 
+S9 D9 HT DJ 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "3"]
+[West "WBridge5"]
+[North "Joueur"]
+[East "WBridge5"]
+[South "Joueur"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "7"]
+[Score "NS -100"]
+[Auction "S"]
+1D 1S Pass Pass
+2C Pass Pass 2S
+Pass Pass 3C Pass
+Pass Pass
+[Play "W"]
+HQ HA H8 H4
+CK CT C8 C9
+H2 H5 HT H7
+HJ H6 HK H9
+SQ S2 S3 S6
+SA S7 S4 CJ
+C3 C2 C6 CA
+C5 C4 H3 CQ
+D7 D3 D4 DA
+DT DQ DK D2
+S5 SJ SK D6
+S9 D9 D5 DJ
+ST C7 S8 D8
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "S"]
+1D      1S      1NT     2S
+3C      Pass    Pass    Pass
+[Play "W"]
+HQ HA H3 H4 
+CK C2 C8 C9 
+HJ H5 HK H7 
+SQ S2 S4 S6 
+H2 H6 HT H9 
+C5 C4 C6 CJ 
+C3 C7 S8 CQ 
+DT D3 D4 DA 
+D7 DQ DK D2 
+S5 D9 D5 D6 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS 130"]
+[Auction "S"]
+1D 1S 1NT 2S
+3C Pass Pass Pass
+[Play "W"]
+D7 D3 D4 D8
+C5 C2 C6 CA
+CK C4 C8 CQ
+DT DQ DK DA
+C3 C7 H8 CJ
+S5 D9 D5 DJ
+ST H5 S4 D6
+H2 H6 HT D2
+HQ HA H3 H4
+S9 S2 S3 S6
+SA S7 S8 C9
+HJ CT HK H7
+SQ SJ SK H9
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "S"]
+1D      1S      1NT     2S
+3C      Pass    Pass    Pass
+[Play "W"]
+HQ HA H8 H4 
+CK CT C8 C9 
+H2 H6 HK H7 
+ST S2 SK S6 
+HJ H5 H3 H9 
+D7 D3 D5 D8 
+C3 C2 C6 CJ 
+C5 C4 S3 CQ 
+DT D9 D4 DA 
+S5 DQ DK D2 
+-  -  S4 -  
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "3"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:6.974.AJ862.AQJ9 AQT95.QJ2.T7.K53 J72.A65.Q93.T742 K843.KT83.K54.86"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS 130"]
+[Auction "S"]
+1D      1S      1NT     X
+2C      2S      3C      Pass
+Pass    Pass    
+[Play "W"]
+D7 D9 D4 D2 
+CK CT C6 C9 
+DT DQ DK DA 
+C3 C2 C8 CA 
+C5 C4 S8 CQ 
+S5 D3 D5 DJ 
+ST H5 H3 D8 
+H2 H6 HT D6 
+HQ HA H8 H4 
+S9 S2 SK S6 
+SA S7 S4 CJ 
+HJ C7 HK H7 
+SQ SJ S3 H9 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.08"]
+[Board "4"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "N"]
+[Contract "4SX"]
+[Result "9"]
+[Score "NS -200"]
+[Auction "W"]
+1H 1S 2H 2S
+4H Pass Pass 4S
+X Pass Pass Pass
+[Play "E"]
+H3 H5 HJ H2
+H4 HT HA H9
+S7 S9 S4 S6
+CT C9 C7 C3
+S3 S2 H6 S8
+C2 S5 C6 C5
+D3 D2 DT DK
+D5 D4 DA D9
+CK SK C4 C8
+DJ DQ HK CJ
+H7 D6 HQ SJ
+ST D7 H8 SQ
+CA D8 CQ SA
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "N"]
+[Contract "4SX"]
+[Result "9"]
+[Score "NS -200"]
+[Auction "W"]
+1H      1S      2H      4S
+X       Pass    Pass    Pass
+[Play "E"]
+D3 D2 DA D9 
+CT C9 C7 C3 
+H4 H5 HJ H2 
+H7 HT HA H9 
+S7 S2 S4 SA 
+S3 S5 HK SQ 
+D5 D4 DT DK 
+ST SK C4 S6 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "W"]
+1H 1S 2H 2S
+3D Pass 3H 3S
+4H Pass Pass Pass
+[Play "N"]
+SA S7 S9 S4
+S8 ST SK H6
+H9 H3 H5 HA
+H2 H4 HT HK
+C5 CA C9 C4
+DK D3 D2 DT
+C3 C2 S2 C7
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "W"]
+1H      1S      2H      2S
+3D      Pass    3H      3S
+4H      Pass    Pass    Pass
+[Play "N"]
+C8 CA C9 C4 
+D9 D5 D6 DA 
+H2 H3 H5 HA 
+H9 H7 HT HK 
+C5 H4 S2 HQ 
+S8 S7 D2 HJ 
+C3 CK D4 C7 
+DK DJ D7 DT 
+S6 S3 SK S4 
+SA ST S9 H6 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "W"]
+1H      1S      2H      2S
+3D      Pass    3H      Pass
+4H      Pass    Pass    Pass
+[Play "N"]
+SA S7 S2 S4 
+SQ S3 S5 H6 
+H2 H3 H5 HA 
+C5 CA C9 C7 
+H9 H7 HT HK 
+C8 H4 SK HQ 
+C3 CK D2 C6 
+CJ C2 D4 CQ 
+S6 D3 S9 HJ 
+S8 D5 D6 H8 
+D9 CT D7 C4 
+DK DJ D8 DA 
+SJ ST DQ DT 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "W"]
+1H      1S      2H      2S
+3D      Pass    3H      Pass
+4H      Pass    Pass    Pass
+[Play "N"]
+C8 CT C9 C7 
+D9 D3 D4 DA 
+H2 H3 H5 HA 
+H9 H7 HT HK 
+S8 H4 S5 HQ 
+C3 CA D2 C4 
+S6 S3 S2 S4 
+SA S7 S9 H6 
+C5 C2 D6 C6 
+SQ D5 D7 HJ 
+SJ ST SK H8 
+CJ CK D8 CQ 
+DK DJ DQ DT 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "4"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "W"]
+1H 1S 2H 3S
+4H Pass Pass Pass
+[Play "N"]
+SA S3 S2 S4
+S8 ST SK H6
+H2 H3 H5 HA
+H9 H4 HT HK
+S6 H7 S5 H8
+C3 CT C9 C4
+DK D3 D2 DT
+D9 D5 D4 DA
+SJ C2 D6 HQ
+C5 CK S9 C6
+C8 CA D7 C7
+SQ DJ D8 CQ
+CJ S7 DQ HJ
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "10"]
+[Score "NS -620"]
+[Auction "W"]
+1H      1S      2H      2S
+3D      Pass    3H      3S
+4H      Pass    Pass    Pass
+[Play "N"]
+SA ST S9 S4 
+C3 CA C9 C4 
+DK D5 D2 DT 
+D9 D3 D4 DA 
+H2 H7 H5 HA 
+H9 H3 HT HK 
+S6 H4 D6 HQ 
+C8 CK S2 C7 
+SQ S3 S5 H6 
+CJ C2 D7 C6 
+SJ S7 SK H8 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "W"]
+1H 1S 2H 2S
+3D Pass 3H Pass
+4H Pass Pass Pass
+[Play "N"]
+H2 H7 HT HA
+H9 H3 H5 HK
+C8 CT C9 CQ
+S8 H4 D2 HQ
+CJ CA S5 C7
+DK D5 D4 DT
+S6 S3 SK S4
+SA S7 S2 H6
+C3 C2 D6 C4
+SQ D3 D7 HJ
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "10"]
+[Score "NS -620"]
+[Auction "W"]
+1H      1S      2H      2S
+3C      Pass    3H      Pass
+Pass    3S      Pass    Pass
+4H      Pass    Pass    Pass
+[Play "N"]
+SA ST S9 S4 
+SQ S3 S2 H6 
+H9 H3 H5 HA 
+C5 CA C9 C4 
+DK D3 D2 DT 
+C3 C2 HT C7 
+D9 D5 D4 DA 
+H2 H4 D6 HK 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "4"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:4.AKQJ86.AT.Q764 AQJ86.92.K9.J853 T73.743.J53.AKT2 K952.T5.Q87642.9"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "W"]
+1H      1S      2H      2S
+3D      Pass    3H      Pass
+4H      Pass    Pass    Pass
+[Play "N"]
+H2 H7 HT HA 
+H9 H3 H5 HK 
+C5 CA C9 C4 
+DK D3 D4 DT 
+SQ ST S9 S4 
+S6 S3 -  -  
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.09"]
+[Board "5"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "3D"]
+[Result "13"]
+[Score "NS -190"]
+[Auction "N"]
+Pass 1S Pass 2C
+Pass 2D Pass 3D
+Pass Pass Pass
+[Play "S"]
+CT C3 C4 CJ
+SQ S9 ST SA
+C2 CA C6 C5
+DJ D6 D5 DQ
+D3 DA D9 D2
+DT DK H6 D4
+C7 CK S7 H7
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "W"]
+[Contract "3NT"]
+[Result "13"]
+[Score "NS -520"]
+[Auction "N"]
+Pass    1S      X       XX
+2H      Pass    Pass    3NT
+Pass    Pass    Pass    
+[Play "N"]
+S5 SA SQ S9 
+C4 CJ C7 C3 
+D5 D2 DT DA 
+C6 C5 C2 CA 
+HT D7 C8 CK 
+H2 H7 C9 CQ 
+S7 S8 H3 S2 
+ST SK H8 H9 
+D9 DQ D3 D6 
+S6 SJ HJ H4 
+HQ D4 DJ DK 
+H6 S3 HA D8 
+S4 H5 CT HK 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "3D"]
+[Result "13"]
+[Score "NS -190"]
+[Auction "N"]
+Pass 1S Pass 2C
+Pass 2D Pass 3D
+Pass Pass Pass
+[Play "S"]
+SQ S2 S7 SA
+D3 DA D5 D2
+C2 C3 C6 CJ
+DT DK D9 D4
+DJ D6 H2 DQ
+C7 CA C4 C5
+C8 CK S6 H5
+C9 CQ HT H7
+H3 S9 ST SK
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "5D"]
+[Result "13"]
+[Score "NS -440"]
+[Auction "N"]
+Pass    1S      Pass    2C
+Pass    2D      Pass    3D
+Pass    5D      Pass    Pass
+Pass    
+[Play "S"]
+CT C3 C4 CJ 
+D3 D8 D5 DQ 
+DT DA D9 D4 
+SQ S2 S7 SA 
+DJ DK ST D2 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "5D"]
+[Result "12"]
+[Score "NS -420"]
+[Auction "N"]
+Pass    1S      Pass    2C
+Pass    2D      Pass    3D
+Pass    5D      Pass    Pass
+Pass    
+[Play "S"]
+HA H4 H6 H7 
+SQ S2 S4 SA 
+D3 D8 D5 DQ 
+DT DA D9 D4 
+C2 C3 C6 CJ 
+DJ DK S7 D2 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "3D"]
+[Result "13"]
+[Score "NS -190"]
+[Auction "N"]
+Pass    1S      Pass    2C
+Pass    2D      Pass    3D
+Pass    Pass    Pass    
+[Play "S"]
+CT CA C4 C5 
+D3 D6 D5 DQ 
+DT DA D9 D7 
+SQ S2 ST SA 
+DJ DK H6 D4 
+C2 C3 C6 CJ 
+C7 S9 S7 S3 
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "5"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "6D"]
+[Result "13"]
+[Score "NS -940"]
+[Auction "N"]
+Pass 1S Pass 3C
+Pass 3D Pass 4NT
+Pass 5D Pass 6D
+Pass Pass Pass
+[Play "S"]
+CT C3 C6 CJ
+D3 DK D9 D2
+DT D6 D5 DQ
+DJ DA C4 D4
+SQ S2 S4 SK
+C2 CQ H2 C5
+C7 S9 S5 S3
+C8 CA H6 H5
+C9 CK S6 D7
+H3 H4 S7 SA
+H8 H9 ST SJ
+HJ HK HT S8
+HA D8 HQ H7
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "3D"]
+[Result "13"]
+[Score "NS -190"]
+[Auction "N"]
+Pass    1S      Pass    2C
+Pass    2D      Pass    3D
+Pass    Pass    Pass    
+[Play "S"]
+DJ D8 D5 DQ 
+D3 DA D9 D2 
+SQ S2 S7 SA 
+C2 C3 C6 CJ 
+DT DK ST D4 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "3D"]
+[Result "13"]
+[Score "NS -190"]
+[Auction "N"]
+Pass 1S Pass 2C
+Pass 2D Pass 3D
+Pass Pass Pass
+[Play "S"]
+CT C3 C6 CJ
+SQ S2 ST SA
+D3 D8 D5 DQ
+DJ DA D9 D4
+DT DK HT D7
+C2 CA C4 C5
+C7 CK S7 H5
+H3 S9 S4 S3
+C8 CQ H6 H7
+H8 H4 H2 D2
+C9 H9 S6 SK
+HJ HK S5 SJ
+HA D6 HQ S8
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "3D"]
+[Result "13"]
+[Score "NS -190"]
+[Auction "N"]
+Pass    1S      Pass    2C
+Pass    2D      Pass    3D
+Pass    Pass    Pass    
+[Play "S"]
+DJ D8 D5 DQ 
+D3 DA D9 D2 
+C2 C3 C6 CJ 
+SQ S2 S4 SA 
+DT DK H6 D4 
+C7 CA C4 C5 
+C8 CK S5 H7 
+H3 S9 S6 SK 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "5"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:T7654.QT62.95.64 AKJ83.75.Q742.J5 Q.AJ83.JT3.T9872 92.K94.AK86.AKQ3"]
+[Declarer "E"]
+[Contract "6D"]
+[Result "13"]
+[Score "NS -940"]
+[Auction "N"]
+Pass    1S      Pass    2C
+Pass    2D      Pass    3D
+Pass    5D      Pass    6C
+Pass    6D      Pass    Pass
+Pass    
+[Play "S"]
+SQ S2 S4 SA 
+C7 CA C6 C5 
+D3 D6 D5 DQ 
+DT DA D9 D7 
+C2 C3 C4 CJ 
+DJ DK ST D4 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.08"]
+[Board "6"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4D"]
+[Result "6"]
+[Score "NS 400"]
+[Auction "E"]
+1D Pass 3C Pass
+3H Pass 4D Pass
+Pass Pass
+[Play "S"]
+SQ S2 S3 SA
+D2 DQ DK D3
+C7 CQ CA C2
+D4 C8 C4 CJ
+S5 ST D8 S6
+DJ C3 C9 D7
+S8 S7 D9 S4
+D6 CT C6 H4
+SJ C5 H8 SK
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4D"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "E"]
+1D      Pass    3C      Pass
+3H      Pass    4D      Pass
+Pass    Pass    
+[Play "S"]
+SQ S2 S3 SA 
+D2 DT DK D3 
+H2 HA H5 H4 
+C7 C3 C4 CJ 
+H9 C8 H3 HK 
+H6 C5 HT HQ 
+D4 DA D9 D5 
+D6 DQ D8 D7 
+S5 ST C9 SK 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4D"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "E"]
+1D Pass 3C Pass
+3H Pass 4D Pass
+Pass Pass
+[Play "S"]
+C7 C5 C6 CJ
+D2 DQ DK D5
+S5 ST S3 SA
+H2 HA H8 H4
+S8 S2 C9 SK
+H6 C3 H7 HK
+H9 C8 HT HQ
+D4 DT H5 HJ
+D6 CK C4 C2
+SQ S7 CA S4
+SJ CT D8 S6
+DJ DA H3 D3
+S9 CQ D9 D7
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4D"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "E"]
+1D      Pass    3C      Pass
+3H      Pass    4D      Pass
+Pass    Pass    
+[Play "S"]
+SQ S2 S3 SA 
+H2 HA H8 H4 
+C7 C3 C6 CJ 
+H6 C5 H7 HK 
+H9 C8 HT HQ 
+S5 S7 H5 HJ 
+S8 ST D9 SK 
+D2 CT C9 C2 
+S9 DT DK S4 
+D4 CQ C4 S6 
+SJ CK D8 D5 
+D6 DQ H3 D3 
+DJ DA CA D7 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4D"]
+[Result "9"]
+[Score "NS 100"]
+[Auction "E"]
+1D      Pass    3C      Pass
+3H      Pass    4D      Pass
+Pass    Pass    
+[Play "S"]
+C7 C5 C6 CJ 
+H2 HA H8 H4 
+D2 CK C4 C2 
+D4 DQ DK D5 
+S8 ST S3 SA 
+H6 S7 H7 HK 
+D6 DT D9 D3 
+DJ CQ C9 S6 
+SQ S2 H3 SK 
+H9 C3 HT HQ 
+S5 C8 H5 HJ 
+S9 DA D8 D7 
+SJ CT CA S4 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4D"]
+[Result "10"]
+[Score "NS -130"]
+[Auction "E"]
+1D      Pass    3C      Pass
+3H      Pass    4D      Pass
+Pass    Pass    
+[Play "S"]
+SQ S7 S3 SA 
+D2 DT DK D3 
+H2 HA H8 H4 
+C7 C5 C6 CJ 
+H6 C8 H7 HK 
+H9 C3 HT HQ 
+D4 DA D9 D5 
+D6 DQ D8 D7 
+S5 CK CA C2 
+DJ CT H5 HJ 
+S8 ST C9 S6 
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "6"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "6C"]
+[Result "12"]
+[Score "NS -1370"]
+[Auction "E"]
+1C 1S 2S Pass
+2NT Pass 4NT Pass
+5D Pass 6C Pass
+Pass Pass
+[Play "S"]
+SQ S2 S3 SK
+C7 CT C6 C2
+H2 HA H3 H4
+H6 C3 CA CJ
+S5 CQ C9 D3
+S8 C5 C4 S4
+S9 C8 D8 S6
+D2 CK D9 D5
+SJ S7 DK SA
+H9 DT H5 HK
+D4 DQ H7 D7
+D6 DA H8 HJ
+DJ ST HT HQ
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "12"]
+[Score "NS -690"]
+[Auction "E"]
+1NT     Pass    3NT     Pass
+Pass    Pass    
+[Play "S"]
+S8 S7 S3 SA 
+H2 HA H5 H4 
+C7 C3 C9 CJ 
+H6 DT H8 HK 
+H9 S2 HT HQ 
+S5 CK C6 C2 
+D2 CQ CA D5 
+D4 CT C4 S6 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4D"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "E"]
+1D Pass 3C Pass
+3H Pass 4D Pass
+Pass Pass
+[Play "S"]
+SQ S2 S3 SA
+D2 DT DK D5
+H2 HA H3 H4
+C7 C3 C4 CJ
+H6 C5 H8 HK
+D4 DA D9 D3
+D6 DQ D8 D7
+S5 ST C9 SK
+H9 S7 HT HQ
+DJ C8 H7 HJ
+SJ CT C6 S4
+S9 CQ H5 S6
+S8 CK CA C2
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4S"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "E"]
+1S      Pass    3C      Pass
+3H      Pass    3S      Pass
+4S      Pass    Pass    Pass
+[Play "S"]
+C7 C5 C9 CJ 
+H2 HA H8 H4 
+S5 S2 S3 SA 
+H6 DT H7 HK 
+S8 S7 H3 SK 
+SJ C8 C4 C2 
+SQ ST D9 S4 
+D2 DQ DK D5 
+D4 DA D8 D3 
+H9 CK CA D7 
+S9 CT C6 HJ 
+DJ C3 HT S6 
+D6 CQ H5 HQ 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "6"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:AK64.KQJ4.753.J2 QJ985.962.J642.7 T72.A.AQT.KQT853 3.T8753.K98.A964"]
+[Declarer "E"]
+[Contract "4D"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "E"]
+1D      Pass    3C      Pass
+3H      Pass    4D      Pass
+Pass    Pass    
+[Play "S"]
+SQ S7 S3 SA 
+D4 DQ DK D3 
+H2 HA H5 H4 
+C7 C3 C4 CJ 
+H6 C5 H8 HK 
+H9 C8 HT HQ 
+D2 DT H7 HJ 
+D6 DA D9 D5 
+S5 S2 D8 S6 
+S8 CT CA C2 
+S9 CQ H3 S4 
+DJ CK C9 D7 
+SJ ST C6 SK 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.08"]
+[Board "7"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass 1S Pass 1NT
+Pass 2S Pass 3S
+Pass 4S Pass Pass
+Pass
+[Play "N"]
+H6 HA H8 HJ
+S2 S5 S3 SA
+C9 CT CQ C8
+H7 H2 H3 S4
+C4 C2 C3 CA
+C7 S8 CJ C5
+SJ SQ S6 S7
+HQ H9 H4 S9
+D3 D4 DK DQ
+HT H5 HK ST
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass    1S      Pass    2D
+Pass    3S      Pass    4S
+Pass    Pass    Pass    
+[Play "N"]
+H6 H2 HK HJ 
+SJ SQ S6 S7 
+D5 D9 DK D6 
+S2 S5 S3 SA 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass 1S Pass 2D
+Pass 3S Pass 4S
+Pass Pass Pass
+[Play "N"]
+D3 D9 DK DJ
+C9 CT CQ CA
+HQ HA H3 HJ
+H7 H2 HK S4
+SJ S5 S3 SA
+S2 S8 S6 S7
+D5 D4 D2 DQ
+C4 DA D7 D6
+H6 H5 H8 S9
+C7 C2 CJ C5
+C6 D8 DT ST
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass    1S      Pass    1NT
+Pass    2S      Pass    3S
+Pass    4S      Pass    Pass
+Pass    
+[Play "N"]
+D3 D9 DK DJ 
+D5 D4 D2 D6 
+S2 SQ S3 S4 
+C4 C2 C3 CA 
+SJ S5 S6 SA 
+C6 S8 H3 SK 
+C7 H9 H4 ST 
+H6 H2 D7 S9 
+HT HA H8 HJ 
+HQ DA DT DQ 
+C9 D8 CJ C8 
+CK CT CQ C5 
+H7 H5 HK S7 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass    1S      Pass    1NT
+Pass    2S      Pass    3S
+Pass    4S      Pass    Pass
+Pass    
+[Play "N"]
+D3 D9 DK DJ 
+SJ SQ S3 S4 
+C9 C2 C3 C8 
+S2 S5 S6 S7 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass    1S      Pass    1NT
+Pass    2S      Pass    3S
+Pass    4S      Pass    Pass
+Pass    
+[Play "N"]
+D3 D9 DK DJ 
+D5 D4 D2 D6 
+S2 SQ S3 S4 
+SJ S5 S6 SA 
+C7 S8 H3 S7 
+C4 C2 C3 CA 
+C6 H5 H4 SK 
+H7 H9 D7 ST 
+H6 H2 DT S9 
+HQ HA H8 HJ 
+C9 DA CJ DQ 
+HT D8 HK C5 
+CK CT CQ C8 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "7"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass 1S Pass 3S
+Pass 4S Pass Pass
+Pass
+[Play "N"]
+D5 D8 DK D6
+D3 D4 D2 DJ
+S2 S8 S3 S4
+SJ S5 S6 SK
+C4 C2 CQ C5
+C6 CT C3 CA
+C7 SQ CJ C8
+H6 HA H3 HJ
+C9 D9 D7 DQ
+H7 DA H4 S7
+CK H2 H8 SA
+HT H5 DT ST
+HQ H9 HK S9
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass    1S      Pass    2D
+Pass    3S      Pass    4S
+Pass    Pass    Pass    
+[Play "N"]
+HT HA H3 HJ 
+C4 CT C3 CA 
+S2 SQ S3 S7 
+C7 C2 CJ C5 
+H7 H5 HK S4 
+C9 S8 CQ C8 
+SJ S5 S6 SA 
+D5 D4 D2 SK 
+CK H2 H4 ST 
+H6 H9 H8 S9 
+D3 D8 DK DQ 
+C6 D9 D7 D6 
+HQ DA DT DJ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass 1S Pass 1NT
+Pass 2S Pass 3S
+Pass 4S Pass Pass
+Pass
+[Play "N"]
+HT HA H8 HJ
+C9 C2 CJ CA
+SJ SQ S3 S4
+H6 H5 HK S9
+CK CT C3 C5
+S2 S5 S6 S7
+C7 S8 CQ C8
+H7 H2 H3 ST
+D3 D4 D7 SA
+D5 D8 DK DQ
+HQ H9 H4 SK
+C6 DA D2 D6
+C4 D9 DT DJ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass    1S      Pass    2D
+Pass    3S      Pass    4S
+Pass    Pass    Pass    
+[Play "N"]
+D3 D9 DK DJ 
+C4 C2 CQ CA 
+SJ SQ S3 ST 
+H7 HA H3 HJ 
+H6 H2 HK S4 
+S2 S5 S6 S7 
+CK CT C3 C8 
+D5 D4 D7 DQ 
+C9 DA D2 D6 
+HQ H5 H4 S9 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "7"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:63.K843.KT72.QJ3 AKT974.J.QJ6.A85 J2.QT76.53.K9764 Q85.A952.A984.T2"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -650"]
+[Auction "S"]
+Pass    1S      Pass    1NT
+Pass    2S      Pass    3S
+Pass    4S      Pass    Pass
+Pass    
+[Play "N"]
+D3 D9 DK DJ 
+D5 D4 D2 D6 
+S2 SQ S3 S4 
+SJ S5 S6 SA 
+C7 C2 C3 CA 
+C4 S8 H3 SK 
+C6 H9 H4 ST 
+H7 H2 D7 S9 
+H6 HA H8 HJ 
+HQ DA DT DQ 
+C9 D8 CJ C8 
+HT H5 HK S7 
+CK CT CQ C5 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.09"]
+[Board "8"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "11"]
+[Score "NS -460"]
+[Auction "W"]
+Pass Pass 2C Pass
+2D Pass 3C Pass
+3H Pass 3NT Pass
+Pass Pass
+[Play "S"]
+S9 S3 S2 SK
+C7 C8 C9 CA
+D3 DT D9 DA
+D4 H7 D6 DK
+S8 SQ SA S4
+D8 H2 D5 DQ
+H6 HA H9 H4
+CJ C5 C6 CK
+S7 ST C4 CQ
+H8 H3 SJ CT
+HT HJ S6 C3
+HQ H5 D2 C2
+DJ S5 HK D7
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "11"]
+[Score "NS -460"]
+[Auction "W"]
+Pass    Pass    2C      Pass
+2D      Pass    3C      Pass
+3H      Pass    3NT     Pass
+Pass    Pass    
+[Play "S"]
+S9 S3 S2 SK 
+S7 SQ SA S4 
+D4 DT D2 DA 
+C7 C5 C9 CA 
+D3 H5 D5 DK 
+D8 H2 D6 DQ 
+CJ C8 C6 CK 
+H6 H3 C4 CQ 
+H8 H7 S6 CT 
+S8 ST D9 C3 
+HQ S5 SJ C2 
+HT HA H9 H4 
+DJ HJ HK D7 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "7CX"]
+[Result "12"]
+[Score "NS 100"]
+[Auction "W"]
+Pass Pass 2C Pass
+2H Pass 3C Pass
+3H Pass 4D Pass
+6H Pass 7C Pass
+Pass X Pass Pass
+Pass
+[Play "S"]
+S9 ST SA S4
+C7 C8 C4 CA
+D3 DT D6 DA
+D4 H2 D5 DK
+S7 S3 S6 SK
+CJ C5 C9 CK
+S8 H5 C6 CQ
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "11"]
+[Score "NS -460"]
+[Auction "W"]
+Pass    Pass    2C      Pass
+2D      Pass    3C      Pass
+3H      Pass    3NT     Pass
+Pass    Pass    
+[Play "S"]
+S9 S3 S6 SK 
+C7 C8 C9 CA 
+D3 DT D6 DA 
+D4 H5 D5 DK 
+S7 ST SJ S4 
+S8 SQ SA C3 
+D8 H7 D9 DQ 
+H6 HA H9 H4 
+CJ S5 S2 D7 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "11"]
+[Score "NS -460"]
+[Auction "W"]
+Pass    Pass    2C      Pass
+2D      Pass    3C      Pass
+3H      Pass    3NT     Pass
+Pass    Pass    
+[Play "S"]
+S9 S3 S2 SK 
+C7 C8 C4 CA 
+D3 DT D6 DA 
+D4 H5 D5 DK 
+S8 SQ SA S4 
+D8 H7 D9 DQ 
+CJ C5 C9 CK 
+S7 H2 C6 CQ 
+H6 H3 S6 CT 
+H8 S5 D2 C3 
+HT ST SJ C2 
+HQ HA H9 H4 
+DJ HJ HK D7 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "10"]
+[Score "NS -430"]
+[Auction "W"]
+Pass    Pass    2C      Pass
+2D      Pass    3C      Pass
+3H      Pass    3NT     Pass
+Pass    Pass    
+[Play "S"]
+S9 ST SJ SK 
+C7 C8 C4 CA 
+D3 DT D2 DA 
+D4 H5 D5 DK 
+S7 S5 S2 S4 
+S8 SQ SA D7 
+H6 S3 S6 C3 
+D8 H2 D6 DQ 
+H8 HA H9 H4 
+CJ C5 C9 CK 
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "8"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "6C"]
+[Result "12"]
+[Score "NS -920"]
+[Auction "W"]
+2H Pass 3C Pass
+3S Pass 4C Pass
+5C Pass 6C Pass
+Pass Pass
+[Play "S"]
+S9 S3 SA S4
+C7 C5 C4 CQ
+CJ C8 C6 CA
+S7 S5 C9 CK
+D3 DT D2 DA
+S8 ST S2 SK
+D4 H2 D5 DK
+D8 H3 D6 C2
+H6 HA H9 H4
+H8 H5 HK C3
+DJ SQ S6 CT
+HT H7 D9 DQ
+HQ HJ SJ D7
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "7CX"]
+[Result "12"]
+[Score "NS 100"]
+[Auction "W"]
+Pass    Pass    2C      Pass
+2H      Pass    3C      Pass
+3H      Pass    4D      Pass
+6H      Pass    7C      Pass
+Pass    X       Pass    Pass
+Pass    
+[Play "S"]
+S7 S5 SA S4 
+C7 C8 C4 CA 
+D3 DT D6 DA 
+CJ C5 C9 CK 
+D4 H5 C6 CQ 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "13"]
+[Score "NS -520"]
+[Auction "W"]
+Pass Pass 2C Pass
+2D Pass 3C Pass
+3H Pass 3NT Pass
+Pass Pass
+[Play "S"]
+S9 ST SJ SK
+C7 C5 C9 CA
+CJ C8 C6 CK
+D3 H5 C4 CQ
+D4 DT D6 DA
+D8 H2 D2 CT
+DJ H7 D5 DK
+H6 S5 D9 DQ
+S7 H3 S6 C3
+S8 S3 S2 C2
+H8 SQ SA D7
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "12"]
+[Score "NS -490"]
+[Auction "W"]
+Pass    Pass    2C      Pass
+2D      Pass    3C      Pass
+3H      Pass    3NT     Pass
+Pass    Pass    
+[Play "S"]
+D4 DT D2 D7 
+C7 C5 C6 CA 
+D3 H2 D5 DA 
+D8 H5 D9 DK 
+S7 S3 SA SK 
+DJ H7 D6 DQ 
+S8 SQ S2 S4 
+H6 HA H9 H4 
+CJ C8 C9 CK 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "8"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:QT53.AJ7532.T.85 AJ62.K9.9652.964 K4.4.AKQ7.AKQT32 987.QT86.J843.J7"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "11"]
+[Score "NS -460"]
+[Auction "W"]
+Pass    Pass    2C      Pass
+2D      Pass    3C      Pass
+3H      Pass    3NT     Pass
+Pass    Pass    
+[Play "S"]
+H6 HA H9 H4 
+C7 C5 C6 CA 
+D3 DT D6 DA 
+D4 H2 D5 DK 
+CJ C8 C9 CK 
+S7 ST C4 CQ 
+H8 H3 S6 CT 
+S8 H5 S2 C3 
+S9 S3 SJ C2 
+HT SQ SA S4 
+HQ H7 HK D7 
+D8 S5 D2 DQ 
+DJ HJ D9 SK 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.09"]
+[Board "9"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "S"]
+[Contract "2H"]
+[Result "8"]
+[Score "NS 110"]
+[Auction "N"]
+1C 1D 1H 2D
+2H Pass Pass Pass
+[Play "W"]
+SQ SA SK S3
+CJ C4 C8 CA
+C7 CT CK C2
+H7 C5 C6 S4
+SJ S5 S7 S8
+D9 D5 DA D3
+H2 C9 C3 ST
+S9 S6 D4 H3
+H5 HA HQ H4
+HT H8 HJ HK
+D7 DK DT D6
+S2 CQ D8 H6
+DQ H9 D2 DJ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "E"]
+[Contract "2D"]
+[Result "8"]
+[Score "NS -90"]
+[Auction "N"]
+1C      1D      X       2D
+Pass    Pass    Pass    
+[Play "S"]
+D3 D7 D5 D4 
+S4 SQ S5 S7 
+S3 S2 SA SK 
+D6 D9 DK DA 
+DJ DQ C4 DT 
+S8 SJ S6 C6 
+H6 H2 HA HJ 
+HK H5 H9 HQ 
+ST S9 C5 C8 
+CA C7 C9 C3 
+C2 CJ CQ CK 
+H3 H7 CT D8 
+H4 HT H8 D2 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "N"]
+[Contract "2NT"]
+[Result "8"]
+[Score "NS 120"]
+[Auction "N"]
+1C 1D X 2D
+2NT Pass Pass Pass
+[Play "E"]
+D2 D3 D9 DK
+C3 CA C7 C4
+CK C2 CJ CQ
+D4 DJ DQ D5
+S7 S3 SQ SA
+C8 S4 D7 CT
+C6 S8 S2 C9
+HQ HK H5 H8
+HJ H3 H2 HA
+DA D6 H7 C5
+DT H4 HT H9
+SK ST SJ S5
+D8 H6 S9 S6
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "E"]
+[Contract "2D"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "N"]
+1C      1D      X       2D
+Pass    Pass    Pass    
+[Play "S"]
+CA C7 C5 C3 
+C2 CJ CQ CK 
+S3 SQ SA S7 
+H3 H7 HA HJ 
+H4 D7 CT C6 
+S4 S2 S6 SK 
+S8 D9 C9 C8 
+ST SJ S5 HQ 
+D3 DQ DK DA 
+DJ H2 D5 DT 
+HK H5 H9 D2 
+D6 HT C4 D8 
+H6 S9 H8 D4 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "E"]
+[Contract "2DX"]
+[Result "8"]
+[Score "NS -180"]
+[Auction "N"]
+1C      1D      X       2D
+Pass    Pass    X       Pass
+Pass    Pass    
+[Play "S"]
+CA CJ C4 C3 
+D3 D9 DK DA 
+S4 SQ SA S7 
+D6 D7 D5 D4 
+S3 S2 S6 SK 
+HK H7 H8 HQ 
+C2 C7 C9 CK 
+DJ DQ C5 DT 
+S8 SJ S5 HJ 
+H3 H2 H9 D2 
+H4 H5 CQ C8 
+H6 HT CT C6 
+ST S9 HA D8 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "S"]
+[Contract "2H"]
+[Result "5"]
+[Score "NS -150"]
+[Auction "N"]
+1C      1D      1H      2D
+2H      Pass    Pass    Pass
+[Play "W"]
+SQ SA SK S3 
+H2 HA HQ H3 
+H5 H8 HJ HK 
+C7 C4 C8 CA 
+CJ CQ CK C2 
+S9 S5 S7 S8 
+HT H9 D8 H4 
+H7 S6 C3 H6 
+SJ C5 C6 S4 
+S2 C9 D2 ST 
+D9 DK DA D3 
+DQ D5 D4 DJ 
+D7 CT DT D6 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "9"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "N"]
+[Contract "1NT"]
+[Result "8"]
+[Score "NS 120"]
+[Auction "N"]
+1C 1D 1H Pass
+1NT Pass Pass Pass
+[Play "E"]
+HQ H3 H7 HA
+C8 CA C7 C4
+CK C2 CJ CQ
+HJ HK H2 H8
+S7 S3 S9 SA
+C3 S4 H5 CT
+C6 S8 D7 C9
+D2 ST S2 C5
+SK D3 SJ S5
+DA D6 D9 D5
+D4 DJ DQ DK
+D8 H4 SQ S6
+DT H6 HT H9
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "N"]
+[Contract "1NT"]
+[Result "7"]
+[Score "NS 90"]
+[Auction "N"]
+1NT     Pass    Pass    Pass
+[Play "E"]
+HQ H3 H2 HA 
+C3 C2 CJ C9 
+S7 S3 SQ S5 
+SK S4 S2 SA 
+C6 CA C7 C4 
+HJ H4 H5 H8 
+CK D3 D7 C5 
+D4 DJ DQ DK 
+C8 D6 S9 CQ 
+D2 S8 D9 CT 
+DA HK HT H9 
+DT H6 H7 D5 
+D8 ST SJ S6 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "N"]
+[Contract "2NT"]
+[Result "6"]
+[Score "NS -100"]
+[Auction "N"]
+1C 1D X 2D
+2NT Pass Pass Pass
+[Play "E"]
+D2 D3 D9 DK
+HQ H3 H5 HA
+HJ H4 H2 H9
+DT DJ DQ D5
+S7 S3 SQ SA
+C6 HK HT H8
+C8 CA C7 C4
+CK C2 CJ CQ
+DA D6 D7 S5
+D8 S4 S2 S6
+SK S8 S9 C5
+D4 ST SJ C9
+C3 H6 H7 CT
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "E"]
+[Contract "2DX"]
+[Result "8"]
+[Score "NS -180"]
+[Auction "N"]
+1C      1D      X       2D
+Pass    Pass    X       Pass
+Pass    Pass    
+[Play "S"]
+CA C7 C4 C3 
+C2 CJ CQ CK 
+HK H5 H8 HQ 
+H3 H2 HA HJ 
+H4 D7 CT C6 
+H6 HT H9 C8 
+S3 S2 S6 SK 
+S4 SQ SA S7 
+D3 D9 C9 D2 
+S8 S9 S5 D4 
+D6 DQ D5 DA 
+DJ SJ DK DT 
+ST H7 C5 D8 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "9"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:A65.A98.K5.QT954 K7.QJ.AT842.K863 T843.K643.J63.A2 QJ92.T752.Q97.J7"]
+[Declarer "S"]
+[Contract "2H"]
+[Result "7"]
+[Score "NS -50"]
+[Auction "N"]
+1C      1D      1NT     2D
+Pass    Pass    2H      Pass
+Pass    Pass    
+[Play "W"]
+D9 D5 D2 DJ 
+D7 DK DA D3 
+H2 H8 HQ HK 
+DQ H9 DT D6 
+C7 C4 C3 CA 
+CJ CQ CK C2 
+SJ SA S7 ST 
+H5 HA HJ H3 
+HT CT C8 S3 
+S2 S5 SK S4 
+SQ S6 D8 H4 
+S9 C5 D4 S8 
+H7 C9 C6 H6 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.09"]
+[Board "10"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "E"]
+Pass Pass Pass 1S
+Pass 3S Pass Pass
+Pass
+[Play "E"]
+C3 C2 CT CA
+S5 S3 C4 SA
+S7 S6 H2 SK
+SJ SQ C6 S2
+D8 CK C5 C7
+H7 C8 CQ S4
+HK HQ HA H5
+D4 D5 DQ D2
+D3 C9 CJ S9
+HT S8 H3 H8
+DA D7 DJ DK
+DT D9 H4 D6
+H6 ST HJ H9
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "E"]
+Pass    Pass    Pass    1S
+Pass    2S      X       Pass
+3D      3S      Pass    Pass
+Pass    
+[Play "E"]
+C3 C2 CT CA 
+S7 S3 H2 SA 
+SJ SQ C4 S2 
+S5 S6 H4 SK 
+H7 HQ HA H5 
+D8 D5 DQ D2 
+DA D7 DJ DK 
+DT D9 C6 D6 
+H6 -  -  -  
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "W"]
+[Contract "6CX"]
+[Result "10"]
+[Score "NS 500"]
+[Auction "E"]
+Pass Pass Pass 1S
+Pass 4S X Pass
+5D Pass 6C X
+Pass Pass Pass
+[Play "N"]
+H9 H6 HQ HA
+CA C3 C2 CQ
+SA SJ S3 C6
+DK DA D5 DQ
+D2 D4 D7 DJ
+C7 HT CK CJ
+S2 S7 S6 C4
+H8 D3 C8 CT
+H5 HK C9 H4
+S9 S5 S8 C5
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "2S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "E"]
+Pass    Pass    Pass    1S
+Pass    2S      Pass    Pass
+Pass    
+[Play "E"]
+C3 C2 CT CA 
+S5 S3 C6 SA 
+S7 SQ C4 S2 
+SJ S6 H4 SK 
+D4 CK C5 C7 
+H6 HQ HA H5 
+DA D5 DQ DK 
+D3 D7 DJ D2 
+H7 C8 CQ S4 
+HT S8 H3 H8 
+D8 C9 CJ S9 
+HK ST HJ H9 
+DT D9 H2 D6 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "E"]
+Pass    Pass    Pass    1S
+Pass    3S      Pass    Pass
+Pass    
+[Play "E"]
+C3 C2 CT CA 
+HK HQ HA H5 
+D8 D5 DQ D2 
+S5 C8 C6 C7 
+DA D7 DJ D6 
+DT D9 H4 DK 
+HT S3 H2 H8 
+S7 S6 C5 SA 
+SJ S8 C4 SK 
+H7 SQ H3 S2 
+D4 C9 CQ S4 
+H6 ST HJ H9 
+D3 CK CJ S9 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "3SX"]
+[Result "9"]
+[Score "NS 730"]
+[Auction "E"]
+Pass    Pass    Pass    1S
+Pass    2S      X       Pass
+3D      3S      X       Pass
+Pass    Pass    
+[Play "E"]
+C3 C2 CT CA 
+S7 C8 C4 C7 
+HK HQ HA H5 
+DA D5 DQ DK 
+D4 D7 DJ D2 
+D8 C9 C6 SA 
+S5 SQ H4 S2 
+SJ S3 CQ SK 
+H6 S6 H2 H8 
+HT CK CJ D6 
+DT D9 H3 S4 
+H7 S8 HJ H9 
+D3 ST C5 S9 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "10"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "E"]
+Pass Pass 1C 1S
+X 3S Pass Pass
+Pass
+[Play "E"]
+C3 C2 CT CA
+S5 S3 C4 SA
+S7 SQ C5 S2
+SJ S6 H2 SK
+D3 CK C6 C7
+D4 C8 CJ S4
+H6 HQ HA H5
+D8 D5 DQ D2
+DA D7 DJ DK
+DT D9 H3 D6
+H7 S8 H4 H8
+HT C9 CQ S9
+HK ST HJ H9
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "3S"]
+[Result "10"]
+[Score "NS 170"]
+[Auction "E"]
+Pass    Pass    Pass    1S
+Pass    3S      Pass    Pass
+Pass    
+[Play "E"]
+C3 CK C6 C7 
+S5 SQ C5 S2 
+S7 S3 H4 SA 
+SJ S6 C4 SK 
+HK HQ H3 H5 
+D4 D5 DJ DK 
+H6 S8 H2 H8 
+D8 C2 CQ CA 
+HT ST HA H9 
+D3 C8 CJ S4 
+DT D7 DQ D2 
+H7 C9 HJ S9 
+DA D9 CT D6 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "4S"]
+[Result "10"]
+[Score "NS 620"]
+[Auction "E"]
+Pass Pass Pass 1S
+Pass 1NT 3C Pass
+Pass 3S Pass 4S
+Pass Pass Pass
+[Play "E"]
+C3 C2 CT CA
+SJ S3 H2 SA
+S5 ST C4 S2
+S7 SQ C6 S4
+H7 HQ HA H5
+DA D5 DQ DK
+D4 D7 DJ D2
+H6 S6 HJ H8
+D3 CK C5 C7
+D8 C9 CQ S9
+HK S8 H4 H9
+DT C8 CJ SK
+HT D9 H3 D6
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "E"]
+Pass    Pass    Pass    1S
+Pass    2S      X       Pass
+3D      3S      Pass    Pass
+Pass    
+[Play "E"]
+C3 C2 CT CA 
+S5 SQ HJ S2 
+S7 S3 C6 SA 
+SJ S6 C5 SK 
+D4 CK C4 C7 
+D8 C8 CQ S4 
+HK HQ H4 H5 
+H7 S8 H3 H8 
+DA D5 DQ DK 
+H6 ST H2 H9 
+D3 D7 DJ D2 
+HT C9 HA S9 
+DT D9 CJ D6 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "10"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:J75.KT76.AT843.3 QT863.Q.975.K982 .AJ432.QJ.QJT654 AK942.985.K62.A7"]
+[Declarer "N"]
+[Contract "3S"]
+[Result "10"]
+[Score "NS 170"]
+[Auction "E"]
+Pass    Pass    Pass    1S
+Pass    3S      Pass    Pass
+Pass    
+[Play "E"]
+C3 C8 CT CA 
+S5 S3 C4 SA 
+S7 ST C6 S2 
+SJ S6 H2 SK 
+DT CK C5 C7 
+H7 C2 CQ S4 
+HK HQ H4 H5 
+D4 D5 DJ DK 
+H6 S8 H3 H8 
+D3 C9 CJ S9 
+HT SQ HA H9 
+D8 D7 DQ D2 
+DA D9 HJ D6 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.09"]
+[Board "11"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass Pass Pass Pass
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass    Pass    Pass    Pass
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass Pass Pass Pass
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass    Pass    Pass    Pass
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass    Pass    Pass    Pass
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass    Pass    Pass    Pass
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "11"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer "S"]
+[Contract "1H"]
+[Result "8"]
+[Score "NS 110"]
+[Auction "S"]
+Pass Pass Pass 1C
+1H Pass Pass Pass
+[Play "W"]
+CT C2 CA C8
+D2 DA DJ D4
+H3 HQ HK HA
+H6 D3 HJ HT
+DQ D5 D9 DT
+D8 D7 C5 H2
+H8 C3 H5 H9
+C6 C4 C7 CK
+S3 C9 H7 CQ
+SA S5 S6 S2
+D6 ST S8 H4
+S9 SK SJ S4
+DK CJ SQ S7
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer "E"]
+[Contract "1NT"]
+[Result "10"]
+[Score "NS -180"]
+[Auction "S"]
+Pass    Pass    Pass    1NT
+Pass    Pass    Pass    
+[Play "S"]
+H4 H3 HQ HK 
+D4 D2 D5 DJ 
+DT DK DA D9 
+C8 CT CJ C7 
+CQ C6 C4 CA 
+S2 S9 SK SQ 
+S4 SA ST S6 
+H2 DQ D3 H5 
+H9 D8 D7 H7 
+S7 D6 C3 C5 
+HT S3 S5 SJ 
+HA H6 C9 S8 
+CK H8 C2 HJ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass Pass Pass Pass
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass    Pass    Pass    Pass
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "11"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "S:742.AT942.T4.KQ8 A93.863.KQ862.T6 KT5.Q.A753.J9432 QJ86.KJ75.J9.A75"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "S"]
+Pass    Pass    Pass    Pass
+[Play "W"]
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.09"]
+[Board "12"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "8"]
+[Score "NS 50"]
+[Auction "W"]
+3C Pass Pass Pass
+[Play "N"]
+S5 SK SA S4
+DA D9 DK D8
+DQ D5 D6 DJ
+DT D2 D7 C5
+C7 C2 C6 CA
+CK C8 H2 CJ
+H9 H7 H3 C3
+S9 SQ S2 S8
+H8 HA H4 S3
+HJ HK H6 S7
+D4 H5 HT C4
+CQ HQ ST CT
+D3 S6 SJ C9
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "W"]
+[Contract "3CX"]
+[Result "10"]
+[Score "NS -570"]
+[Auction "W"]
+3C      Pass    Pass    X
+Pass    Pass    Pass    
+[Play "N"]
+H8 HA H2 D8 
+H9 HK H3 DJ 
+HJ H7 H4 C9 
+C7 C2 C6 CA 
+CK C8 S2 CJ 
+DA D2 D7 C3 
+CQ D5 ST CT 
+D4 D9 DK C4 
+S5 SK SA S4 
+DQ H5 D6 C5 
+S9 SQ SJ S3 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "W"]
+3C Pass Pass Pass
+[Play "N"]
+S9 SK SA S8
+S5 SQ SJ S4
+HJ HA H2 D8
+H9 HK H3 DJ
+H8 HQ H4 S3
+C7 C8 C6 CA
+CK C2 S2 CJ
+DA D5 D7 C3
+CQ D2 D6 CT
+DQ D9 DK C4
+DT H5 H6 C9
+D4 H7 HT C5
+D3 S6 ST S7
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS -130"]
+[Auction "W"]
+3C      Pass    Pass    Pass
+[Play "N"]
+S5 SK SA S4 
+H9 HA H2 D8 
+H8 HK H3 S3 
+HJ HQ H4 DJ 
+CQ H5 H6 C9 
+DA D2 D6 C5 
+S9 SQ S2 S8 
+CK C8 C6 C4 
+D4 D9 D7 S7 
+D3 S6 ST CT 
+C7 C2 SJ CA 
+DQ D5 DK CJ 
+DT H7 HT C3 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "N"]
+[Contract "3NTX"]
+[Result "9"]
+[Score "NS 750"]
+[Auction "W"]
+3C      Pass    Pass    X
+Pass    3NT     X       Pass
+Pass    Pass    
+[Play "E"]
+HA H2 C3 H8 
+HK H3 CJ H9 
+C8 C6 CA C7 
+D5 D6 DJ DA 
+HQ H4 S8 HJ 
+D2 DK D8 D3 
+H5 HT CT S5 
+D9 D7 S7 DQ 
+H7 S2 S4 DT 
+S6 ST S3 D4 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "8"]
+[Score "NS 50"]
+[Auction "W"]
+3C      Pass    Pass    Pass
+[Play "N"]
+S5 SK SA S8 
+DQ D5 D6 DJ 
+DA D2 D7 D8 
+DT D9 DK C5 
+S9 SQ S2 S4 
+H8 HA H2 S3 
+H9 HK H3 S7 
+C7 C8 C6 CA 
+CK C2 H4 CJ 
+D4 H5 H6 C3 
+CQ H7 HT CT 
+D3 S6 ST C4 
+HJ HQ SJ C9 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "12"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "W"]
+3C Pass Pass Pass
+[Play "N"]
+S9 SQ SA S3
+H8 HQ H2 D8
+H9 HA H3 DJ
+HJ H5 H4 C3
+S5 SK S2 S4
+D3 D2 D6 C4
+D4 S6 ST S7
+CQ H7 HT C9
+DA D5 D7 C5
+C7 C2 C6 CA
+CK D9 SJ S8
+DQ C8 DK CT
+DT HK H6 CJ
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "9"]
+[Score "NS -110"]
+[Auction "W"]
+3C      Pass    Pass    Pass
+[Play "N"]
+S5 SK SA S4 
+S9 SQ ST S7 
+H8 HA H2 D8 
+HJ HK H3 DJ 
+H9 HQ H4 S3 
+C7 C8 C6 CA 
+CK C2 D6 CJ 
+DA D2 D7 C3 
+CQ D5 S2 CT 
+DQ D9 DK C4 
+DT H5 H6 C9 
+D4 S6 SJ S8 
+D3 H7 HT C5 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "W"]
+[Contract "3C"]
+[Result "8"]
+[Score "NS 50"]
+[Auction "W"]
+3C Pass Pass Pass
+[Play "N"]
+S5 SK SA S8
+DQ D2 D6 DJ
+DA D5 D7 D8
+DT D9 DK C5
+C7 C8 C6 CA
+CK C2 ST CJ
+H9 H5 H2 C3
+S9 SQ S2 S4
+H8 HA H3 S3
+HJ HK H4 S7
+D4 H7 H6 C4
+CQ HQ HT CT
+D3 S6 SJ C9
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "N"]
+[Contract "3NTX"]
+[Result "8"]
+[Score "NS -200"]
+[Auction "W"]
+3C      Pass    Pass    X
+Pass    3NT     X       Pass
+Pass    Pass    
+[Play "E"]
+HA H2 C5 H8 
+D9 D6 DJ DQ 
+D2 DK D8 D3 
+C8 C6 CJ CQ 
+SK SA S4 S5 
+SQ S2 S3 S9 
+HK H3 S8 H9 
+HQ H4 S7 HJ 
+D5 D7 C4 D4 
+S6 SJ C3 DT 
+C2 ST CT C7 
+H5 HT C9 CK 
+H7 H6 CA DA 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "12"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "W"]
+[Vulnerable "NS"]
+[Deal "W:8743..J8.AJT9543 95.J98.AQT43.KQ7 KQ6.AKQ75.952.82 AJT2.T6432.K76.6"]
+[Declarer "S"]
+[Contract "3H"]
+[Result "8"]
+[Score "NS -100"]
+[Auction "W"]
+3C      Pass    Pass    3H
+Pass    Pass    Pass    
+[Play "W"]
+CA C7 C2 C6 
+C5 CQ C8 S2 
+CJ H8 HA H2 
+S4 H9 HK H3 
+S8 S5 SK SA 
+D8 D3 D2 DK 
+DJ DA D5 D6 
+CT DQ D9 D7 
+C9 CK H5 H6 
+S7 S9 SQ ST 
+C4 HJ HQ H4 
+S3 D4 H7 HT 
+C3 DT S6 SJ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.09"]
+[Board "13"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "S"]
+[Contract "5C"]
+[Result "11"]
+[Score "NS 600"]
+[Auction "N"]
+Pass Pass 1H Pass
+1S Pass 2C Pass
+Pass 2D 3C Pass
+5C Pass Pass Pass
+[Play "W"]
+C3 C8 C2 C5
+C7 C9 D7 CA
+S8 S3 SK ST
+S2 S4 SA C6
+D3 D2 D4 DK
+D8 DA DJ D9
+S7 SQ S5 H2
+CK SJ S9 H4
+H3 H5 H9 HJ
+H6 HQ HT HA
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "E"]
+[Contract "3DX"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2C      Pass
+2H      3D      Pass    Pass
+X       Pass    Pass    Pass
+[Play "S"]
+H2 HK H5 H9 
+HA H3 HQ HT 
+HJ H6 C9 D7 
+ST S2 S3 SA 
+DK D3 D2 DJ 
+H8 H7 S4 D6 
+D9 DQ DA D5 
+C5 S7 SQ SK 
+C6 S8 SJ S5 
+CT C7 S6 S9 
+H4 D8 C8 D4 
+CJ C3 C4 C2 
+CA CK CQ DT 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "E"]
+[Contract "3DX"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "N"]
+Pass Pass 1H Pass
+1S Pass 2C Pass
+2H 3D Pass Pass
+X Pass Pass Pass
+[Play "S"]
+ST S2 S4 SA
+CA C3 C4 C2
+C5 CK CQ H9
+C6 C7 C9 D7
+DK D8 D2 D6
+HA H3 H5 HT
+CT D3 C8 S5
+H2 HK HQ S9
+D9 S8 S3 SK
+HJ H6 S6 D4
+H4 DQ DA DJ
+CJ S7 SQ D5
+H8 H7 SJ DT
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "10"]
+[Score "NS 620"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2C      Pass
+2H      3D      3H      Pass
+4H      Pass    Pass    Pass
+[Play "W"]
+D3 D2 DT DK 
+HK H5 HT H2 
+D8 DA D7 D9 
+H7 HQ H9 H4 
+C7 C4 C2 CA 
+H6 S3 S5 HA 
+H3 S4 DJ HJ 
+CK CQ S9 C5 
+S8 S6 SK ST 
+-  -  D6 -  
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "E"]
+[Contract "3DX"]
+[Result "7"]
+[Score "NS 500"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2C      Pass
+Pass    2D      Pass    Pass
+2S      Pass    3C      3D
+Pass    Pass    X       Pass
+Pass    Pass    
+[Play "S"]
+HA H3 H5 H9 
+H2 H7 HQ HT 
+CA C3 C9 C2 
+ST S2 S3 SA 
+DK D3 D2 D7 
+C5 CK C4 S5 
+H4 HK DA S9 
+D9 S7 S6 SK 
+CJ C7 C8 D4 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "10"]
+[Score "NS 620"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2C      Pass
+2H      3D      3H      Pass
+4H      Pass    Pass    Pass
+[Play "W"]
+D3 DA D7 D9 
+HK HQ HT H2 
+H7 H5 H9 HJ 
+H3 S3 D4 HA 
+H6 D2 D6 H8 
+C7 C4 C2 CA 
+CK CQ S9 C5 
+D8 S4 DT DK 
+C3 C8 S5 C6 
+S8 C9 DJ CT 
+S7 S6 SA CJ 
+S2 SJ D5 H4 
+DQ SQ SK ST 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "13"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS 130"]
+[Auction "N"]
+1S Pass 2H Pass
+2NT Pass 3C Pass
+Pass Pass
+[Play "W"]
+D3 DA D6 D9
+CK CQ C2 C5
+S2 S3 SK ST
+D8 D2 D4 DK
+C3 C4 H9 CA
+C7 C8 D5 C6
+HK HQ HT H2
+S7 SQ SA CT
+H3 H5 D7 HA
+H6 C9 DT H4
+S8 S4 S5 CJ
+H7 S6 S9 HJ
+DQ SJ DJ H8
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "S"]
+[Contract "5C"]
+[Result "10"]
+[Score "NS -100"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2C      Pass
+Pass    2D      3C      Pass
+5C      Pass    Pass    Pass
+[Play "W"]
+D3 DA DJ D9 
+CK C9 C2 C5 
+DQ D2 D4 DK 
+C3 C4 S5 CA 
+C7 CQ D7 C6 
+HK H5 HT HJ 
+H3 HQ H9 H2 
+S2 S3 SA ST 
+S7 S4 SK CT 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "S"]
+[Contract "5C"]
+[Result "10"]
+[Score "NS -100"]
+[Auction "N"]
+Pass Pass 1H Pass
+1S Pass 2C Pass
+Pass 2D 3C Pass
+5C Pass Pass Pass
+[Play "W"]
+D8 DA D7 D9
+HK HQ HT H2
+D3 D2 D4 DK
+S2 S3 SK ST
+CK C4 C2 C5
+C3 C8 DJ C6
+H7 H5 H9 HA
+H3 C9 S5 H4
+S8 S4 S9 CT
+H6 CQ DT H8
+S7 S6 SA CJ
+C7 SJ D6 CA
+DQ SQ D5 HJ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "10"]
+[Score "NS 620"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2C      Pass
+2H      3D      3H      Pass
+4H      Pass    Pass    Pass
+[Play "W"]
+D3 D2 DT DK 
+HK H5 HT H2 
+D8 DA D7 D9 
+H7 HQ H9 H4 
+CK CQ C2 C5 
+DQ S3 DJ H8 
+H6 S4 S5 HJ 
+H3 S6 S9 HA 
+C3 C4 D6 CA 
+C7 C8 SA C6 
+S2 C9 D5 CT 
+S8 SJ D4 CJ 
+S7 SQ SK ST 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "13"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "N"]
+[Vulnerable "All"]
+[Deal "N:QJ643.Q5.A2.Q984 AK95.T9.JT7654.2 T.AJ842.K9.AJT65 872.K763.Q83.K73"]
+[Declarer "S"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS 130"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2C      Pass
+Pass    2D      Pass    Pass
+2S      Pass    2NT     Pass
+3C      Pass    Pass    Pass
+[Play "W"]
+D8 D2 DT DK 
+S8 S3 SK ST 
+HK H5 HT H2 
+C3 CQ C2 C5 
+C7 C4 D4 CA 
+H7 HQ H9 H4 
+D3 DA D7 D9 
+S7 S4 S9 C6 
+H6 S6 DJ HA 
+H3 SJ S5 HJ 
+S2 SQ D6 H8 
+CK C8 SA CT 
+DQ C9 D5 CJ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "14"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "8"]
+[Score "NS 100"]
+[Auction "E"]
+Pass Pass 1NT Pass
+2C Pass 2S Pass
+4S Pass Pass Pass
+[Play "N"]
+S6 S5 H2 SJ
+C3 C2 CQ CJ
+H5 H6 H3 HJ
+SQ SK H7 S3
+CA C5 C4 C7
+H4 H8 H9 HA
+C6 D7 CK CT
+S4 HQ HT HK
+S8 ST C8 S2
+D8 D3 DK D5
+D9 D2 D4 DQ
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "8"]
+[Score "NS 100"]
+[Auction "E"]
+Pass    Pass    1NT     Pass
+2C      Pass    2S      Pass
+2NT     Pass    3NT     Pass
+4D      X       4S      Pass
+Pass    Pass    
+[Play "N"]
+S6 S5 H2 SJ 
+CA C2 C4 CJ 
+C6 C5 CK C7 
+H4 H6 H3 HJ 
+S8 ST D4 S3 
+H5 H8 H9 HA 
+C3 D7 CQ CT 
+S4 HQ HT HK 
+S7 S9 D6 S2 
+D8 D3 DK D5 
+D9 D2 H7 SA 
+DJ DA C8 C9 
+SQ SK DT DQ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "9"]
+[Score "NS 50"]
+[Auction "E"]
+Pass Pass 1NT Pass
+2C Pass 2S Pass
+4S Pass Pass Pass
+[Play "N"]
+H5 H6 HT HA
+C3 C2 CQ CJ
+H4 H8 H2 HJ
+SQ SK H3 SJ
+D9 D3 DK D5
+S4 HQ H7 HK
+CA C5 C4 C7
+S8 ST C8 S3
+D8 D2 D4 DQ
+C6 S5 CK CT
+DJ D7 DT S2
+S7 S9 D6 C9
+S6 DA H9 SA
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.13"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS -140"]
+[Auction "E"]
+Pass    Pass    1NT     Pass
+2C      Pass    2S      Pass
+3S      Pass    Pass    Pass
+[Play "N"]
+H5 H6 H7 HJ 
+S8 SK H2 S3 
+CA C2 C4 CJ 
+H4 H8 H9 HA 
+C6 C5 C8 C7 
+S4 HQ H3 HK 
+S7 S5 D4 SJ 
+C3 S9 CQ CT 
+D9 D3 D6 DQ 
+D8 DA DT D5 
+DJ D7 DK SA 
+S6 ST CK C9 
+SQ D2 HT S2 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "E"]
+[Contract "4S"]
+[Result "8"]
+[Score "NS 100"]
+[Auction "E"]
+Pass    Pass    1NT     Pass
+2C      X       XX      Pass
+2S      Pass    3S      Pass
+4S      Pass    Pass    Pass
+[Play "S"]
+CK C7 C3 C5 
+C4 CJ CA C2 
+H2 S2 S4 S5 
+H3 HA H5 H6 
+H7 HJ H4 H8 
+D6 D5 DJ D3 
+H9 SJ S8 ST 
+HT HK S7 HQ 
+D4 S3 S6 S9 
+DT DQ D9 DA 
+DK C9 D8 D7 
+CQ CT C6 SK 
+C8 SA SQ D2 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "9"]
+[Score "NS 50"]
+[Auction "E"]
+Pass    Pass    1NT     Pass
+2C      Pass    2S      Pass
+2NT     Pass    3NT     Pass
+4D      Pass    4S      Pass
+Pass    Pass    
+[Play "N"]
+S6 ST H3 SJ 
+C3 C5 CQ CJ 
+H4 H6 H2 HJ 
+CA C2 C4 CT 
+H5 H8 H9 HA 
+D9 DA D4 D5 
+D8 D3 DK DQ 
+S4 HQ H7 HK 
+S8 S9 C8 S3 
+DJ D2 D6 S2 
+C6 S5 CK C9 
+SQ D7 DT SA 
+S7 SK HT C7 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "14"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "9"]
+[Score "NS 50"]
+[Auction "E"]
+Pass Pass 1NT Pass
+2C Pass 2S Pass
+3S Pass 4S Pass
+Pass Pass
+[Play "N"]
+D8 D2 DK D5
+C3 C2 CK C7
+C6 C5 CQ C9
+D9 D3 D4 DQ
+H4 HQ H2 HJ
+DJ DA D6 CT
+H5 H6 H3 HK
+S6 S9 H7 S2
+S4 H8 H9 HA
+CA S5 C4 CJ
+S7 D7 DT SA
+S8 ST HT S3
+SQ SK C8 SJ
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "2NT"]
+[Result "7"]
+[Score "NS 50"]
+[Auction "E"]
+Pass    Pass    1C      Pass
+1D      Pass    1NT     Pass
+2C      Pass    2S      Pass
+2NT     Pass    Pass    Pass
+[Play "N"]
+H5 HQ H7 HJ 
+CA C2 C4 CJ 
+H4 H8 H9 HA 
+C6 C5 CQ CT 
+S4 H6 H2 HK 
+S8 SK D6 S3 
+S6 S5 D4 SA 
+SQ S9 C8 S2 
+C3 D7 CK C7 
+D8 D2 HT D5 
+D9 D3 H3 C9 
+DJ DA DT DQ 
+S7 ST DK SJ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.15"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "4S"]
+[Result "9"]
+[Score "NS 50"]
+[Auction "E"]
+Pass Pass 1NT Pass
+2C Pass 2S Pass
+4S Pass Pass Pass
+[Play "N"]
+H5 H8 H9 HA
+C3 C5 CK CJ
+H4 HQ H2 HK
+SQ SK H3 SJ
+D8 D3 DK D5
+S4 H6 H7 HJ
+S8 ST C4 S3
+C6 C2 C8 C7
+D9 D2 D4 DQ
+CA S5 CQ CT
+DJ D7 D6 S2
+S7 S9 DT C9
+S6 DA HT SA
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.06"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "3S"]
+[Result "8"]
+[Score "NS 50"]
+[Auction "E"]
+Pass    Pass    1NT     Pass
+2C      Pass    2S      Pass
+3S      Pass    Pass    Pass
+[Play "N"]
+H5 H6 H9 HJ 
+C6 C5 CK CJ 
+H4 HQ H2 HA 
+S8 SK D4 S3 
+CA C2 C4 CT 
+D9 D7 DK D5 
+S4 H8 H3 HK 
+D8 D2 D6 DQ 
+C3 S5 C8 C7 
+DJ D3 DT SJ 
+S7 S9 H7 SA 
+S6 ST CQ C9 
+SQ DA HT S2 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "14"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "E"]
+[Vulnerable "None"]
+[Deal "E:KT95.Q86.A732.52 .T9732.KT64.KQ84 AJ32.AKJ.Q5.JT97 Q8764.54.J98.A63"]
+[Declarer "W"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS -140"]
+[Auction "E"]
+Pass    Pass    1NT     Pass
+2C      Pass    2S      Pass
+3S      Pass    Pass    Pass
+[Play "N"]
+H5 H6 H7 HA 
+SQ SK D4 SJ 
+DJ DA D6 D5 
+CA C2 C4 CJ 
+H4 H8 H9 HJ 
+S4 HQ H2 HK 
+C6 C5 CQ C9 
+D9 D2 DK DQ 
+C3 S5 CK C7 
+S8 ST C8 S3 
+D8 D7 DT S2 
+S7 S9 H3 CT 
+S6 D3 HT SA 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "15"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "1S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "S"]
+1C Pass 1H Pass
+1S Pass Pass Pass
+[Play "W"]
+H6 H7 HK HA
+D5 SK S9 S3
+C5 C6 CA C2
+CQ C7 C3 CK
+CJ SJ D4 CT
+H9 H3 HJ HQ
+H8 H4 HT H2
+D2 D3 DA D8
+D9 DQ D7 DT
+C9 H5 S5 S6
+DJ D6 S4 DK
+- - S8 -
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result "9"]
+[Score "NS 600"]
+[Auction "S"]
+1NT     Pass    2NT     Pass
+3NT     Pass    Pass    Pass
+[Play "W"]
+CQ C6 CA C2 
+H6 H3 HK HA 
+D9 DQ DA D8 
+H9 H4 HJ H2 
+H8 H5 HT HQ 
+D5 SK S9 S3 
+C4 S2 S8 SA 
+C5 SJ S7 S6 
+C8 SQ S5 ST 
+D2 D3 D4 DK 
+DJ D6 D7 DT 
+C9 C7 C3 CT 
+CJ H7 S4 CK 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "2NT"]
+[Result "8"]
+[Score "NS 120"]
+[Auction "S"]
+1NT Pass 2C Pass
+2S Pass 2NT Pass
+Pass Pass
+[Play "W"]
+CQ C6 CA C2
+CJ C7 C3 CT
+C9 D3 D4 CK
+H6 S2 S5 SA
+C8 SJ S4 S3
+C5 SQ S9 S6
+H9 SK S8 ST
+H8 H3 HJ HQ
+D9 DQ DA D8
+D2 D6 S7 DT
+DJ H4 D7 DK
+D5 H5 HK HA
+C4 H7 HT H2
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.13"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result "8"]
+[Score "NS -100"]
+[Auction "S"]
+1NT     Pass    2NT     Pass
+3C      Pass    3NT     Pass
+Pass    Pass    
+[Play "W"]
+CQ C6 CA C2 
+CJ C7 C3 CT 
+H6 H7 HT HQ 
+D9 DQ DA D8 
+DJ D3 D4 DT 
+C9 H3 S5 CK 
+D5 D6 D7 DK 
+C8 S2 S4 SA 
+H9 SJ S9 S3 
+C5 SQ S8 S6 
+C4 SK S7 ST 
+H8 H4 HK HA 
+D2 H5 HJ H2 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result "9"]
+[Score "NS 600"]
+[Auction "S"]
+1NT     Pass    2NT     Pass
+3NT     Pass    Pass    Pass
+[Play "W"]
+CQ C6 CA C2 
+H9 H3 HK HA 
+C9 S2 S4 SA 
+C5 SJ S9 S3 
+DJ D3 D4 DT 
+C8 C7 C3 CT 
+D2 D6 DA DK 
+H6 H4 HJ HQ 
+CJ H5 S5 CK 
+D5 SQ S8 S6 
+D9 SK S7 ST 
+C4 DQ D7 D8 
+H8 H7 HT H2 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "1S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "S"]
+1D      Pass    1H      Pass
+1S      Pass    Pass    Pass
+[Play "W"]
+CQ C6 C3 CK 
+C9 SK S5 S3 
+H9 H7 HJ HQ 
+H8 H3 HK HA 
+H6 H4 HT H2 
+D2 SQ S4 S6 
+C5 H5 S9 ST 
+C8 C7 CA C2 
+D9 DQ D4 D8 
+DJ D6 D7 DT 
+D5 D3 DA DK 
+C4 S2 S8 SA 
+CJ SJ S7 CT 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "15"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "1NT"]
+[Result "9"]
+[Score "NS 150"]
+[Auction "S"]
+1NT Pass Pass Pass
+[Play "W"]
+CQ C6 CA C2
+C4 C7 C3 CK
+H6 S2 S4 SA
+H8 SJ S5 S3
+H9 H3 HT HQ
+D2 SQ S7 S6
+C5 H4 HJ HA
+C8 SK S8 ST
+D5 H5 HK H2
+D9 D3 S9 D8
+DJ DQ D4 DT
+C9 H7 D7 CT
+CJ D6 DA DK
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "W"]
+[Contract "5CX"]
+[Result "8"]
+[Score "NS 500"]
+[Auction "S"]
+1S      Pass    3S      Pass
+4S      5C      Pass    Pass
+X       Pass    Pass    Pass
+[Play "N"]
+H3 HJ HQ H6 
+H4 HT HA H8 
+H7 HK H2 H9 
+S2 S5 S3 C5 
+D3 D4 D8 D2 
+C7 C3 C2 CQ 
+C6 CA CT C4 
+SK S4 S6 C8 
+D6 DA DT DJ 
+DQ D7 DK D9 
+SQ S7 ST C9 
+SJ S8 CK D5 
+H5 S9 SA CJ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.17"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result "8"]
+[Score "NS -100"]
+[Auction "S"]
+1NT Pass 2NT Pass
+3NT Pass Pass Pass
+[Play "W"]
+CQ C6 CA C2
+C9 C7 C3 CK
+D9 DQ DA D8
+D5 D3 D4 DK
+C8 S2 S9 SA
+D2 SK S8 S3
+H9 SQ S4 S6
+H8 SJ S7 ST
+H6 H3 HJ HQ
+C5 H4 HK HA
+C4 H7 HT H2
+CJ D6 S5 CT
+DJ H5 D7 DT
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result "9"]
+[Score "NS 600"]
+[Auction "S"]
+1NT     Pass    2NT     Pass
+3NT     Pass    Pass    Pass
+[Play "W"]
+CQ C6 CA C2 
+CJ C7 C3 CT 
+C9 S2 S4 CK 
+H9 SJ S5 S3 
+H6 SQ S9 S6 
+H8 H3 HJ HQ 
+C8 H4 HK HA 
+C5 H5 HT H2 
+D5 D3 DA D8 
+D2 DQ D7 DT 
+DJ SK S8 ST 
+D9 D6 D4 DK 
+C4 H7 S7 SA 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "15"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "S"]
+[Vulnerable "NS"]
+[Deal "S:AT63.AQ2.KT8.KT2 .986.J952.QJ9854 KQJ2.7543.Q63.76 98754.KJT.A74.A3"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "10"]
+[Score "NS 620"]
+[Auction "S"]
+1NT     Pass    2C      Pass
+2S      Pass    2NT     Pass
+3NT     Pass    4S      Pass
+Pass    Pass    
+[Play "W"]
+D2 D3 DA D8 
+C9 C6 CA C2 
+C8 C7 C3 CK 
+C5 SK S5 S3 
+H9 SQ S9 S6 
+H6 H3 HJ HQ 
+H8 H4 HK HA 
+DJ DQ D4 DT 
+D9 D6 D7 DK 
+C4 SJ HT CT 
+CQ H5 S8 H2 
+CJ S2 S7 ST 
+D5 H7 S4 SA 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "16"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "7"]
+[Score "NS 200"]
+[Auction "W"]
+Pass Pass 1NT Pass
+2C Pass 2D Pass
+3NT Pass Pass Pass
+[Play "S"]
+HK H3 H6 H4
+HQ H9 HA H2
+HJ C6 HT S9
+H8 S3 D2 C7
+H7 SQ D4 C3
+H5 DT D8 D9
+DQ D5 D3 DA
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "7"]
+[Score "NS 200"]
+[Auction "W"]
+Pass    Pass    1NT     Pass
+2C      Pass    2D      2H
+3NT     Pass    Pass    Pass
+[Play "S"]
+HK H3 H6 H4 
+HQ H9 HA H2 
+HJ S3 HT S9 
+H8 C8 D8 CT 
+H7 C6 D7 C7 
+H5 DT ST C3 
+DQ D5 D2 DA 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "S"]
+[Contract "2HX"]
+[Result "8"]
+[Score "NS 470"]
+[Auction "W"]
+Pass Pass 1C 1H
+X 2H Pass Pass
+X Pass Pass Pass
+[Play "W"]
+SA S6 S5 S2
+SK S7 S9 S4
+SQ ST S8 SJ
+H3 H6 H4 HK
+H9 HT H2 H5
+D6 D2 DA DJ
+D5 D3 DK DQ
+DT D4 D9 H7
+C8 HA C7 H8
+C6 D7 C3 C2
+CQ D8 CT C5
+CJ C4 CA HJ
+S3 C9 CK HQ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.13"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "3NTX"]
+[Result "7"]
+[Score "NS 500"]
+[Auction "W"]
+Pass    Pass    1NT     Pass
+2C      Pass    2D      2H
+3NT     X       Pass    Pass
+Pass    
+[Play "S"]
+HK H3 HT H4 
+H5 H9 HA H2 
+HQ CJ H6 C7 
+HJ S3 D4 C3 
+H8 SQ D8 D9 
+H7 C6 C9 S8 
+S2 SA S7 S9 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "4C"]
+[Result "10"]
+[Score "NS -130"]
+[Auction "W"]
+Pass    Pass    1NT     2H
+3H      Pass    4C      Pass
+Pass    Pass    
+[Play "S"]
+HK H9 H6 H4 
+H8 H3 HA H2 
+DJ D5 D4 DA 
+C2 CQ C9 C3 
+C5 C6 C4 C7 
+H5 C8 D3 CT 
+S2 SA S6 S5 
+S4 SK S7 S8 
+DQ DT D2 D9 
+HQ S3 HT CK 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "7"]
+[Score "NS 200"]
+[Auction "W"]
+Pass    Pass    1NT     Pass
+2C      Pass    2D      Pass
+3NT     Pass    Pass    Pass
+[Play "S"]
+HK H9 H6 H2 
+HQ H3 HA H4 
+HJ C8 HT S9 
+H8 S3 D8 C3 
+H7 C6 D7 C7 
+H5 DT ST DK 
+DQ D5 D2 DA 
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "16"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "7"]
+[Score "NS 200"]
+[Auction "W"]
+1C Pass 3NT Pass
+Pass Pass
+[Play "S"]
+HK H3 H6 H2
+HQ H9 HA H4
+HJ C6 HT D9
+H5 C8 C9 C3
+H7 CJ C4 C7
+H8 CQ D2 CT
+DJ D5 D3 DK
+C2 D6 D4 CA
+C5 DT S6 CK
+DQ S3 D7 DA
+S2 SQ S7 S5
+S4 SA ST S8
+SJ SK D8 S9
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "W"]
+[Contract "3NT"]
+[Result "9"]
+[Score "NS -600"]
+[Auction "W"]
+1NT     Pass    3NT     Pass
+Pass    Pass    
+[Play "N"]
+C4 C3 C2 C6 
+D2 DA DQ D6 
+C9 CT C5 C8 
+ST S9 S2 SA 
+S7 S5 S4 SK 
+D8 D9 DJ DT 
+H6 H4 HK H9 
+HT H2 HQ H3 
+HA C7 H5 S3 
+D4 DK H7 D5 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.17"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "7"]
+[Score "NS 200"]
+[Auction "W"]
+Pass Pass 1NT 2H
+3H Pass 3S Pass
+3NT Pass Pass Pass
+[Play "S"]
+HK H9 HT H4
+H7 H3 HA H2
+H8 CJ H6 C7
+HQ S3 D2 C3
+HJ DT D4 CK
+H5 C6 ST S9
+C5 C8 C9 CT
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "7"]
+[Score "NS 200"]
+[Auction "W"]
+Pass    Pass    1NT     2H
+3H      Pass    3S      Pass
+3NT     Pass    Pass    Pass
+[Play "S"]
+HK H9 HT H2 
+HQ H3 HA H4 
+HJ SQ H6 S5 
+H8 C8 D8 CT 
+H7 DT D7 DK 
+H5 S3 D2 S8 
+DQ D5 D3 DA 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "16"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "W"]
+[Vulnerable "EW"]
+[Deal "W:AKQ3.93.T65.QJ86 T76.AT6.87432.94 985.42.AK9.AKT73 J42.KQJ875.QJ.52"]
+[Declarer "E"]
+[Contract "3NT"]
+[Result "7"]
+[Score "NS 200"]
+[Auction "W"]
+Pass    Pass    1NT     3H
+3NT     Pass    Pass    Pass
+[Play "S"]
+HK H9 HT H4 
+HQ H3 HA H2 
+H7 CJ H6 C7 
+HJ S3 D2 C3 
+H8 CQ D4 CK 
+H5 DT ST S5 
+DQ D5 D3 DA 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "17"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS 450"]
+[Auction "N"]
+Pass Pass 1C Pass
+1D Pass 1H Pass
+4H Pass Pass Pass
+[Play "W"]
+C3 C4 C9 CT
+H2 HQ HA H3
+H6 HK HT H5
+C6 CJ CQ CA
+C5 D2 C8 CK
+D7 D3 S7 C7
+S4 D5 D4 C2
+S5 SA S6 S3
+D6 D8 DJ H8
+SK H4 S2 S8
+DA D9 DK H9
+DQ DT SJ SQ
+HJ H7 ST S9
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "N"]
+Pass    Pass    Pass    Pass
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "N"]
+Pass Pass Pass Pass
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.13"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer "N"]
+[Contract "3D"]
+[Result "7"]
+[Score "NS -100"]
+[Auction "N"]
+Pass    Pass    1C      Pass
+1D      Pass    2C      Pass
+3D      Pass    Pass    Pass
+[Play "E"]
+SJ S3 S5 SA 
+D4 H3 D7 D2 
+HA H5 H2 HK 
+HT H8 H6 HQ 
+DJ S8 D6 D8 
+S2 S9 SK D3 
+C9 CK C6 C4 
+ST SQ S4 H4 
+C8 CA C5 CJ 
+CQ C2 C3 D5 
+S7 H9 HJ H7 
+DK C7 DQ D9 
+S6 CT DA DT 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer "E"]
+[Contract "3SX"]
+[Result "6"]
+[Score "NS 500"]
+[Auction "N"]
+Pass    Pass    1C      Pass
+1D      Pass    1H      Pass
+3H      3S      Pass    Pass
+X       Pass    Pass    Pass
+[Play "S"]
+H3 H2 HQ HA 
+S3 D6 D5 D4 
+CA C5 C4 C9 
+CK C3 CJ C8 
+C2 C6 SA CQ 
+S8 D7 D3 DJ 
+H5 H6 HK HT 
+S9 DA DT DK 
+C7 S5 D9 S2 
+SQ SK H7 S6 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "N"]
+Pass    Pass    Pass    Pass
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "17"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer "S"]
+[Contract "3H"]
+[Result "10"]
+[Score "NS 170"]
+[Auction "N"]
+1D Pass 1H Pass
+2H Pass 3H Pass
+Pass Pass
+[Play "W"]
+S4 SA S2 S3
+C3 CJ CQ CK
+C5 C4 C9 CA
+C6 D2 C8 CT
+S5 H4 S6 S8
+D6 D3 D4 H3
+SK H7 S7 S9
+D7 D5 DJ H5
+DQ D8 ST SQ
+H2 HQ HA H8
+H6 HK HT H9
+DA DT DK C2
+HJ D9 SJ C7
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer "N"]
+[Contract "3D"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "N"]
+Pass    Pass    1C      Pass
+1D      Pass    1S      Pass
+3D      Pass    Pass    Pass
+[Play "E"]
+HA H3 H6 H4 
+HT H5 HJ HK 
+S2 S3 S4 SA 
+C9 CA C6 C4 
+S7 S8 S5 D2 
+C8 CK C5 CJ 
+SJ S9 SK D3 
+D4 H8 D7 D5 
+CQ C2 C3 D8 
+DK H9 D6 D9 
+ST SQ DQ H7 
+DJ C7 DA DT 
+S6 CT H2 HQ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.17"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer "N"]
+[Contract "1H"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "N"]
+Pass Pass 1C Pass
+1H Pass Pass Pass
+[Play "E"]
+SJ SQ SK SA
+DK H3 D7 D2
+S2 S3 S5 H4
+D4 H5 D6 D3
+C8 CA C3 C4
+C9 CK C6 CJ
+S6 S8 S4 H7
+DJ H9 DA D5
+ST S9 DQ HQ
+HT C2 H6 D8
+HA H8 HJ HK
+CQ C7 C5 D9
+S7 CT H2 DT
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer ""]
+[Contract "Pass"]
+[Result ""]
+[Score "NS 0"]
+[Auction "N"]
+Pass    Pass    Pass    Pass
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "17"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:A.KQ74.T98532.J4 JT762.AT.KJ4.Q98 Q983.9853..AKT72 K54.J62.AQ76.653"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "10"]
+[Score "NS 420"]
+[Auction "N"]
+Pass    Pass    1C      Pass
+1D      Pass    1S      Pass
+3D      Pass    3H      Pass
+4H      Pass    Pass    Pass
+[Play "W"]
+H6 HQ HA H3 
+H2 HK HT H5 
+C3 CJ CQ CK 
+C6 C4 C9 CA 
+C5 D2 C8 CT 
+HJ D3 S2 C7 
+S5 SA SJ S3 
+D7 D5 D4 H8 
+D6 D8 S6 C2 
+S4 H4 S7 S8 
+DQ D9 DJ H9 
+SK H7 ST S9 
+DA DT DK SQ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "18"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "N"]
+[Contract "1NT"]
+[Result "7"]
+[Score "NS 90"]
+[Auction "E"]
+Pass 1D X 1NT
+Pass Pass Pass
+[Play "E"]
+H4 H3 HA H2
+C3 CQ CJ C5
+HK H6 H9 HJ
+C6 C2 CA C8
+C9 C7 C4 CK
+HT S9 H8 HQ
+D7 DQ D3 D4
+DK DA D9 D6
+DJ D2 S2 D8
+H5 SJ H7 S3
+S4 D5 CT S5
+- - S8 -
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "E"]
+[Contract "2H"]
+[Result "8"]
+[Score "NS -110"]
+[Auction "E"]
+Pass    1D      X       1NT
+Pass    2D      Pass    Pass
+2H      Pass    Pass    Pass
+[Play "S"]
+C2 CJ CK C9 
+DQ D3 D4 DJ 
+C7 CT C5 C3 
+H3 HA H2 H5 
+H6 H9 HQ HK 
+DA D9 D6 DK 
+DT H7 D8 D7 
+CQ CA C8 C6 
+SA S2 S3 SK 
+D5 S8 HJ H4 
+SJ SQ S7 ST 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "N"]
+[Contract "1NT"]
+[Result "6"]
+[Score "NS -100"]
+[Auction "E"]
+Pass 1D X 1NT
+Pass Pass Pass
+[Play "E"]
+C6 C2 CT CK
+DJ DQ D9 D8
+D7 DA D3 D4
+DK D2 H7 D6
+H5 H6 HA H2
+HK H3 H9 HJ
+C3 C7 CJ C5
+C9 CQ CA C8
+S4 S9 C4 S3
+SK SA S2 S5
+H4 DT S8 S6
+HT D5 H8 S7
+ST SJ SQ HQ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.13"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "N"]
+[Contract "1NT"]
+[Result "7"]
+[Score "NS 90"]
+[Auction "E"]
+Pass    1D      X       1NT
+Pass    Pass    Pass    
+[Play "E"]
+C3 C2 CT CK 
+D7 DT D3 D4 
+HK H3 H9 HJ 
+C6 C7 CJ C5 
+C9 CQ CA C8 
+H5 H6 C4 S3 
+H4 D2 HA H2 
+HT S9 H8 HQ 
+DJ DQ D9 D6 
+DK DA H7 D8 
+S4 D5 S2 S5 
+ST SA S8 S6 
+SK SJ SQ S7 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "E"]
+[Contract "2H"]
+[Result "8"]
+[Score "NS -110"]
+[Auction "E"]
+Pass    1D      X       1NT
+Pass    2D      Pass    Pass
+2H      Pass    Pass    Pass
+[Play "S"]
+C2 CJ CK C9 
+DQ D3 D6 DJ 
+H3 H9 HJ HK 
+C7 CT C5 C3 
+CQ CA C8 C6 
+SA S2 S3 SK 
+H6 HA H2 H5 
+D5 H8 HQ H4 
+DA D9 D4 DK 
+S9 SQ S5 ST 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "N"]
+[Contract "1NTX"]
+[Result "6"]
+[Score "NS -200"]
+[Auction "E"]
+Pass    1D      X       1NT
+X       Pass    Pass    Pass
+[Play "E"]
+C3 C2 CT CK 
+D7 DT D9 D4 
+S4 SA S8 S3 
+ST S9 SQ S5 
+H5 H3 HA H2 
+HK H6 H9 HJ 
+SK SJ S2 S6 
+C6 CQ CA C5 
+C9 C7 CJ C8 
+DJ D2 C4 D6 
+H4 D5 H8 HQ 
+DK DQ D3 S7 
+HT DA H7 D8 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "18"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "S"]
+[Contract "1NT"]
+[Result "6"]
+[Score "NS -100"]
+[Auction "E"]
+Pass 1D Pass 1S
+Pass 1NT Pass Pass
+Pass
+[Play "W"]
+H8 HJ HK H3
+HA H2 H4 H6
+S2 S3 SK SA
+CT CK C3 C2
+H7 HQ H5 D2
+D3 D4 DK DA
+D9 D6 D7 DQ
+H9 D8 DJ D5
+C4 S5 HT DT
+CJ C5 C6 C7
+CA C8 C9 CQ
+S8 S6 ST SJ
+SQ S7 S4 S9
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "N"]
+[Contract "1NT"]
+[Result "5"]
+[Score "NS -200"]
+[Auction "E"]
+Pass    1D      X       1NT
+Pass    Pass    Pass    
+[Play "E"]
+C3 C2 CT CK 
+D7 DT D3 D4 
+ST S9 S8 S3 
+H5 H3 HA H2 
+HK H6 H9 HJ 
+C6 C7 CJ C5 
+C9 CQ CA C8 
+H4 SJ C4 S5 
+SK SA S2 S6 
+DJ DA D9 D6 
+DK D2 H8 D8 
+S4 D5 SQ S7 
+HT DQ H7 HQ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.17"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "N"]
+[Contract "2S"]
+[Result "7"]
+[Score "NS -100"]
+[Auction "E"]
+Pass 1D X 1NT
+X 2D Pass Pass
+2H Pass Pass 2S
+Pass Pass Pass
+[Play "E"]
+C3 C2 CT CK
+ST SJ SQ S3
+HK H3 H9 HJ
+C6 C7 CJ C5
+H4 H6 HA H2
+C9 CQ CA C8
+H5 D2 H8 HQ
+D7 DQ D9 D4
+DK DA D3 D6
+DJ D5 S2 D8
+SK SA C4 S5
+S4 S9 S8 S6
+HT DT H7 S7
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "N"]
+[Contract "1NTX"]
+[Result "7"]
+[Score "NS 180"]
+[Auction "E"]
+Pass    1D      X       1NT
+X       Pass    Pass    Pass
+[Play "E"]
+C6 C2 CT CK 
+DJ DQ D3 D8 
+D7 DA D9 D4 
+DK D2 H9 D6 
+H5 H3 HA H2 
+HK H6 H8 HJ 
+C3 C7 CJ C5 
+C9 CQ CA C8 
+S4 S9 C4 S3 
+HT SJ H7 HQ 
+ST SA S2 S5 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "18"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "E"]
+[Vulnerable "NS"]
+[Deal "E:KT4.KT54.KJ7.963 AJ9.63.AQT52.Q72 Q82.A987.93.AJT4 7653.QJ2.864.K85"]
+[Declarer "N"]
+[Contract "2NTX"]
+[Result "8"]
+[Score "NS 690"]
+[Auction "E"]
+Pass    1D      X       1NT
+X       2NT     Pass    Pass
+X       Pass    Pass    Pass
+[Play "E"]
+C9 C2 C4 CK 
+D7 DT D3 D4 
+HK H3 H9 HJ 
+HT H6 HA H2 
+H5 S9 H8 HQ 
+DJ DQ D9 D6 
+DK DA S2 D8 
+ST D5 CJ C5 
+C6 D2 S8 S3 
+S4 SA SQ S5 
+SK SJ CT S6 
+C3 C7 CA C8 
+H4 CQ H7 S7 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "19"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "9"]
+[Score "NS -50"]
+[Auction "S"]
+1C Pass 1D Pass
+2D Pass 4D Pass
+4H Pass Pass Pass
+[Play "W"]
+DK D2 DT DA
+S2 S6 SA SK
+D9 DQ D8 D3
+C6 CK CA C2
+CJ CT C4 CQ
+S4 H5 C9 C3
+S8 SQ S5 D4
+S7 ST SJ H2
+S3 H6 C8 C5
+H7 DJ D5 D6
+H4 H8 H3 HJ
+HK D7 S9 C7
+H9 HQ HT HA
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "4H"]
+[Result "8"]
+[Score "NS -100"]
+[Auction "S"]
+1D      Pass    1H      Pass
+2C      Pass    2NT     Pass
+3H      Pass    4H      Pass
+Pass    Pass    
+[Play "E"]
+D5 D3 DK D2 
+DT D4 D9 DJ 
+H3 HJ HK H5 
+CA C2 C6 CT 
+C4 C3 CJ CK 
+HT HA H7 H6 
+D8 H2 H4 H8 
+S9 DA H9 D7 
+SA SK S4 S6 
+S5 C5 S7 ST 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "4D"]
+[Result "9"]
+[Score "NS -50"]
+[Auction "S"]
+1C Pass 1D Pass
+2D Pass 4D Pass
+Pass Pass
+[Play "E"]
+H3 H2 HK H5
+CA C2 CJ CK
+C4 C3 C6 CT
+D5 DA D9 D2
+DT D3 DK D7
+SA SK S4 S6
+D8 D4 S3 DJ
+HT HJ H9 H6
+S5 HA H7 H8
+C9 CQ S8 ST
+C8 C5 H4 DQ
+SJ C7 S7 HQ
+S9 D6 S2 SQ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.13"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "3NT"]
+[Result "7"]
+[Score "NS -100"]
+[Auction "S"]
+1D      Pass    1H      Pass
+2C      Pass    2NT     Pass
+3NT     Pass    Pass    Pass
+[Play "E"]
+HT H2 H4 HQ 
+H3 HJ HK H5 
+D8 HA H7 H6 
+CA C2 CJ CK 
+SA SK S8 S6 
+S5 D3 S7 ST 
+C4 C3 C6 CT 
+SJ D4 S4 SQ 
+D5 DA D9 D2 
+C9 CQ S3 H8 
+C8 C5 S2 D7 
+S9 D6 H9 DJ 
+DT C7 DK DQ 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "3D"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "S"]
+1C      Pass    1D      Pass
+3D      Pass    Pass    Pass
+[Play "E"]
+HT H2 HK H5 
+CA C2 C6 CT 
+SA SK S2 S6 
+H3 HJ H7 H6 
+D5 DA D9 D2 
+DT D3 DK D7 
+D8 HA H4 H8 
+S9 C3 S4 ST 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "5D"]
+[Result "8"]
+[Score "NS -150"]
+[Auction "S"]
+1C      Pass    1D      Pass
+2D      Pass    4D      Pass
+5D      Pass    Pass    Pass
+[Play "E"]
+H3 H2 HK H5 
+CA C2 C6 CK 
+HT HJ H4 H6 
+C4 CQ CJ CT 
+C9 C3 H7 D2 
+D5 D3 DK DQ 
+SA SK S4 S6 
+C8 C5 D9 DJ 
+DT DA S3 D7 
+S5 HA H9 H8 
+D8 D6 S2 ST 
+SJ C7 S8 SQ 
+S9 D4 S7 HQ 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "19"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "S"]
+[Contract "2NT"]
+[Result "7"]
+[Score "NS -50"]
+[Auction "S"]
+1C Pass 1H Pass
+1NT Pass 2NT Pass
+Pass Pass
+[Play "W"]
+S2 S6 S9 SK
+D9 D2 D5 DA
+DK D7 D8 D3
+S3 SQ SA C2
+S4 ST SJ C3
+S7 H5 S5 C5
+S8 H6 C4 H2
+H4 H8 HT HJ
+H7 DJ DT D6
+C6 DQ C8 D4
+CJ CT CA C7
+H9 HQ H3 HA
+HK CK C9 CQ
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "4D"]
+[Result "8"]
+[Score "NS -100"]
+[Auction "S"]
+1C      Pass    1D      Pass
+2D      Pass    4D      Pass
+Pass    Pass    
+[Play "E"]
+HT H2 HK H5 
+H3 HJ H7 H6 
+SA SK S8 S6 
+C4 C2 CJ CK 
+D8 D3 DK DJ 
+CA C3 C6 CT 
+C9 CQ D9 DQ 
+D5 DA S7 D2 
+S9 HA H4 H8 
+C8 C5 S2 D7 
+S5 C7 H9 HQ 
+SJ D4 S4 SQ 
+DT D6 S3 ST 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.17"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "2NT"]
+[Result "8"]
+[Score "NS 120"]
+[Auction "S"]
+1D Pass 1H Pass
+2C Pass 2NT Pass
+Pass Pass
+[Play "E"]
+DT D3 DK D2
+D8 D4 D9 DQ
+H3 HJ HK H5
+C4 C2 C6 CT
+CA C3 CJ CK
+C9 CQ S8 D7
+D5 D6 H7 DJ
+HT HA H4 H6
+S9 DA S7 S6
+S5 H2 H9 HQ
+SA SK S2 ST
+C8 C5 S4 H8
+SJ C7 S3 SQ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "5D"]
+[Result "9"]
+[Score "NS -100"]
+[Auction "S"]
+1C      Pass    1D      Pass
+2D      Pass    4D      Pass
+5D      Pass    Pass    Pass
+[Play "E"]
+C4 C2 CJ CK 
+D5 D3 DK DQ 
+SA SK S8 S6 
+D8 D4 D9 DJ 
+DT DA S2 D2 
+CA C3 C6 CT 
+H3 HA H9 H5 
+C9 CQ S7 H6 
+C8 C5 H7 D7 
+S5 H2 S4 SQ 
+SJ D6 S3 ST 
+S9 C7 H4 H8 
+HT HJ HK HQ 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "19"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "S"]
+[Vulnerable "EW"]
+[Deal "S:K.AJ2.A643.Q7532 87432.K974.K9.J6 QT6.Q865.QJ72.KT AJ95.T3.T85.A984"]
+[Declarer "N"]
+[Contract "5DX"]
+[Result "8"]
+[Score "NS -500"]
+[Auction "S"]
+1C      Pass    1D      Pass
+2D      Pass    4D      Pass
+5D      Pass    Pass    X
+Pass    Pass    Pass    
+[Play "E"]
+HT HA H7 H5 
+D5 DA D9 D2 
+DT D3 DK D7 
+H3 H2 HK H6 
+D8 HJ H4 H8 
+SA SK S2 S6 
+C4 C2 CJ CK 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "20"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "N"]
+[Contract "5DX"]
+[Result "11"]
+[Score "NS 750"]
+[Auction "W"]
+Pass 1D Pass 1S
+Pass 1NT X 3D
+3H 3NT Pass 4S
+Pass 5D X Pass
+Pass Pass
+[Play "E"]
+S2 ST S7 S4
+D4 DQ C3 D2
+DK DJ S9 D3
+CA C4 C7 C6
+H2 HQ HK HA
+D7 DT H3 D5
+D6 D9 C5 D8
+S5 S6 S3 SA
+C2 CK CQ C8
+H7 SK H4 H5
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "W"]
+Pass    1D      Pass    1S
+Pass    1NT     Pass    2C
+Pass    2D      Pass    4S
+Pass    Pass    Pass    
+[Play "W"]
+C3 C6 CA C4 
+HK HA H8 HQ 
+S7 SA S2 S6 
+S9 S4 S5 SK 
+S3 C8 D4 SQ 
+H3 D2 H2 SJ 
+H4 H5 D6 ST 
+C5 C9 C2 CK 
+H6 DA D7 DQ 
+C7 D3 DK D9 
+-  -  H7 -  
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "W"]
+Pass 1D Pass 1S
+Pass 1NT Pass 4S
+Pass Pass Pass
+[Play "W"]
+C3 C6 CA C4
+HK HA H2 HQ
+S9 SA S5 S6
+S7 S4 S2 SK
+S3 H5 D4 SQ
+C7 C8 C2 CK
+H3 D2 DK DQ
+- - D7 -
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.13"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "W"]
+Pass    1D      Pass    1S
+Pass    1NT     X       4S
+Pass    Pass    Pass    
+[Play "W"]
+C3 C8 CA C4 
+HK HA H2 HQ 
+S9 SA S2 S6 
+S7 S4 S5 SK 
+S3 H5 D7 SQ 
+H6 C6 H8 SJ 
+H3 D2 D4 DQ 
+C7 D3 DK DJ 
+C5 C9 C2 CK 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "W"]
+Pass    1D      Pass    1S
+Pass    1NT     Pass    4S
+Pass    Pass    Pass    
+[Play "W"]
+C5 C6 CA C4 
+HK HA H2 HQ 
+S3 SA S5 S6 
+S9 S4 S2 SK 
+S7 H5 D4 SQ 
+H3 C8 C2 SJ 
+H6 D2 CJ ST 
+H4 D3 D6 DQ 
+C3 C9 H7 CK 
+C7 DA D7 DJ 
+H9 D5 DK D9 
+HJ CT HT S8 
+CQ D8 H8 DT 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "N"]
+[Contract "3NT"]
+[Result "8"]
+[Score "NS -100"]
+[Auction "W"]
+Pass    1D      Pass    1S
+Pass    1NT     Pass    3S
+Pass    3NT     Pass    Pass
+Pass    
+[Play "E"]
+H2 HQ HK HA 
+S5 S6 S3 SA 
+S2 SK S9 S4 
+D7 SQ S7 H5 
+H7 SJ H3 C6 
+D4 ST C3 C8 
+C2 S8 C5 C9 
+D6 DQ C7 DA 
+DK D9 CQ D2 
+CA C4 H6 CT 
+H8 DT H4 D3 
+HT DJ HJ D5 
+CJ CK H9 D8 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "20"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "W"]
+2H Pass 3H 3S
+Pass 4S Pass Pass
+Pass
+[Play "W"]
+H6 HA H8 HQ
+S3 SA S5 S6
+S7 S4 S2 ST
+S9 H5 H2 SK
+C3 D2 DK DQ
+C5 C6 CA C4
+C7 C8 C2 CK
+H3 D3 D4 DJ
+H4 D5 D6 DT
+H9 DA D7 D9
+HJ D8 H7 S8
+CQ C9 HT SJ
+HK CT CJ SQ
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "6S"]
+[Result "11"]
+[Score "NS -100"]
+[Auction "W"]
+Pass    1D      Pass    1S
+Pass    2C      Pass    2H
+Pass    2NT     Pass    3S
+Pass    4S      Pass    4NT
+Pass    5C      Pass    6S
+Pass    Pass    Pass    
+[Play "W"]
+C3 C8 CA C4 
+HK HA H2 HQ 
+S7 SA S5 S6 
+S3 S4 S2 SK 
+S9 C6 D4 SQ 
+H6 D2 DK DQ 
+-  -  H8 -  
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.17"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "W"]
+Pass 1D Pass 1S
+Pass 1NT Pass 4S
+Pass Pass Pass
+[Play "W"]
+C5 CT CA C4
+HK HA H2 HQ
+S3 SA S2 S6
+S7 S4 S5 SK
+S9 C6 D7 SQ
+H3 D2 H7 SJ
+H6 DA D4 DQ
+C3 D3 D6 D9
+H4 D5 DK DT
+H9 H5 H8 S8
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "W"]
+Pass    1D      Pass    1S
+Pass    1NT     Pass    4S
+Pass    Pass    Pass    
+[Play "W"]
+C3 C6 CA C4 
+S7 SA S2 S6 
+S9 S4 S5 SK 
+S3 H5 H2 SQ 
+H6 D2 DK DQ 
+C7 C8 CJ CK 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "20"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "W"]
+[Vulnerable "All"]
+[Deal "W:973.KJ9643..Q753 A4.A5.A8532.T986 52.T872.K764.AJ2 KQJT86.Q.QJT9.K4"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "W"]
+Pass    1D      Pass    1S
+Pass    1NT     Pass    3S
+Pass    4S      Pass    Pass
+Pass    
+[Play "W"]
+C5 C6 CJ CK 
+S7 SA S2 S6 
+S3 S4 S5 SK 
+S9 C8 H2 SQ 
+H6 D2 DK DQ 
+C7 C9 CA C4 
+H3 D3 D4 D9 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "21"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D 1H Pass 2C
+2D 4H Pass Pass
+Pass
+[Play "S"]
+D6 DK DA D4
+S6 S8 S3 SQ
+H3 HJ D3 H2
+C4 CK CA C2
+ST S9 S2 SA
+H6 HK D2 H5
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D      4H      Pass    Pass
+Pass    
+[Play "S"]
+D6 DK DA D4 
+S6 S8 S3 SQ 
+H3 HJ D3 H2 
+H6 HT D2 H8 
+H7 HK D8 H5 
+C4 CK CA C2 
+D5 DQ D7 D9 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D 4H Pass Pass
+Pass
+[Play "S"]
+SJ S4 S2 SQ
+H3 HJ D2 H2
+H6 HT D8 H5
+C4 CK CA C2
+S6 S5 S3 SA
+H7 HK D7 H4
+C6 CQ C5 S7
+D5 DK DA D9
+ST S8 SK H8
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.17"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D      4H      Pass    Pass
+Pass    
+[Play "S"]
+D6 DK DA D4 
+S6 S8 S3 SQ 
+H3 HJ D8 H2 
+H6 HT D7 H5 
+H7 HK D2 H4 
+C4 CK CA C2 
+D5 DQ D3 D9 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D      4H      Pass    Pass
+Pass    
+[Play "S"]
+D6 DK DA D9 
+S6 S4 S3 SQ 
+H3 HJ D3 H2 
+H6 HT D2 H5 
+H7 HK DJ H4 
+C4 CK CA C2 
+ST S5 S2 SA 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D      4H      Pass    Pass
+Pass    
+[Play "S"]
+D6 DK DA D9 
+S6 S8 S3 SQ 
+H3 HJ D3 H2 
+H6 HT D2 H5 
+H7 HK DJ H8 
+C4 CK CA C2 
+ST S9 SK SA 
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "21"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "10"]
+[Score "NS -420"]
+[Auction "N"]
+1D 1H Pass 4H
+Pass Pass Pass
+[Play "S"]
+D6 DQ DA D4
+ST S4 S2 S7
+C4 CQ CA C2
+S6 S5 SK SA
+H3 HT S3 H2
+D5 DK D2 D9
+SJ S8 C5 SQ
+H6 HJ CT H4
+H7 HK D3 H5
+C6 C3 D7 H8
+C7 C9 D8 HA
+C8 CK DT HQ
+CJ S9 DJ H9
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D      4H      Pass    Pass
+Pass    
+[Play "S"]
+D5 DK DA D4 
+C4 C9 CA C2 
+S6 S8 S3 SA 
+H3 HJ D3 H2 
+C6 C3 CT H5 
+H6 HT D2 H4 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.17"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D 1H Pass 2C
+2D 4H Pass Pass
+Pass
+[Play "S"]
+D6 DK DA D4
+S6 S4 SK SA
+H3 HJ D8 H2
+C4 CK CA C2
+ST S5 S3 SQ
+H6 HK D7 H5
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D      Pass    Pass    X
+Pass    1H      Pass    2H
+3D      4H      Pass    Pass
+Pass    
+[Play "S"]
+D6 DK DA D9 
+S6 S4 S3 SQ 
+H3 HJ DJ H2 
+H6 HT DT H5 
+H7 HK D3 H4 
+C4 CK CA C2 
+D5 DQ D2 D4 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "21"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "N"]
+[Vulnerable "NS"]
+[Deal "N:K32..AJT8732.AT5 AQ7.AQ98542.94.2 JT6.763.65.J8764 9854.KJT.KQ.KQ93"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+1D      4H      Pass    Pass
+Pass    
+[Play "S"]
+D6 DK DA D4 
+S6 S8 S3 SQ 
+H3 HJ D8 H2 
+H6 HT D2 H5 
+C4 CK CA C2 
+D5 DQ D3 D9 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.11"]
+[Board "22"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS -130"]
+[Auction "E"]
+1C 1H Pass Pass
+3C Pass Pass Pass
+[Play "S"]
+HA H7 H2 HQ
+H6 H4 C3 HK
+SA S5 ST S2
+SQ SK S7 S4
+H3 HT CJ CK
+C7 CQ C2 C6
+D5 D7 DJ DK
+C8 D6 D4 CA
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "3C"]
+[Result "11"]
+[Score "NS -150"]
+[Auction "E"]
+1C      1H      Pass    Pass
+3C      Pass    Pass    Pass
+[Play "S"]
+D8 DQ D3 D2 
+C7 CQ C3 C6 
+D5 D7 D4 DK 
+C8 H7 C2 CA 
+H3 H4 CJ CK 
+H5 H8 S7 CT 
+S6 S3 DJ C9 
+HA H9 H2 HK 
+HJ HT S8 HQ 
+SJ D6 S9 C5 
+SA S5 ST S4 
+H6 DA DT C4 
+SQ SK D9 S2 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS -130"]
+[Auction "E"]
+1C 1H Pass Pass
+3C Pass Pass Pass
+[Play "S"]
+D8 D6 D9 DK
+C7 CQ C3 C6
+D5 DA D3 D2
+C8 DQ D4 HQ
+HA H4 H2 HK
+SA S5 ST S4
+SJ SK S9 S2
+H3 HT CJ CK
+H5 H7 C2 CA
+S6 H8 DJ CT
+H6 S3 S8 C9
+HJ H9 S7 C5
+SQ D7 DT C4
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.17"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "5C"]
+[Result "12"]
+[Score "NS -620"]
+[Auction "E"]
+1C      X       XX      1D
+5C      Pass    Pass    Pass
+[Play "S"]
+C8 CQ C3 C9 
+D5 D7 DJ DK 
+C7 H7 CJ CA 
+H3 H4 C2 CK 
+S6 S5 DT CT 
+H5 H8 D9 C6 
+D8 SK S7 C5 
+SJ DA D4 D2 
+SQ DQ D3 S2 
+H6 D6 ST S4 
+HA HT H2 HK 
+SA S3 S9 C4 
+HJ H9 S8 HQ 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "4NT"]
+[Result "11"]
+[Score "NS -660"]
+[Auction "E"]
+1C      X       XX      1D
+4NT     Pass    Pass    Pass
+[Play "S"]
+SQ SK ST S2 
+C7 CQ C2 C6 
+D5 D7 D3 DK 
+C8 H7 C3 CA 
+H3 H8 CJ CK 
+D8 H4 D4 CT 
+H5 S5 H2 C9 
+H6 H9 S9 C5 
+HJ S3 S8 C4 
+S6 DA DJ D2 
+SJ DQ DT HQ 
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "5C"]
+[Result "12"]
+[Score "NS -620"]
+[Auction "E"]
+1C      1H      Pass    Pass
+3C      Pass    3NT     Pass
+5C      Pass    Pass    Pass
+[Play "S"]
+SA S3 S7 S4 
+SQ SK S8 S2 
+C7 CQ C3 C9 
+D5 D7 DJ DK 
+C8 H4 C2 CA 
+H3 H7 CJ CK 
+H5 H8 D4 CT 
+D8 H9 D3 C6 
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "22"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "W"]
+[Contract "3NT"]
+[Result "11"]
+[Score "NS -660"]
+[Auction "E"]
+1C 2D Pass 2S
+3C Pass 3NT Pass
+Pass Pass
+[Play "N"]
+ST S2 SA S3
+H2 HQ HA H4
+D3 HK H3 H7
+C2 C4 C7 CQ
+D4 DK D5 D6
+C3 CA C8 S5
+CJ CK D8 D7
+S7 C5 S6 H8
+S8 C6 SJ H9
+S9 CT SQ HT
+D9 D2 H5 DQ
+DT S4 H6 DA
+DJ C9 HJ SK
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "3C"]
+[Result "11"]
+[Score "NS -150"]
+[Auction "E"]
+1C      2C      Pass    2S
+3C      Pass    Pass    Pass
+[Play "S"]
+SA S5 S7 S4 
+C7 CQ C3 C6 
+D5 D7 DJ DK 
+C8 H4 C2 CA 
+D8 H7 CJ CK 
+H3 H8 D4 CT 
+H5 H9 S8 C9 
+S6 HT H2 C5 
+H6 DA D3 D2 
+HJ DQ DT HQ 
+SJ SK ST S2 
+SQ S3 S9 C4 
+HA D6 D9 HK 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.21"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "3C"]
+[Result "11"]
+[Score "NS -150"]
+[Auction "E"]
+1C 1H Pass Pass
+3C Pass Pass Pass
+[Play "S"]
+C8 CQ C3 C6
+D5 D7 DJ DK
+C7 H7 C2 CA
+H3 H4 CJ CK
+S6 S5 DT CT
+H5 H8 ST C9
+D8 SK H2 C5
+SJ DA D3 D2
+H6 DQ D4 S4
+HA HT S9 HK
+SA S3 S8 S2
+SQ H9 S7 C4
+HJ D6 D9 HQ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "E"]
+[Contract "3C"]
+[Result "10"]
+[Score "NS -130"]
+[Auction "E"]
+1C      1H      Pass    Pass
+3C      Pass    Pass    Pass
+[Play "S"]
+D8 D6 D9 DK 
+C7 CQ C3 CA 
+C8 H4 C2 CK 
+D5 DA DJ D2 
+H3 DQ D3 S4 
+HA HT H2 HK 
+H5 H9 CJ HQ 
+S6 D7 DT C4 
+H6 S3 S7 CT 
+SJ H7 S8 C9 
+SQ S5 ST C6 
+HJ SK D4 C5 
+SA H8 S9 S2 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "22"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "E"]
+[Vulnerable "EW"]
+[Deal "E:42.KQ.K2.AKT9654 AQJ6.AJ653.85.87 K53.T9874.AQ76.Q T987.2.JT943.J32"]
+[Declarer "W"]
+[Contract "4H"]
+[Result "9"]
+[Score "NS 100"]
+[Auction "E"]
+1C      Pass    1H      Pass
+3C      Pass    3H      Pass
+4H      Pass    Pass    Pass
+[Play "N"]
+ST S2 SA S5 
+H2 HQ HA H7 
+D3 HK H3 HT 
+CJ C6 C7 CQ 
+DJ DK D5 D7 
+C3 CA C8 D6 
+C2 CK H5 S3 
+S7 S4 SQ SK 
+D4 C4 HJ H9 
+S9 C5 SJ H4 
+S8 C9 H6 H8 
+DT D2 D8 DA 
+D9 CT S6 DQ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.12"]
+[Board "23"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "N"]
+[Contract "4S"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "S"]
+1D Pass 1S X
+XX 2C 2H Pass
+2NT Pass 3S Pass
+4S Pass Pass Pass
+[Play "E"]
+CA C3 C7 S5
+S4 SQ S3 S6
+S2 S8 ST SA
+H2 HA H6 H4
+HK H5 HJ HQ
+C2 - - -
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "S"]
+[Contract "6S"]
+[Result "12"]
+[Score "NS 1430"]
+[Auction "S"]
+1NT     Pass    2H      Pass
+2S      Pass    4S      Pass
+4NT     Pass    5H      Pass
+6S      Pass    Pass    Pass
+[Play "W"]
+H6 HT H2 H5 
+ST S5 S2 SQ 
+S3 S6 S4 S8 
+D5 SA C2 S9 
+D9 SK C5 C3 
+DQ D8 H8 D2 
+HJ H4 H7 HA 
+D3 DJ C8 D4 
+D7 DT CQ DA 
+C7 H9 CJ DK 
+C4 HQ HK D6 
+CT S7 CA C9 
+C6 SJ H3 CK 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "S"]
+1NT Pass 2H Pass
+2S Pass 4S Pass
+Pass Pass
+[Play "W"]
+S3 SA S4 S8
+ST SK S2 S9
+D5 D8 C8 DK
+C4 S5 C5 C3
+DQ DT H2 D2
+C7 S6 C2 C9
+D3 DJ H8 D4
+H6 H4 H3 HA
+D9 H9 CQ DA
+HJ HQ HK H5
+CT S7 CA CK
+D7 HT H7 D6
+C6 SJ CJ SQ
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.17"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "S"]
+1NT     Pass    2H      Pass
+2S      Pass    4S      Pass
+Pass    Pass    
+[Play "W"]
+HJ HQ HK HA 
+C4 SJ C5 C3 
+S3 SK S4 S8 
+ST S5 S2 SQ 
+CT S6 C2 C9 
+D3 D8 CQ DA 
+D5 DT H2 DK 
+DQ DJ CJ D2 
+D9 -  -  -  
+*
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "S"]
+1NT     Pass    2H      Pass
+2S      Pass    3H      Pass
+3S      Pass    4S      Pass
+Pass    Pass    
+[Play "W"]
+C4 S5 C2 C3 
+ST SA S4 S8 
+S3 S6 S2 SQ 
+C6 S7 C5 C9 
+DQ DJ H2 D2 
+C7 SJ C8 CK 
+D5 DT H8 D4 
+D3 D8 H7 DA 
+D9 H4 CA DK 
+D7 SK CQ D6 
+H6 HQ HK HA 
+CT H9 H3 S9 
+HJ HT CJ H5 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "N"]
+[Contract "4S"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "S"]
+1NT     Pass    4S      Pass
+Pass    Pass    
+[Play "E"]
+CA C3 C4 S5 
+S2 SQ S3 S6 
+S4 S9 ST SA 
+C8 D2 DQ DJ 
+H8 D4 D3 D8 
+H7 D6 D9 DT 
+C5 S8 C6 S7 
+HK DA D7 H4 
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "23"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "S"]
+1NT Pass 2H 3C
+3S Pass 4S Pass
+Pass Pass
+[Play "W"]
+C7 S5 C8 C3
+S3 S6 S4 SQ
+ST SK S2 S8
+DQ DJ C2 D2
+D3 D8 C5 D4
+D5 DT CJ D6
+H6 H4 H2 HA
+D7 H9 CQ DA
+D9 HT H3 DK
+HJ HQ HK H5
+C4 S7 CA C9
+C6 SA H7 S9
+CT SJ H8 CK
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "N"]
+[Contract "4S"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "S"]
+1D      Pass    1S      X
+1NT     Pass    2C      X
+2D      Pass    4S      Pass
+Pass    Pass    
+[Play "E"]
+H8 H5 HJ HQ 
+S4 S8 S3 SA 
+S2 S9 ST SK 
+H3 HA H6 H4 
+C5 C3 C4 S5 
+HK SQ D3 H9 
+C2 C9 C6 S6 
+H7 CK D7 HT 
+C8 DA D5 DJ 
+CA DK D9 D8 
+CQ D2 DQ DT 
+CJ D6 CT S7 
+H2 D4 C7 SJ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.21"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "S"]
+1NT Pass 2H Pass
+2S Pass 3D Pass
+3NT Pass 4S Pass
+Pass Pass
+[Play "W"]
+HJ HQ HK HA
+ST SA S2 S8
+S3 SK S4 S9
+D7 DJ C5 DA
+H6 HT H3 H5
+CT H9 H2 C3
+D3 H4 H8 SQ
+C4 S5 C2 C9
+D5 SJ CQ D2
+C7 S7 CJ D4
+C6 S6 C8 CK
+D9 D8 H7 DK
+DQ DT CA D6
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "S"]
+1NT     Pass    2H      Pass
+2S      Pass    3H      Pass
+4S      Pass    Pass    Pass
+[Play "W"]
+H6 HT H3 H5 
+HJ H4 H8 HA 
+ST SA S4 S8 
+D5 H9 H2 S9 
+C4 S5 C5 C3 
+D9 HQ HK SQ 
+C6 S6 C2 C9 
+S3 SK S2 CK 
+CT SJ C8 D2 
+D3 DJ CA DA 
+D7 D8 CQ DK 
+DQ DT H7 D4 
+C7 S7 CJ D6 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "23"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "S"]
+[Vulnerable "All"]
+[Deal "S:Q98.A5.AK642.K93 T3.J6.Q9753.T764 AKJ765.QT94.JT8. 42.K8732..AQJ852"]
+[Declarer "E"]
+[Contract "5HX"]
+[Result "7"]
+[Score "NS 1100"]
+[Auction "S"]
+1NT     Pass    2H      Pass
+2S      Pass    3D      Pass
+3S      Pass    4S      5H
+X       Pass    Pass    Pass
+[Play "S"]
+DK D5 D8 S4 
+HA H6 HT H8 
+H5 HJ HQ HK 
+C3 CT H4 C2 
+S8 ST SA S2 
+D2 D7 H9 H2 
+S9 S3 SK H3 
+C9 C6 SJ C5 
+DA D3 DJ H7 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.13"]
+[Board "24"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "6"]
+[Score "NS 200"]
+[Auction "W"]
+Pass Pass 1H Pass
+1NT Pass 2NT Pass
+3H Pass 4H Pass
+Pass Pass
+[Play "S"]
+ST SJ SQ SA
+C7 C5 CK C9
+CT CJ C4 CA
+CQ C8 C3 C6
+S9 S2 S4 SK
+DA D2 D8 DQ
+S5 S6 S7 S3
+DT DK D7 D4
+HA H4 H7 HK
+D3 D5 D6 H2
+H3 HJ S8 H8
+HT D9 DJ H5
+HQ H9 C2 H6
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "7"]
+[Score "NS 150"]
+[Auction "W"]
+Pass    Pass    1H      Pass
+1NT     Pass    2NT     Pass
+3H      Pass    4H      Pass
+Pass    Pass    
+[Play "S"]
+ST S6 S4 SA 
+H3 HJ H7 H8 
+HT H9 D6 H6 
+S9 SJ SQ SK 
+S5 S2 S8 S3 
+DA D5 D8 D4 
+D3 D2 DJ DQ 
+HQ H4 C4 H5 
+HA D9 D7 H2 
+C7 C8 CK CA 
+CQ C5 C3 C9 
+DT DK S7 C6 
+CT CJ C2 HK 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "8"]
+[Score "NS 100"]
+[Auction "W"]
+Pass Pass 1H Pass
+1NT Pass 2NT Pass
+3H Pass 4H Pass
+Pass Pass
+[Play "S"]
+ST SJ SQ SA
+CQ C5 C2 C9
+C7 C8 CK CA
+CT CJ C4 C6
+HT H9 H7 H8
+DA D5 D8 D4
+D3 D2 DJ DQ
+HA H4 S8 HK
+HQ HJ D7 H2
+DT DK D6 S3
+S5 S2 S4 SK
+H3 D9 S7 H6
+S9 S6 C3 H5
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.17"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "8"]
+[Score "NS 100"]
+[Auction "W"]
+Pass    Pass    1H      Pass
+1NT     Pass    2NT     Pass
+3H      Pass    4H      Pass
+Pass    Pass    
+[Play "S"]
+S9 S6 S4 SA 
+S5 S2 S8 SK 
+ST SJ SQ S3 
+DA D5 D8 D4 
+D3 D2 DJ DQ 
+H3 HJ H7 H6 
+DT DK D7 C6 
+HT D9 D6 C9 
+C7 C8 CK CA 
+HQ H4 C4 H2 
+CQ C5 C2 H5 
+HA H9 S7 HK 
+CT CJ C3 H8 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "7"]
+[Score "NS 150"]
+[Auction "W"]
+Pass    Pass    1H      Pass
+1NT     Pass    2NT     Pass
+3H      Pass    4H      Pass
+Pass    Pass    
+[Play "S"]
+DA D2 D8 D4 
+D3 D5 D7 DQ 
+S5 S6 S8 SA 
+H3 H9 H7 H2 
+HT H4 C4 H8 
+S9 SJ SQ SK 
+ST S2 S7 S3 
+DT DK D6 C6 
+CT C5 C2 C9 
+C7 CJ CK CA 
+HQ HJ S4 H6 
+HA C8 C3 H5 
+CQ D9 DJ HK 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "3H"]
+[Result "8"]
+[Score "NS 50"]
+[Auction "W"]
+Pass    Pass    1H      X
+1NT     2S      2NT     Pass
+3H      Pass    Pass    Pass
+[Play "S"]
+ST SJ SQ SA 
+HQ H9 H7 H6 
+S9 S2 S4 SK 
+S5 S6 S8 S3 
+CQ C8 C4 C6 
+CT CJ CK CA 
+HA H4 D6 H2 
+H3 HJ C3 H5 
+DA D2 D8 DQ 
+C7 C5 C2 C9 
+*
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "24"]
+[West "WBridge5"]
+[North "WBridge5"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "3H"]
+[Result "7"]
+[Score "NS 100"]
+[Auction "W"]
+Pass Pass 1H Pass
+2H Pass 3H Pass
+Pass Pass
+[Play "S"]
+S5 SJ SQ SK
+S9 S2 S4 SA
+HQ H4 H7 H2
+HA H9 C4 H5
+H3 HJ C2 H6
+C7 C5 C3 CA
+HT C8 D6 HK
+DA D2 D7 D4
+ST S6 S7 S3
+CQ CJ CK C6
+D3 D5 S8 C9
+DT D9 D8 DQ
+CT DK DJ H8
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "8"]
+[Score "NS 100"]
+[Auction "W"]
+Pass    Pass    1H      Pass
+1NT     Pass    2NT     Pass
+3H      Pass    4H      Pass
+Pass    Pass    
+[Play "S"]
+ST SJ SQ SA 
+H3 H9 H7 H6 
+DA D2 D8 DQ 
+S5 S6 S7 SK 
+D3 DK D6 D4 
+DT D5 DJ H2 
+S9 S2 S8 S3 
+C7 C8 CK CA 
+HQ H4 C2 H8 
+CQ C5 C3 C6 
+CT CJ C4 C9 
+HA D9 D7 HK 
+HT HJ S4 H5 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.21"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "7"]
+[Score "NS 150"]
+[Auction "W"]
+Pass Pass 1H Pass
+1NT Pass 2NT Pass
+3H Pass 4H Pass
+Pass Pass
+[Play "S"]
+ST SJ SQ SA
+CQ C8 C4 C6
+CT CJ CK CA
+DA D2 D8 DQ
+C7 C5 C3 C9
+D3 DK D6 D4
+HT H4 H7 H8
+DT D5 D7 H2
+S5 S2 S4 SK
+HA H9 S8 HK
+HQ HJ C2 H5
+S9 S6 S7 S3
+H3 D9 DJ H6
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "8"]
+[Score "NS 100"]
+[Auction "W"]
+Pass    Pass    1H      Pass
+1NT     Pass    2NT     Pass
+3H      Pass    4H      Pass
+Pass    Pass    
+[Play "S"]
+ST SJ SQ SA 
+CQ C5 C4 C9 
+C7 C8 CK CA 
+DA D5 D8 DQ 
+CT CJ C3 C6 
+D3 DK D6 D4 
+DT D2 DJ H6 
+H3 H9 H7 H2 
+HT D9 D7 S3 
+S5 S2 S4 SK 
+HQ H4 S8 H8 
+HA HJ S7 HK 
+S9 S6 C2 H5 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "24"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "W"]
+[Vulnerable "None"]
+[Deal "W:J62.J94.K952.J85 Q874.7.J876.K432 AK3.K8652.Q4.A96 T95.AQT3.AT3.QT7"]
+[Declarer "E"]
+[Contract "4H"]
+[Result "8"]
+[Score "NS 100"]
+[Auction "W"]
+Pass    Pass    1H      Pass
+1NT     Pass    2NT     Pass
+3H      Pass    4H      Pass
+Pass    Pass    
+[Play "S"]
+D3 D2 DJ DQ 
+DA D5 D6 D4 
+S5 SJ SQ SA 
+S9 S6 S8 SK 
+HQ H4 H7 H6 
+ST S2 S7 S3 
+DT DK D8 C6 
+H3 D9 D7 C9 
+C7 C8 CK CA 
+HA H9 C2 H8 
+CQ C5 C4 H2 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.13"]
+[Board "25"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "W"]
+[Contract "3NTX"]
+[Result "6"]
+[Score "NS 800"]
+[Auction "N"]
+Pass Pass 2H Pass
+Pass 3C 3D 3NT
+X Pass Pass Pass
+[Play "N"]
+D3 D8 DQ D9
+D4 D7 DT D6
+DJ H8 D2 DA
+C6 C7 C3 C2
+S5 S2 SJ SA
+S4 S6 H2 SK
+C5 CQ H4 C8
+CK CA H6 H5
+*
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "W"]
+[Contract "3NTX"]
+[Result "6"]
+[Score "NS 800"]
+[Auction "N"]
+Pass    Pass    2H      Pass
+Pass    3C      3D      3NT
+X       Pass    Pass    Pass
+[Play "N"]
+HA H8 H6 H3 
+D4 D8 DQ D9 
+H7 D7 HQ HK 
+C6 C7 C3 C2 
+S5 S2 SJ SA 
+S4 S6 H2 SK 
+DJ S7 D2 DA 
+CJ CA H4 C8 
+C5 C4 H9 S3 
+SQ S8 D5 S9 
+ST C9 DT H5 
+CK CT HJ HT 
+D3 CQ DK D6 
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "E"]
+[Contract "2S"]
+[Result "9"]
+[Score "NS -140"]
+[Auction "N"]
+Pass Pass Pass 1D
+Pass 1S 2H 2S
+Pass Pass Pass
+[Play "S"]
+C3 C8 CK CA
+SJ SA S5 S8
+H2 C2 C6 CT
+HQ HK HA H8
+H4 SK SQ S6
+H6 H5 H7 S2
+D2 D6 C5 CQ
+D5 S3 CJ C9
+H9 H3 D4 D8
+HJ HT D3 C4
+DK DA DJ D7
+DT D9 S4 S7
+DQ S9 ST C7
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.17"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "S"]
+[Contract "3H"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2D      Pass
+2NT     Pass    3H      Pass
+Pass    Pass    
+[Play "W"]
+C8 C5 C9 C3 
+DA D3 D8 DK 
+SA S4 S2 SJ 
+C2 C6 C7 H2 
+H5 HA H8 H4 
+H3 H7 C4 HJ 
+D6 DJ D7 D2 
+D9 D4 CQ DT 
+S3 S5 S8 DQ 
+S9 ST CT D5 
+HT SQ S7 H6 
+HK CJ S6 H9 
+SK CK CA HQ 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "S"]
+[Contract "3H"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2D      Pass
+2NT     Pass    3H      Pass
+Pass    Pass    
+[Play "W"]
+SK S4 S8 SJ 
+C2 CJ CQ C3 
+DA D3 D8 D2 
+C8 C5 C7 H2 
+H5 HA H8 H4 
+H3 H7 C4 HQ 
+D6 DJ D7 D5 
+D9 D4 S7 DK 
+S3 C6 CT DQ 
+S9 CK S6 DT 
+HT S5 CA H9 
+HK ST C9 H6 
+SA SQ S2 HJ 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "E"]
+[Contract "2S"]
+[Result "6"]
+[Score "NS 200"]
+[Auction "N"]
+Pass    Pass    Pass    1D
+Pass    1S      2H      2S
+Pass    Pass    Pass    
+[Play "S"]
+C3 C2 CK CA 
+SJ SA S5 S2 
+H2 SK S4 S6 
+D5 C8 C5 CQ 
+HJ HK HA H8 
+H4 S3 SQ S7 
+D2 S9 ST S8 
+DT D6 D4 D8 
+DQ DA D3 D7 
+DK D9 DJ C4 
+HQ H3 H7 C7 
+H6 H5 C6 C9 
+H9 HT CJ CT 
+
+[Event "#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "25"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "S"]
+[Contract "3H"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "N"]
+Pass Pass 3H Pass
+Pass Pass
+[Play "W"]
+C8 CJ CQ C3
+DA D3 D8 D2
+SA S4 S7 SJ
+D9 DJ D7 D5
+H3 HA H8 H2
+HK H7 C4 HJ
+C2 CK CA H4
+D6 D4 C7 DK
+H5 C5 C9 HQ
+S3 C6 CT DQ
+S9 S5 S2 DT
+HT ST S6 H6
+SK SQ S8 H9
+
+[Event "?"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "S"]
+[Contract "3H"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "N"]
+Pass    Pass    1H      Pass
+1S      Pass    2D      Pass
+2NT     Pass    3H      Pass
+Pass    Pass    
+[Play "W"]
+SA S4 S2 SJ 
+DA D3 D7 D2 
+SK S5 S6 H2 
+H5 H7 H8 HJ 
+H3 HA C7 H4 
+D9 DJ D8 D5 
+D6 D4 CT DT 
+C2 CJ CQ C3 
+C8 C5 CA H6 
+S3 ST C4 DK 
+HT C6 S8 DQ 
+HK SQ C9 H9 
+S9 CK S7 HQ 
+
+[Event "#"]
+[Site ""]
+[Date "1999.07.21"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "E"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS -140"]
+[Auction "N"]
+Pass Pass 3H X
+Pass 3S Pass Pass
+Pass
+[Play "S"]
+HQ HK HA H8
+DT DA D4 D8
+C3 C8 C6 CQ
+SJ SA S5 S8
+H2 C2 CK CA
+H4 S3 C5 C4
+H6 H5 H7 S2
+DQ D9 D3 D7
+DK D6 DJ S6
+D2 S9 CJ CT
+H9 H3 SQ C7
+D5 SK S4 S7
+HJ HT ST C9
+
+[Event ""]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "W"]
+[Contract "3NTX"]
+[Result "8"]
+[Score "NS 200"]
+[Auction "N"]
+Pass    Pass    2H      Pass
+Pass    3C      3D      3NT
+X       Pass    Pass    Pass
+[Play "N"]
+HA H8 H2 H5 
+C6 C4 C3 C8 
+C5 CA D2 C2 
+S5 S2 SJ SA 
+S4 S6 H4 S9 
+DJ D7 DQ D6 
+H7 C7 HQ HK 
+SQ S7 D5 SK 
+D4 D8 DT DA 
+D3 C9 DK D9 
+CJ CQ HJ H3 
+CK S8 H9 HT 
+ST CT H6 S3 
+
+[Event "#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "25"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "N"]
+[Vulnerable "EW"]
+[Deal "N:QT54.A7.J43.KJ65 8762.8.87.AQT974 J.QJ9642.KQT52.3 AK93.KT53.A96.82"]
+[Declarer "W"]
+[Contract "3NTX"]
+[Result "7"]
+[Score "NS 500"]
+[Auction "N"]
+Pass    Pass    2H      Pass
+Pass    3C      Pass    3NT
+X       Pass    Pass    Pass
+[Play "N"]
+HA H8 H9 H3 
+C6 C7 C3 C2 
+S5 S2 SJ SA 
+C5 CQ H2 C8 
+CK CA H4 HT 
+ST S8 H6 S3 
+CJ C4 D2 D9 
+D4 D8 DQ DA 
+H7 S6 HJ HK 
+S4 S7 D5 SK 
+*
+
+[Event "#"]
+[Site ""]
+[Date "1999.09.13"]
+[Board "26"]
+[West "GIB 2.6.2"]
+[North "GIB 2.6.2"]
+[East "GIB 2.6.2"]
+[South "Robert Vasicek"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "N"]
+[Contract "3NT"]
+[Result "11"]
+[Score "NS 660"]
+[Auction "E"]
+Pass 1H Pass 1S
+Pass 3H Pass 3NT
+Pass Pass Pass
+[Play "E"]
+C3 CJ CK CA
+S4 SA S8 S3
+H3 HK HA C9
+DA C5 DT DJ
+D6 C8 D9 DK
+S2 SK SJ S5
+H4 HQ H7 D2
+*
+
+[Event"#"]
+[Site "#"]
+[Date "1999.09.10"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Vlad"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "S"]
+[Contract "6H"]
+[Result "12"]
+[Score "NS 1430"]
+[Auction "E"]
+Pass    1H      Pass    1S
+Pass    3H      Pass    3NT
+Pass    4H      Pass    4NT
+Pass    5S      Pass    6H
+Pass    Pass    Pass    
+[Play "W"]
+S8 S9 ST SA 
+HA D2 H4 HK 
+D7 DJ DA H2 
+H7 D3 H3 HQ 
+H6 D4 H9 HJ 
+C2 C9 C7 HT 
+SJ S3 S4 SK 
+C4 SQ S2 S6 
+DQ S7 D5 C5 
+CT S5 C6 C8 
+DT DK D8 CJ 
+CK CA C3 H5 
+D9 CQ D6 H8 
+
+
+[Event"#"]
+[Site ""]
+[Date "1999.09.02"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "ALBERT"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "E"]
+Pass 1H Pass 1S
+Pass 2C Pass 2NT
+Pass 4H Pass Pass
+Pass
+[Play "W"]
+SJ S3 S4 SA
+H7 D2 H9 HT
+H6 D3 H4 HJ
+HA D4 H3 HQ
+D7 DK DA H2
+S8 S5 S2 SK
+C4 SQ ST S6
+DT S9 D8 C5
+C2 S7 C7 C8
+CT CA C3 CJ
+*
+
+[Event"#"]
+[Site "#"]
+[Date "1999.09.17"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Danellakis D"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "N"]
+[Contract "4S"]
+[Result "13"]
+[Score "NS 710"]
+[Auction "E"]
+Pass    1H      Pass    1S
+Pass    3H      Pass    3S
+Pass    4S      Pass    Pass
+Pass    
+[Play "E"]
+C3 C5 CK CA 
+S4 SA S8 S3 
+H4 HK HA S5 
+S2 S6 SJ SQ 
+C6 CJ C4 C9 
+H3 H2 H7 S7 
+ST SK D7 S9 
+H9 HQ H6 D2 
+D5 HJ DT D3 
+*
+
+[Event"#"]
+[Site "#"]
+[Date "1999.09.04"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "max3"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "E"]
+Pass    1H      Pass    1S
+Pass    3H      Pass    3S
+Pass    4H      Pass    Pass
+Pass    
+[Play "W"]
+S8 S3 S4 SA 
+H7 D2 H9 HT 
+HA D3 H4 HJ 
+SJ S5 S2 SK 
+H6 D4 H3 HK 
+*
+
+[Event"#"]
+[Site "#"]
+[Date "1999.09.11"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Walter"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "E"]
+Pass    1H      Pass    1S
+Pass    3H      Pass    3S
+Pass    4H      Pass    Pass
+Pass    
+[Play "W"]
+S8 S3 S4 SA 
+H7 D2 H4 HT 
+H6 D3 H3 HJ 
+HA D4 H9 HQ 
+D7 DJ DA H2 
+SJ S5 S2 SK 
+C4 SQ ST S6 
+CT S9 C7 C5 
+*
+
+[Event"#"]
+[Site "?"]
+[Date "1999.09.03"]
+[Board "26"]
+[West "WBridge5"]
+[North "Yves"]
+[East "WBridge5"]
+[South "Yves"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "N"]
+[Contract "4S"]
+[Result "10"]
+[Score "NS 620"]
+[Auction "E"]
+Pass 1H Pass 1S
+Pass 3H Pass 4D
+Pass 4H Pass 4S
+Pass Pass Pass
+[Play "E"]
+C3 C5 CT CQ
+D8 S6 D9 D2
+H3 HK H6 D3
+H4 HQ HA S3
+S2 SK S8 S5
+S4 SA SJ S7
+H9 HJ H7 C9
+ST HT C2 D4
+C6 C8 CK CA
+DA CJ D7 DK
+C7 H2 C4 S9
+D5 H5 DQ DJ
+D6 H8 DT SQ
+
+
+
+[Event"#"]
+[Site "#"]
+[Date "1999.09.05"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "tony"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "E"]
+Pass    2H      Pass    2NT
+Pass    4H      Pass    Pass
+Pass    
+[Play "W"]
+H6 S3 H9 HQ 
+HA D2 H4 HK 
+D7 DJ DA H2 
+H7 D3 H3 HJ 
+C4 D4 C7 HT 
+S8 S5 S2 SA 
+SJ S7 S4 SK 
+CT SQ ST S6 
+DQ S9 D5 C5 
+*
+
+[Event"#"]
+[Site ""]
+[Date "1999.07.21"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Al Howard"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "E"]
+Pass 1H Pass 1S
+Pass 3H Pass 3S
+Pass 4H Pass Pass
+Pass
+[Play "W"]
+S8 S9 ST SA
+HA D2 H4 HK
+SJ S3 S4 SK
+H7 D3 H3 HQ
+H6 D4 H9 HJ
+DT DJ D6 HT
+CT C9 D5 H8
+C4 DK C3 H5
+D7 S7 S2 S6
+DQ SQ D8 C5
+C2 S5 C7 C8
+CK CA C6 CJ
+D9 CQ DA H2
+
+[Event"#"]
+[Site "#"]
+[Date "1999.09.12"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Tis Veugen"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "12"]
+[Score "NS 680"]
+[Auction "E"]
+Pass    2C      Pass    2D
+Pass    2H      Pass    2S
+Pass    4H      Pass    Pass
+Pass    
+[Play "W"]
+D7 DJ DA H2 
+HA D2 H4 HK 
+DQ DK D5 C5 
+S8 S3 S4 SA 
+H7 D3 H9 HQ 
+H6 D4 H3 HJ 
+C2 C9 C3 HT 
+SJ S5 S2 SK 
+C4 SQ ST S6 
+CT S9 C6 C8 
+DT S7 D8 CJ 
+*
+
+[Event"#"]
+[Site "#"]
+[Date "1999.09.07"]
+[Board "26"]
+[West "GIB 2.6.3"]
+[North "GIB 2.6.3"]
+[East "GIB 2.6.3"]
+[South "Geppe Coha"]
+[Dealer "E"]
+[Vulnerable "All"]
+[Deal "E:T42.943.A865.763 AK6.KQJT852..J85 J8.A76.QT97.KT42 Q9753..KJ432.AQ9"]
+[Declarer "N"]
+[Contract "5S"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "E"]
+Pass    1H      Pass    1S
+Pass    3H      Pass    3S
+Pass    4NT     Pass    5D
+Pass    5S      Pass    Pass
+Pass    
+[Play "E"]
+DA S6 D7 D2 
+S4 SK S8 S3 
+H9 HK HA S5 
+S2 SA SJ S7 
+H4 HQ H7 D3 
+H3 HJ H6 D4 
+C3 C5 C2 CA 
+ST H2 D9 SQ 
+C7 C8 C4 CQ 
+C6 CJ CK C9 
+D5 H5 CT S9 
+D8 H8 DT DK 
+D6 HT DQ DJ 
+

@@ -20,8 +20,8 @@
     "duplicate"
   ],
   "dependencies": {
-    "crypto-shuffle": "^1.0.1",
-    "pbn": "^1.3.0"
+    "crypto-shuffle": "1.x",
+    "pbn": "1.x"
   },
   "devDependencies": {
     "browserify": "^14.4.0",
