@@ -151,6 +151,35 @@ describe('Session', function() {
         });
 
         });
+
+        describe('import PBN with a promise', function() {
+
+        it('should then return a new Session', function(done) {
+            var stream = fs.createReadStream('./test/sample/AlsReg6-Final.pbn');
+            Session
+                .importPbn(stream)
+                .then(function(session) {
+                    expect(session).is.instanceof(Session);
+                    done();
+                })
+                .catch(done)
+            ;
+        });
+
+        it('should catch error', function(done) {
+            Session
+                .importPbn('[Session test]') // test should be in quotes
+                .then(function(session) {
+                    done('did not reject');
+                })
+                .catch(function(err) {
+                    expect(err).is.instanceof(Error);
+                    done();
+                })
+            ;
+        });
+    });
+
     }
 
     it('should generate boards', function() {
