@@ -45,6 +45,11 @@ describe('Contract', function() {
         expect(contract.leader()).to.equal(bridge.seat.west);
     });
 
+    it('should have a undefined leader', function() {
+        var contract = new bridge.Contract();
+        expect(contract.leader()).to.equal(undefined);
+    });
+
     it('should have opponents', function() {
         var contract = new bridge.Contract();
         contract.level = 3;

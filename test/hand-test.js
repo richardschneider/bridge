@@ -158,6 +158,10 @@ describe('Hand', function() {
         expect(hand.cards.length).to.equal(0);
     });
 
+    it('should throw on bad PBN hand', function() {
+        expect(bridge.Hand.parsePBN.bind(bridge.Hand, 'AKQJT')).to.throw('All four suits must be declared.');
+    });
+
     it('should calculate high card points', function() {
         var hand = bridge.Hand.parsePBN('A432.K432.QJ3.JT');
         expect(hand.hcp()).equal(11);
