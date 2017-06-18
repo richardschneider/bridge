@@ -84,9 +84,9 @@ describe('Session', function() {
                 expect(session.games[0].players).to.have.property(seat.south, 'Leufkens');
                 expect(session.games[0].players).to.have.property(seat.east, 'Kalish');
                 expect(session.games[0].players).to.have.property(seat.west, 'Podgor');
-                expect(session.games[0].contract.toString()).to.equal('5HX by S');
+                expect(session.games[0].contract.toString()).to.equal('5HX by S made -2');
                 // TODO: Scoring
-                // TODO: Result
+                expect(session.games[0].contract.made).to.equal(-2);
                 done();
             });
         });
