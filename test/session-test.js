@@ -61,6 +61,7 @@ describe('Session', function() {
         it('should process mandatory tags', function(done) {
             var stream = fs.createReadStream('./test/sample/Schiphol.pbn');
             Session.importPbn(stream, function(err, session) {
+                if (err) return done(err);
                 expect(session.competition).to.have.property('name', 'International Amsterdam Airport Schiphol Bridgetournament');
                 expect(session).to.have.property('site', 'Amsterdam, The Netherlands NLD');
                 expect(session).to.have.property('date', '1995.06.10');
@@ -94,6 +95,7 @@ describe('Session', function() {
         it('should process board records only', function(done) {
             var stream = fs.createReadStream('./test/sample/Hand_Trophy_Pairs.pbn');
             Session.importPbn(stream, function(err, session) {
+                if (err) return done(err);
                 expect(session.competition).to.have.property('name', '160816TuE');
                 expect(session).to.have.property('site', '');
                 expect(session).to.have.property('date', '2016.08.16');
@@ -110,6 +112,7 @@ describe('Session', function() {
         it('should ignore tags with value "?"', function(done) {
             var stream = fs.createReadStream('./test/sample/kgb.pbn');
             Session.importPbn(stream, function(err, session) {
+                if (err) return done(err);
                 expect(session.competition).to.have.property('name', '');
                 expect(session).to.have.property('site', '');
                 expect(session).to.have.property('date', '');
@@ -122,6 +125,7 @@ describe('Session', function() {
         it('should process Auction section', function(done) {
             var stream = fs.createReadStream('./test/sample/Schiphol.pbn');
             Session.importPbn(stream, function(err, session) {
+                if (err) return done(err);
                 expect(session).to.have.property('games').of.length(1);
                 var auction = session.games[0].auction;
                 expect(auction).to.have.property('dealer', seat.north);
@@ -134,6 +138,7 @@ describe('Session', function() {
         it('should process Play section', function(done) {
             var stream = fs.createReadStream('./test/sample/Schiphol.pbn');
             Session.importPbn(stream, function(err, session) {
+                if (err) return done(err);
                 expect(session).to.have.property('games').of.length(1);
                 expect(session.games[0]).to.have.property('tricks').of.length(7);
                 var tricks = session.games[0].tricks;
