@@ -23,6 +23,14 @@ describe('Trick', function() {
         expect(trick.leaderSuit()).to.equal('S');
     });
 
+    it('lead is the 1st card played', function() {
+        var trick = new bridge.Trick();
+        expect(trick.lead()).to.be.undefined;
+
+        trick.play.push({ seat: seat.north, card: bridge.card.S2 } );
+        expect(trick.lead()).to.equal(bridge.card.S2);
+    });
+
     it('winner is declared after 4 cards are played', function() {
         var contract = new bridge.Contract();
         contract.denomination = 'NT';
