@@ -3,6 +3,7 @@
 var Session = require('../').Session;
 var Competition = require('../').Competition;
 var Hand = require('../').Hand;
+var Card = require('../').card;
 var seat = require('../').seat;
 var expect = require('chai').expect;
 var fs = require('fs');
@@ -86,6 +87,7 @@ describe('Session', function() {
                 expect(session.games[0].players).to.have.property(seat.east, 'Kalish');
                 expect(session.games[0].players).to.have.property(seat.west, 'Podgor');
                 expect(session.games[0].contract.toString()).to.equal('5HX by S');
+                expect(session.games[0].lead()).to.equal(Card.SK);
                 // TODO: Scoring
                 expect(session.games[0].made).to.equal(-2);
                 done();

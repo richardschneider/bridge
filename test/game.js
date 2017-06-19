@@ -21,9 +21,19 @@ describe('Game', function() {
         expect(game).to.have.property('tricks');
     });
 
+    it('should have a lead', function() {
+            var game = new Game();
+            game.contract.level = 3;
+            game.contract.denomination = 'NT';
+            game.contract.declaror = bridge.seat.south;
+            game.play('AS');
+            game.play('2S');
+            expect(game.lead()).to.equal(bridge.card.SA);
+    });
+
     describe('play', function() {
         it('should allow an opening lead', function() {
-             var game = new Game();
+            var game = new Game();
             game.contract.level = 3;
             game.contract.denomination = 'NT';
             game.contract.declaror = bridge.seat.south;
