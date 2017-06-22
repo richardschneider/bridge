@@ -30,6 +30,12 @@ describe('Auction', function() {
         expect(auction.isClosed()).equal(true);
     });
 
+    it('should be convertable to a string', function() {
+        var auction = new Auction(seat.south);
+        auction.bid(['-', 'Pass', '1NT', 'X', '-', '-', '-']);
+        expect(auction.toString()).equal('- - 1NT X - - -');
+    });
+
     describe('Bidding', function() {
         it('should allow adding a Bid object or a string', function() {
             var auction = new Auction(seat.south);
