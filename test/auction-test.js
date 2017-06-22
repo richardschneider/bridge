@@ -36,6 +36,15 @@ describe('Auction', function() {
         expect(auction.toString()).equal('- - 1NT X - - -');
     });
 
+    it('should be convertable from a string', function() {
+        var auction = new Auction(seat.south, '');
+        expect(auction.bids.length).equal(0);
+
+        auction = new Auction(seat.south, '  Pass -    1NT     X     -    -    -      ');
+        expect(auction.bids.length).equal(7);
+        expect(auction.toString()).equal('- - 1NT X - - -');
+    });
+
     describe('Bidding', function() {
         it('should allow adding a Bid object or a string', function() {
             var auction = new Auction(seat.south);
