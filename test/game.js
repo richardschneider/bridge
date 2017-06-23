@@ -84,6 +84,16 @@ describe('Game', function() {
             expect(game.tricks[0].play[1].card).to.equal(bridge.card.S2);
         });
 
+        it('should return an array of cards', function() {
+            var game = new Game();
+            game.contract.level = 3;
+            game.contract.denomination = 'NT';
+            game.contract.declaror = bridge.seat.south;
+            game.play('AS', bridge.card.S2);
+            var play = game.play();
+            expect(play).to.have.length(2).and.eql([bridge.card.SA, bridge.card.S2]);
+        });
+
     });
 
 });
