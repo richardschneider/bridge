@@ -42,7 +42,7 @@
     "should": "^11.1.1",
     "validate-commit-msg": "^2.6.1",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.2"
   },
   "config": {
     "ghooks": {
