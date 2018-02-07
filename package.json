@@ -24,7 +24,7 @@
     "pbn": "1.x"
   },
   "devDependencies": {
-    "browserify": "^14.4.0",
+    "browserify": "^16.0.0",
     "chai": "^4.0.2",
     "glob": "^7.0.6",
     "gulp": "^3.9.1",
