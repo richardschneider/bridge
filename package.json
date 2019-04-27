@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "crypto-shuffle": "1.x",
-    "pbn": "1.x"
+    "pbn": "1.5.0"
   },
   "devDependencies": {
     "browserify": "^14.4.0",
